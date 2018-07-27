@@ -1,0 +1,46 @@
+﻿
+.auto-stringstyle /*输入文本框提示文字样式*/
+{
+    font-color: red;            
+    font-family: 楷体;
+    font-size: 20px;                
+    font-weight: bold;            
+    text-align:right;
+    height:30px;
+
+}
+.auto-captionstyle /*标题样式*/
+{
+    font-size: 16pt;
+    color: #ff0099;
+    font-family: 宋体;
+    font-weight: bold;
+    text-align:center;
+    height:40px;
+}
+.auto-resettyle  /*重置按钮样式*/
+{
+    font-weight: bold;
+    color: red;
+    font-family: 黑体;
+    font-size: medium;
+}
+a:visited /*定义超链接被访问过后的显示颜色*/
+{ 
+    text-decoration:none; 
+    color:#0000FF;font-weight:bold;
+}
+a:link /*定义正常显示的超链接颜色*/
+{
+    text-decoration:none; 
+    color:#FF6A00;font-weight:bold;
+}
+#tablecenter    /*表格居中样式*/
+{ 
+    margin-left: auto; 
+    margin-right: auto; 
+    vertical-align: middle; 
+    background-color: white;
+} 
+
+

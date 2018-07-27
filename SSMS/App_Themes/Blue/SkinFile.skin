@@ -1,0 +1,13 @@
+﻿<%--
+程序名称：SkinFile.skin
+程序功能：blue主题的皮肤文件
+--%>
+<%--下面的皮肤代码都可以被默认调用--%>　
+<asp:Label runat="server" style="color: #00698c;font-size: 20px; font-weight: 700;font-family: 楷体;" />
+<asp:Button runat="server" style="color: red; font-size: medium; font-weight: 700; 
+      font-family: 黑体" Text="Button" />
+<asp:TextBox runat="server" style="font-size: small;background-color:white" />
+<asp:RequiredFieldValidator runat="server"  style="font-family: 仿宋; font-size:16px; color: #800080;font-weight: bold" />
+<asp:CompareValidator  runat="server" style="font-family: 仿宋; font-size:16px; color: #800080;font-weight: bold" />
+<asp:RadioButton runat="server" style="font-family: 宋体; font-size: small; color: #008080;font-weight: bold" />
+<asp:DropDownList runat="server" style="font-size: small;background-color:white;width:120px" />

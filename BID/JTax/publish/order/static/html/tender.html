@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>招标项目</title>
+    <link rel="stylesheet" href="../css/tender.css">
+    <link rel="stylesheet" href="../font/font_0.1/iconfont.css">
+    <link rel="stylesheet" href="../css/pageNav.css">
+    <link rel="stylesheet" href="../css/destail.css">
+    <link rel="stylesheet" href="../css/readManage.css">
+    <link rel="stylesheet" href="../css/readManageTradeData.css">
+</head>
+<body>
+<div class="complete">
+    <div class="contentBox">
+        <!--招标项目头部公共块-->
+        <div class="header">
+            <div class="ulDiv">
+                <ul class="ulHeader">
+                    <li>你好,<a href="login.html" class="longin">去登录</a>,<a href="register.html" class="register">免费注册</a><span>|</span></li>
+                    <li>帮助中心<span>|</span></li>
+                    <li><i class="icon iconfont icon-saoyisao"></i>用手机查看<i class="icon iconfont icon-sanjiaoxing-down"></i><span>|</span></li>
+                    <li><i class="icon iconfont icon-dianhua"></i>官方热线：4444-33333<span>|</span></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <div class="logoLeft">
+                    <img src="../images/logo.png" alt="">
+                    <span>智能推荐的招投标信息平台</span>
+                </div>
+                <div class="logoRight">
+                    <form action="">
+                        <i class="icon iconfont icon-sousuo"></i>
+                        <input type="text" value="请输入项目关键词">
+                        <input type="button" value="搜索">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--main导航栏--导航内容块-->
+        <div class="mainNav">
+            <div class="contentHot">
+                <span>热门招标</span>
+                <ul class="ulNav" id="ulNav">
+                    <li><a href="javascript:void(0);">首页</a></li>
+                    <li class="navActive"><a href="javascript:void(0);">项目</a></li>
+                    <li><a href="javascript:void(0);">订阅</a></li>
+                    <li><a href="javascript:void(0);">积分</a></li>
+                    <li><a href="javascript:void(0);">我的</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content" id="content">
+            <!--首页-->
+            <div style="display: none" class="home">1111</div>
+            <!--项目页面-->
+            <div class="program">
+                <div class="program_1">
+                    <!--项目页面部门行业地区数据初始化-->
+                    <div class="department-trade">
+                        <div class="trade divLas">
+                            <!--行业部分-->
+                            <span>所属行业&nbsp;:</span>
+                            <ul class="tradeId">
+                                <li class='liCla' id="000" style="background:#02AFF3;color:#ffffff">不限</li>
+
+                            </ul>
+                            <input type="button" value="更多" id="tradeMore"  />
+                            <ul class="tradeChilren">
+
+                            </ul>
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="department divLas">
+                            <span>所属部门&nbsp;:</span>
+                            <ul id="departmenId">
+                                <li class='liCla1' style="background:#02AFF3;color:#ffffff">不限</li>
+
+                            </ul>
+                            <input type="button" value="更多" id="depertMore"  />
+                            <ul class="deparChilren">
+
+                            </ul>
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="area divLas">
+                            <span>所在地区&nbsp;:</span>
+                            <ul id="voiceId" class="voiceId">
+                                <li class='liCla2' id="0" style="background:#02AFF3;color:#ffffff">不限</li>
+
+                            </ul>
+                            <input type="button" value="更多" id="vinMore"  />
+                            <ul class="city">
+
+                            </ul>
+                            <ul class="areachil">
+
+                            </ul>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <!--项目页面中标招标部分-->
+                    <div class="tender">
+                        <div class="tenderLeft">
+                            <div class="tenderTop">
+                                <ul id="choiceTab">
+                                    <li class="active">招标</li>
+                                    <li>中标</li>
+                                    <li>废标</li>
+                                    <li>全部</li>
+                                </ul>
+                                <ul>
+                                    <li>排序方式&nbsp;:</li>
+                                    <li>综合</li>
+                                    <li>发布时间 <span>||</span></li>
+                                    <li>查看人数 <span>||</span></li>
+                                </ul>
+                            </div>
+                            <div class="tenderBottom">
+                              <!-- <div class="titleCla">
+                                    <ul>
+                                        <li><p><img src="../images/pic1.png" alt="">医疗</p></li>
+                                        <li><a href="">医疗机构消毒效果检测方案面向社会招标</a></li>
+                                        <li>河南省检验检疫中心</li>
+                                    </ul>
+                                    <ul>
+                                        <li><i class="icon iconfont icon-weizhi"></i>河南省松山是少林去</li>
+                                        <li><i class="icon iconfont icon-ren3"></i>查看人数 <span>12</span></li>
+                                        <li>今天&nbsp;更新</li>
+                                    </ul>
+                                </div>-->
+                            </div>
+                            <!--分页部分-->
+                            <div class="page">
+                                <nav aria-label="Page navigation" class="page-nav-outer" id="PageNavId"></nav>
+                            </div>
+                        </div>
+                        <div class="tenderRight">
+                            <div class="question">
+                                <ul>
+                                    <li><a href=""><span>1</span>为什么要注册会员</a></li>
+                                    <li><a href=""><span>2</span>什么是订阅</a></li>
+                                    <li><a href=""><span>3</span>如何进行订阅</a></li>
+                                    <li><a href=""><span>4</span>积分是什么</a></li>
+                                    <li><a href=""><span>5</span>如何获得积分</a></li>
+                                </ul>
+                                <a href="">更多常见问题</a>
+                            </div>
+                            <div class="reversity">
+                                <a href="">
+                                    <img src="../images/ver.png" alt="">
+                                </a>
+                            </div>
+                            <div class="recommend">
+                                <h3>推荐项目</h3>
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--详情页-->
+                <div style="clear:both;"></div>
+                <div class="tederInstail" id="tederInstail">
+                    <div class="InstailContent">
+                        <p class="p">当前位置:招投标网>订阅>项目详情</p>
+                        <div class="tender">
+                            <div class="stailLeft">
+                                <div class="stailTop">
+                                    <div class="collect">
+                                        <span>项目编号:3567</span>
+                                        <span><img src="../images/star1.png" alt="">关注</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stailRight">
+
+                                <div class="recommend">
+                                    <h3>推荐项目</h3>
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+                <!--底部-->
+                <div class="footer">
+                    <div class="footerTop">
+                        <div class="fLeft">
+                            <ul>
+                                <li>
+                                    <ul>
+                                        <li>关于我们</li>
+                                        <li><a href="">网站介绍</a></li>
+                                        <li><a href="">联系我们</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li>快捷入口</li>
+                                        <li><a href="">招标项目</a></li>
+                                        <li><a href="">个性订阅</a></li>
+                                        <li><a href="">会员积分</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li>帮助中心</li>
+                                        <li><a href="">在线问题</a></li>
+                                        <li><a href="">在线留言</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fRight">
+                            <div class="phone">
+                                <p>联系我们</p>
+                                <p>官方热线:4444-55555-33</p>
+                            </div>
+                            <div class="wei">
+                                <p>手机版</p>
+                                <img src="../images/wei.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+                <div class="footerButtom">
+                    玖通安信科技有限公司
+                </div>
+            </div>
+            <!--订阅页面-->
+            <div style="display: none" class="program read">
+                <div class="program_1" id="dis">
+                    <!--订阅页面-->
+                    <div class="read-trade">
+                        <div class="group">
+                            <span>我的组合:</span>
+                            <ul class="groupNum">
+
+                            </ul>
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="condition">
+                            <span>组合条件:</span>
+                            <ul class="groupCon">
+
+                            </ul>
+                        </div>
+                         <button type="button" id="readId">订阅管理</button>
+                    </div>
+
+                    <!--中标招标部分-->
+                    <div class="tender">
+                        <!--重复部分-->
+                        <div class="tenderLeft_1">
+                            <div class="tenderTop_1">
+                                <ul id="choiceTab_1">
+                                    <li class="active_1">招标</li>
+                                    <li>中标</li>
+                                    <li>废标</li>
+                                    <li>全部</li>
+                                </ul>
+                                <ul>
+                                    <li>排序方式&nbsp;:</li>
+                                    <li>综合</li>
+                                    <li>发布时间 <span>||</span></li>
+                                    <li>查看人数 <span>||</span></li>
+                                </ul>
+                            </div>
+                            <div class="tenderBottom_1">
+                                <!-- <div class="titleCla">
+                                      <ul>
+                                          <li><p><img src="../images/pic1.png" alt="">医疗</p></li>
+                                          <li><a href="">医疗机构消毒效果检测方案面向社会招标</a></li>
+                                          <li>河南省检验检疫中心</li>
+                                      </ul>
+                                      <ul>
+                                          <li><i class="icon iconfont icon-weizhi"></i>河南省松山是少林去</li>
+                                          <li><i class="icon iconfont icon-ren3"></i>查看人数 <span>12</span></li>
+                                          <li>今天&nbsp;更新</li>
+                                      </ul>
+                                  </div>-->
+                            </div>
+                            <!--分页部分-->
+
+                        </div>
+                        <div class="tenderRight">
+                            <div class="question">
+                                <ul>
+                                    <li><a href=""><span>1</span>为什么要注册会员</a></li>
+                                    <li><a href=""><span>2</span>什么是订阅</a></li>
+                                    <li><a href=""><span>3</span>如何进行订阅</a></li>
+                                    <li><a href=""><span>4</span>积分是什么</a></li>
+                                    <li><a href=""><span>5</span>如何获得积分</a></li>
+                                </ul>
+                                <a href="">更多常见问题</a>
+                            </div>
+                            <div class="reversity">
+                                <a href="">
+                                    <img src="../images/ver.png" alt="">
+                                </a>
+                            </div>
+                            <div class="recommend">
+                                <h3>推荐项目</h3>
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <p>河南省检验检疫中心</p>
+                                            <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--订阅管理页面-第二个修改页面-->
+                <div class="readGrey" id="readGrey">
+                    <div class="readContent">
+                        <p class="p">当前位置:招投标网>订阅>订阅修改</p>
+                        <div class="tender">
+                            <div class="tenderLeft_1">
+                                  <div class="readManage">
+                                     <h4>订阅管理</h4>
+                                      <form action="" class="fromRead">
+                                          <p>
+                                              <span>订阅邮箱:</span><input type="text">
+                                          </p>
+                                          <span>注：每日订阅内容，将自动发送至该邮箱内，请确认填写无误。</span>
+                                          <p>
+                                              <span>我的组合:</span>
+                                              <select name="" id="select" class="select">
+
+                                              </select>
+                                          </p>
+                                         <p>
+                                             <span>组合名称:</span><input type="text" class="newGroup" value="请为新组和命名">
+                                         </p>
+
+                                      </form>
+                                         <button class="button_1">新建</button>
+                                      <!--项目页面部门行业地区数据初始化-->
+                                      <div class="department-trade_1">
+                                          <div class="trade_1 divLas_1">
+                                              <!--行业部分-->
+                                              <span>所属行业&nbsp;:</span>
+                                              <ul class="tradeId_1">
+                                                  <li class='liCla_1' id="00000" style="background:#02AFF3;color:#ffffff">不限</li>
+
+                                              </ul>
+                                              <input type="button" value="更多" id="tradeMore_1"  />
+                                              <ul class="tradeChilren_1">
+
+                                              </ul>
+                                          </div>
+                                          <div style="clear:both;"></div>
+                                          <div class="department_1 divLas_1">
+                                              <span>所属部门&nbsp;:</span>
+                                              <ul id="departmenId_1">
+                                                  <li class='liCla1_1' style="background:#02AFF3;color:#ffffff">不限</li>
+
+                                              </ul>
+                                              <input type="button" value="更多" id="depertMore_1"  />
+                                              <ul class="deparChilren_1">
+
+                                              </ul>
+                                          </div>
+                                          <div style="clear:both;"></div>
+                                          <div class="area_1 divLas_1">
+                                              <span>所在地区&nbsp;:</span>
+                                              <ul id="voiceId_1" class="voiceId_1">
+                                                  <li class='liCla2_1' id="0678" style="background:#02AFF3;color:#ffffff">不限</li>
+
+                                              </ul>
+                                              <input type="button" value="更多" id="vinMore_1"  />
+                                              <ul class="city_1">
+
+                                              </ul>
+                                              <ul class="areachil_1">
+
+                                              </ul>
+                                          </div>
+                                          <div style="clear:both;"></div>
+                                      </div>
+                                      <!---->
+                                      <div class="already">
+                                          已选条件:
+                                          <ul class="wuhan">
+                                              <li class="li_1"></li>
+                                              <li class="li_2"></li>
+                                              <li class="li_3"></li>
+                                          </ul>
+                                      </div>
+                                      <button type="button" class="btn_keep">保存</button>
+                                  </div>
+                            </div>
+                            <div class="tenderRight">
+                                <div class="question">
+                                    <ul>
+                                        <li><a href=""><span>1</span>为什么要注册会员</a></li>
+                                        <li><a href=""><span>2</span>什么是订阅</a></li>
+                                        <li><a href=""><span>3</span>如何进行订阅</a></li>
+                                        <li><a href=""><span>4</span>积分是什么</a></li>
+                                        <li><a href=""><span>5</span>如何获得积分</a></li>
+                                    </ul>
+                                    <a href="">更多常见问题</a>
+                                </div>
+                               <!-- <div class="reversity">
+                                    <a href="">
+                                        <img src="../images/ver.png" alt="">
+                                    </a>
+                                </div>-->
+                                <div class="recommend re">
+                                    <h3>推荐项目</h3>
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--第三个新建页面-->
+                <div class="readGrey_2" id="readGrey_2">
+                    <div class="readContent_2">
+                        <p class="p_2">当前位置:招投标网>订阅>订阅新建</p>
+                        <div class="tender_2">
+                            <div class="tenderLeft_2">
+                                <div class="readManage_2">
+                                    <h4>订阅管理</h4>
+                                    <form action="" class="fromRead_2">
+                                        <p>
+                                            <span>订阅邮箱:</span><input type="text">
+                                        </p>
+                                        <span>注：每日订阅内容，将自动发送至该邮箱内，请确认填写无误。</span>
+                                       <!-- <p>
+                                            <span>我的组合:</span>
+                                            <select name="" id="select_2" class="select_2">
+
+                                            </select>
+                                        </p>-->
+                                        <p>
+                                            <span>组合名称:</span><input type="text" class="newGroup_2" value="">
+                                        </p>
+
+                                    </form>
+                                    <!--项目页面部门行业地区数据初始化-->
+                                    <div class="department-trade_2">
+                                        <div class="trade_2 divLas_2">
+                                            <!--行业部分-->
+                                            <span>所属行业&nbsp;:</span>
+                                            <ul class="tradeId_2">
+                                                <li class='liCla_2' id="007000" style="background:#02AFF3;color:#ffffff">不限</li>
+
+                                            </ul>
+                                            <input type="button" value="更多" id="tradeMore_2"  />
+                                            <ul class="tradeChilren_2">
+
+                                            </ul>
+                                        </div>
+                                        <div style="clear:both;"></div>
+                                        <div class="department_2 divLas_2">
+                                            <span>所属部门&nbsp;:</span>
+                                            <ul id="departmenId_2">
+                                                <li class='liCla1_2' style="background:#02AFF3;color:#ffffff">不限</li>
+
+                                            </ul>
+                                            <input type="button" value="更多" id="depertMore_2"  />
+                                            <ul class="deparChilren_2">
+
+                                            </ul>
+                                        </div>
+                                        <div style="clear:both;"></div>
+                                        <div class="area_2 divLas_2">
+                                            <span>所在地区&nbsp;:</span>
+                                            <ul id="voiceId_2" class="voiceId_2">
+                                                <li class='liCla2_2' id="05678" style="background:#02AFF3;color:#ffffff">不限</li>
+
+                                            </ul>
+                                            <input type="button" value="更多" id="vinMore_2"  />
+                                            <ul class="city_2">
+
+                                            </ul>
+                                            <ul class="areachil_2">
+
+                                            </ul>
+                                        </div>
+                                        <div style="clear:both;"></div>
+                                    </div>
+                                    <!---->
+                                    <div class="already_2">
+                                        已选条件:
+                                        <ul class="wuhan_2">
+                                            <li class="li_1_2"></li>
+                                            <li class="li_2_2"></li>
+                                            <li class="li_3_2"></li>
+                                        </ul>
+                                    </div>
+                                    <button type="button" class="btn_keep_2">新建</button>
+                                </div>
+                            </div>
+                            <div class="tenderRight">
+                                <div class="question">
+                                    <ul>
+                                        <li><a href=""><span>1</span>为什么要注册会员</a></li>
+                                        <li><a href=""><span>2</span>什么是订阅</a></li>
+                                        <li><a href=""><span>3</span>如何进行订阅</a></li>
+                                        <li><a href=""><span>4</span>积分是什么</a></li>
+                                        <li><a href=""><span>5</span>如何获得积分</a></li>
+                                    </ul>
+                                    <a href="">更多常见问题</a>
+                                </div>
+                                <!-- <div class="reversity">
+                                     <a href="">
+                                         <img src="../images/ver.png" alt="">
+                                     </a>
+                                 </div>-->
+                                <div class="recommend re">
+                                    <h3>推荐项目</h3>
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <p>河南省检验检疫中心</p>
+                                                <p>医疗机构消毒效果检测方案面向社会招标</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+                <!--底部-->
+                <div class="footer">
+                    <div class="footerTop">
+                        <div class="fLeft">
+                            <ul>
+                                <li>
+                                    <ul>
+                                        <li>关于我们</li>
+                                        <li><a href="">网站介绍</a></li>
+                                        <li><a href="">联系我们</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li>快捷入口</li>
+                                        <li><a href="">招标项目</a></li>
+                                        <li><a href="">个性订阅</a></li>
+                                        <li><a href="">会员积分</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li>帮助中心</li>
+                                        <li><a href="">在线问题</a></li>
+                                        <li><a href="">在线留言</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fRight">
+                            <div class="phone">
+                                <p>联系我们</p>
+                                <p>官方热线:4444-55555-33</p>
+                            </div>
+                            <div class="wei">
+                                <p>手机版</p>
+                                <img src="../images/wei.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footerButtom">
+                    玖通安信科技有限公司
+                </div>
+            </div>
+            <!--积分页面-->
+            <div style="display: none" class="grade">4444</div>
+            <!--我的页面-->
+            <div style="display: none" class="mine">55555</div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/tenderPro.js"></script>
+<script src="../js/read.js"></script>
+<script src="../js/pageNav.js"></script>
+<script src="../js/pageNav1.js"></script>
+<script>
+
+
+</script>
+</html>

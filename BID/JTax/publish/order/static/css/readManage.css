@@ -1,0 +1,452 @@
+/*招标中标部分*/
+.tender{
+    width: 100%;
+    margin-top: 20px;
+}
+.tender .tenderLeft_1{
+    float: left;
+    width: 74%;
+    background: #FFFFFF;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.tender .tenderTop_1{
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    height: 84px;
+    background: #FFFFFF;
+}
+.tender .tenderTop_1 ul:nth-of-type(1){
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid dodgerblue;
+    box-sizing: border-box;
+}
+.tender .tenderTop_1 ul:nth-of-type(1) .active_1{
+    background:dodgerblue ;
+}
+.tender .tenderTop_1 ul:nth-of-type(1) li{
+    float: left;
+    width: 150px;
+    text-align: center;
+    font-size: 16px;
+    border-right: 1px solid gainsboro;
+    box-sizing: border-box;
+}
+.tender .tenderTop_1 ul:nth-of-type(2) li{
+    float: left;
+    width: 150px;
+    text-align: center;
+    font-size: 16px;
+    height: 44px;
+    line-height: 44px;
+}
+.tender .tenderTop_1 ul:nth-of-type(2) li:nth-of-type(2){
+    color: dodgerblue;
+}
+.tender .tenderBottom_1{
+    margin-top: 20px;
+}
+.tender .tenderBottom_1 .titleCla{
+    border: 1px solid gainsboro;
+    height: 88px;
+    margin-top: 16px;
+    background: #FFFFFF;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+.tender .tenderBottom_1 .titleCla_1:hover{
+    box-shadow: 2px 4px 4px rgba(198, 198, 198, 0.5);
+}
+.tender .tenderBottom_1 .titleCla_1 ul{
+    height: 44px;
+    line-height: 44px;
+}
+.tender .tenderBottom_1 .titleCla_1 ul li{
+    float: left;
+    font-size: 16px;
+}
+.tender .tenderBottom_1 .titleCla_1 ul li i{
+    font-size: 22px;
+}
+.tender .tenderBottom_1 .titleCla_1 ul:nth-of-type(1) li:nth-of-type(1){
+    width: 20%;
+}
+.tender .tenderBottom_1 .titleCla_1 ul:nth-of-type(1) li:nth-of-type(1) p{
+    display: inline-block;
+    width: 100px;
+    height: 22px;
+    line-height: 22px;
+    border: 1px solid dodgerblue;
+    border-radius: 4px;
+
+}
+.tender .tenderBottom_1 .titleCla_1 ul:nth-of-type(1) li:nth-of-type(1) p img{
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-right: 10px;
+}
+.tender .tenderBottom_1 .titleCla_1 ul:nth-of-type(1) li:nth-of-type(2){
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 30px;
+}
+.tender .tenderBottom_1 .titleCla_1 ul:nth-of-type(1) li:nth-of-type(3){
+    width: 20%;
+}
+.tender .tenderBottom_1 .titleCla_1 ul:nth-of-type(2) li{
+    width:30%;
+    color: gray;
+    font-size: 15px;
+}
+.tender .tenderBottom_1 .titleCla_1 ul:nth-of-type(2) li:nth-of-type(1){
+    text-align: left;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.tender .tenderBottom_1 .titleCla_1 ul:nth-of-type(2) li:nth-of-type(2){
+    text-align: center;
+}
+.tender .tenderBottom_1 .titleCla_1 ul:nth-of-type(2) li:nth-of-type(3){
+    text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+
+/*问题*/
+.tender .tenderRight{
+    float: left;
+    box-sizing: border-box;
+    width: 24%;
+    margin-left: 24px;
+}
+.tender .tenderRight .question{
+    height: 350px;
+    border: 1px solid gainsboro;
+    padding-left: 16px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+}
+.tender .tenderRight .question ul li{
+    border-bottom: 1px solid gray;
+    padding-left: 6px;
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 6px;
+}
+.tender .tenderRight .question ul li a{
+    font-size: 18px;
+    color: black;
+    font-weight: bolder;
+}
+.tender .tenderRight .question ul li a span{
+    font-size: 24px;
+    color:dodgerblue;
+    margin-right: 20px;
+}
+.tender .tenderRight .question>a{
+    margin-top: 20px;
+    width: 260px;
+    height: 40px;
+    line-height: 40px;
+    background: rgba(30, 144, 255, 0.68);
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+}
+/*广告*/
+.tender .tenderRight .reversity{
+    margin-top: 20px;
+}
+.tender .tenderRight .reversity img{
+    width: 100%;
+}
+.tender .tenderRight .recommend{
+    border: 1px solid gainsboro;
+    height: 448px;
+    padding-left: 18px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+}
+.tender .tenderRight .re{
+    margin-top: 20px;
+}
+.tender .tenderRight .recommend ul{
+    margin-top: 10px;
+}
+.tender .tenderRight .recommend ul li{
+    height: 60px;
+    width:90%;
+    border-bottom: 1px dashed gainsboro;
+}
+.tender .tenderRight .recommend ul li p{
+    color: #2d2f33;
+}
+.tender .tenderRight .recommend ul li p:nth-of-type(1){
+    font-size: 14px;
+    height: 26px;
+    line-height: 28px;
+}
+.tender .tenderRight .recommend ul li p:nth-of-type(2){
+    height: 34px;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+
+ /*订阅管理的文本框部分*/
+.fromRead p{
+    height:80px;
+    line-height: 80px;
+}
+.fromRead>span{
+    font-size: 14px;
+    color: #ffc346;
+    padding-left:100px;
+}
+.fromRead p span{
+    width: 110px;
+    display: inline-block;
+    text-align: right;
+}
+.fromRead input{
+    width: 260px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 4px;
+    margin-left: 20px;
+    border: 1px solid gainsboro;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.fromRead select{
+    width: 260px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 4px;
+    margin-left: 20px;
+    border: 1px solid gainsboro;
+}
+.button_1{
+    margin-left: 600px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background: #39a4ff;
+    font-size: 16px;
+    border: none;
+    color: #FFFFFF;
+}
+
+
+/*行业部门部分*/
+.program .department-trade_1{
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-bottom: 20px;
+    background: #FFFFFF;
+
+}
+.program .department-trade_1 .divLas_1{
+    padding-top: 20px;
+    position: relative;
+    margin-top: 20px;
+}
+.program .department-trade_1 .divLas_1>ul:nth-of-type(1){
+    width: 80%;
+}
+/*行业子集*/
+.program .department-trade_1 .divLas_1 .tradeChilren_1{
+    display: none;
+    border: 1px solid #ececec;
+    margin-left: 10%;
+    width:80%;
+    overflow: visible;
+    height:auto;
+    margin-top:10px;
+}
+.program .department-trade_1 .divLas_1 .deparChilren_1{
+    display: none;
+    border: 1px solid #ececec;
+    margin-left: 8%;
+    width: 66%;
+    overflow: visible;
+    height:auto;
+    margin-top:10px;
+}
+.program .department-trade_1 .divLas_1 .deparChilren_1 .deparActive{
+    color: #02AFF3;
+    border-bottom: 2px solid #02AFF3;
+    border-radius: 0px;
+}
+.program .department-trade_1 .divLas_1 .tradeChilren_1 .tradeActive{
+    color: #02AFF3;
+    border-bottom: 2px solid #02AFF3;
+    border-radius: 0px;
+}
+.program .department-trade1_1 .divLas_1 .deparChilren_1 .deparActive{
+    color: #02AFF3;
+    border-bottom: 2px solid #02AFF3;
+    border-radius: 0px;
+}
+.program .department-trade1_1 .divLas_1 .deparChilren_1{
+    margin-top: 10px;
+    border: 1px solid gainsboro;
+    display: none;
+    height: auto;
+}
+.program .department-trade1_1 .divLas_1 .tradeChilren_1 .tradeActive{
+    color: #02AFF3;
+    border-bottom: 2px solid #02AFF3;
+    border-radius: 0px;
+}
+.program .department-trade1_1 .divLas_1 .tradeChilren{
+    margin-top: 10px;
+    border: 1px solid gainsboro;
+    display: none;
+    height: auto;
+}
+/*地区*/
+.program .department-trade_1 .divLas_1 .city_1{
+    display: none;
+    border: 1px solid #ececec;
+    margin-left: 8%;
+    width: 66%;
+    overflow: visible;
+    height:auto;
+    margin-top:10px;
+}
+.program .department-trade_1 .divLas_1 .city_1 .cityActive{
+    color: #02AFF3;
+    border-bottom: 2px solid #02AFF3;
+    border-radius: 0px;
+}
+.program .department-trade1_1 .divLas_1 .city_1 .cityActive{
+    color: #02AFF3;
+    border-bottom: 2px solid #02AFF3;
+    border-radius: 0px;
+}
+.program .department-trade1_1 .divLas_1 .city_1 {
+    margin-top: 10px;
+    border: 1px solid gainsboro;
+    display: none;
+    height: auto;
+}
+.program .department-trade_1 .divLas_1 .city_1 .areachil_1{
+    display: none;
+    width: 100%;
+    overflow: visible;
+    height:auto;
+    margin-top: 10px;
+}
+.program .department-trade_1 .divLas_1 .city_1 .areachil_1 li{
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    margin-top: 6px;
+}
+.program .department-trade_1 .divLas_1 ul{
+    overflow: hidden;
+    height: 24px;
+}
+.program .department-trade_1 .divLas_1 a{
+    position: absolute;
+    top: 22px;
+    right: 160px;
+    font-size: 14px;
+    color: black;
+}
+.program .department-trade_1 .divLas_1 .areachil_1{
+    display: none;
+    border: 1px solid #ececec;
+    margin-left: 8%;
+    width: 66%;
+    overflow: visible;
+    height:auto;
+    margin-top:10px;
+}
+.program .department-trade_1 .divLas_1 .areachil_1 .areaActive{
+    border: 1px solid #02AFF3;
+    border-radius: 4px;
+}
+.program .department-trade_1 .divLas_1 .areachil_1 .areaActive{
+    border: 1px solid #02AFF3;
+    border-radius: 4px;
+}
+.program .department-trade_1 .divLas_1 .areachil_1{
+    margin-top: 10px;
+    border: 1px solid gainsboro;
+    display: none;
+    height: auto;
+}
+.program .department-trade_1 .divLas_1 .liCla2-last{
+    clear: both;
+}
+.program .department-trade_1 div span{
+    float: left;
+    margin-right: 20px;
+}
+.program .department-trade_1 div ul{
+    float: left;
+    width: 860px;
+}
+.program .department-trade_1 div ul li{
+    float: left;
+    box-sizing: border-box;
+    padding: 0px 16px 0px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 40px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*已选条件*/
+.already{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.already .wuhan{
+   display: inline-block;
+    margin-left: 20px;
+}
+.already .wuhan li{
+    float: left;
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    padding: 4px 16px;
+    margin-right: 20px;
+}
+.btn_keep{
+    display: block;
+    width: 120px;
+    height: 34px;
+    line-height: 34px;
+    border: none;
+    border-radius: 4px;
+    margin: 50px auto;
+    background: #39a4ff;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+/*我的组合*/
+.groupNum li{
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+.groupNum .groupActive{
+    background:#39a4ff ;
+}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}
+    Login--Blog
+{% endblock title %}
+    <!-- Page Header  image path-->
+    {% block pageheader %}
+        <header class="intro-header" style="background-image: url({% static 'img/login-bg.jpg' %}) ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                        <div class="site-heading">
+                            <h1></h1>
+                            {# <span class="subheading"></span> #}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    {% endblock pageheader %}
+
+    <!-- Main Content -->
+    {% block maincontent %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <h4 class="text-center">Login</h4>
+                <form action="" method="POST" class="" role="form"> {% csrf_token %}
+                <!--
+                {{ loginfm.as_p }} 
+                -->                 
+                   <div class="input-group">
+                        <span class="input-group-addon" ><img src="{% static 'img/username2.png' %}" alt="" width='24px'></span>
+                        <input type="text" class="form-control" placeholder="username/email" autofocus="" required="" name='username'>
+                    </div>               
+                    <div class="input-group">
+                        <span class="input-group-addon"><img src="{% static 'img/password2.png' %}" alt=""></span>
+                        <input type="password" class="form-control" placeholder="your password" required="" name='password'>
+                    </div>
+                    <input type="submit" name='login' value="Login" class="btn  btn-success btn-block">
+
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock maincontent %}

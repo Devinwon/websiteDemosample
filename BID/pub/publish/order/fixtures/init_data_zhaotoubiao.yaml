@@ -1,0 +1,725 @@
+- model: order.Biddinginfo
+  pk: 1
+  fields:
+     TagName: 建筑
+     Url: 'https://zb.mycaigou.com/bidding-71279.html'
+     Title: 2018年金科集团西部区域公司EPS装饰线条战略采购招标公告
+     LabelTime: 2017-04-02
+     PurchaseDept: 采购单位
+     GetViews: 25
+     PublishTime: 2018-04-12
+     DeadLine: 2018-04-15
+     TimestoFavo: 14
+     LabelByWhom: 手工标注人
+     BiddingType: 4
+     BiddingStatus: 1
+     BiddingSubject: 主体（招标内容）
+     OrgCategory: 2
+     PurchaseCategory: 10
+     PurchseArea: 1
+
+     
+- model: order.Biddinginfo
+  pk: 2
+  fields:
+    TagName: 医疗
+    Url: https://www.qianlima.com/zb/detail/20180411_83361811.html
+    Title: 美丽校园（彩叶化树种进校园）建设工程的招标公告
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 2
+    BiddingStatus: 2
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+
+     
+- model: order.Biddinginfo
+  pk: 3
+  fields:
+    TagName: 园林
+    Url: https://www.qianlima.com/zb/detail/20180411_83361668.html
+    Title: 兰太实业ERP缝包机充电器采购704-1
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: （招标内容）
+    OrgCategory: 1
+    PurchaseCategory: 10
+    PurchseArea: 20
+    
+- model: order.Biddinginfo
+  pk: 4
+  fields:
+    TagName: 公安
+    Url: http://www.qianlima.com/zb/detail/20180411_83361775.html
+    Title: 广西鑫磐工程项目管理有限责任公司田林县文化和体育广电局田林县文广局《我们的纺织》专题歌会采购(重
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 301
+    PurchseArea: 6
+    
+- model: order.Biddinginfo
+  pk: 5
+  fields:
+    TagName: 地产
+    Url: http://www.qianlima.com/zb/detail/20180411_83361690.html
+    Title: 泗县2018年草沟镇于韩村沟韩东路道路建设工程（项目1）
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 2002
+    PurchseArea: 1201
+    
+- model: order.Biddinginfo
+  pk: 6
+  fields:
+    TagName: 绿化
+    Url: http://www.qianlima.com/zb/detail/20180411_83361649.html
+    Title: 南宁地体4号线02标8工区盾构项目部-----皮带轮及其它杂料采购
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 301
+    PurchseArea: 1027
+    
+- model: order.Biddinginfo
+  pk: 7
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361663.html
+    Title: 珠海电厂2号机组保安段400VPCC可靠性改造招标公告
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 1
+    PurchaseCategory: 10
+    PurchseArea: 5
+    
+- model: order.Biddinginfo
+  pk: 8
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361702.html
+    Title: 西峡县田关乡中心学校教学、办公设备采购项目询价公告
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 2001
+    PurchseArea: 1201
+
+    
+- model: order.Biddinginfo
+  pk: 9
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361583.html
+    Title: 吴忠市招标公告同心县教育局美术教学器材采购项目公开招标公告（二次）
+    LabelTime: 2017-04-02
+    PurchaseDept:  采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1027
+    
+- model: order.Biddinginfo
+  pk: 10
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361693.html
+    Title: 天津市东丽区人民政府万新街道办事处采购台式计算机（不包括计算机工作站）等项目招标公告
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 22
+    
+- model: order.Biddinginfo
+  pk: 11
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361577.html
+    Title: 2018年度枣庄市市中区税郭镇旱厕改造工程招标公告
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+    
+- model: order.Biddinginfo
+  pk: 12
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361532.html
+    Title: 【询价信息】昭泸项目洒水车租赁询价信息
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+    
+- model: order.Biddinginfo
+  pk: 13
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361555.html
+    Title: 兰太实业ERP传动链条采购705
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+    
+- model: order.Biddinginfo
+  pk: 14
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361552.html
+    Title: 兰太实业ERP泵轴采购706
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+    
+- model: order.Biddinginfo
+  pk: 15
+  fields:
+    TagName: 标签名
+    Url: http:http://www.qianlima.com/zb/detail/20180411_83361665.html
+    Title: 兰太实业ERP封口机配件采购704-2
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+    
+- model: order.Biddinginfo
+  pk: 16
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361535.html
+    Title: 【询价信息】昭泸项目拖板车租赁询价信息
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+    
+- model: order.Biddinginfo
+  pk: 17
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361553.html
+    Title: 雪山乡卫生院门诊综合楼建设项目采购水土保持方案编制及水土保持监测服务
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+    
+- model: order.Biddinginfo
+  pk: 18
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361548.html
+    Title: 雪山乡卫生院门诊综合楼建设项目采购环境影响评价服务
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 1
+    PurchaseCategory: 2001
+    PurchseArea: 6
+    
+- model: order.Biddinginfo
+  pk: 19
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361500.html
+    Title: 度尾镇后埔村德兴至田庄水沟修建工程招标公告
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+
+- model: order.Biddinginfo
+  pk: 3
+  fields:
+    TagName: 园林
+    Url: https://www.qianlima.com/zb/detail/20180411_83361668.html
+    Title: 兰太实业ERP缝包机充电器采购704-1
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: （招标内容）
+    OrgCategory: 1
+    PurchaseCategory: 10
+    PurchseArea: 20
+
+- model: order.Biddinginfo
+  pk: 4
+  fields:
+    TagName: 公安
+    Url: http://www.qianlima.com/zb/detail/20180411_83361775.html
+    Title: 广西鑫磐工程项目管理有限责任公司田林县文化和体育广电局田林县文广局《我们的纺织》专题歌会采购(重
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 301
+    PurchseArea: 6
+
+- model: order.Biddinginfo
+  pk: 5
+  fields:
+    TagName: 地产
+    Url: http://www.qianlima.com/zb/detail/20180411_83361690.html
+    Title: 泗县2018年草沟镇于韩村沟韩东路道路建设工程（项目1）
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 2002
+    PurchseArea: 1201
+
+- model: order.Biddinginfo
+  pk: 6
+  fields:
+    TagName: 绿化
+    Url: http://www.qianlima.com/zb/detail/20180411_83361649.html
+    Title: 南宁地体4号线02标8工区盾构项目部-----皮带轮及其它杂料采购
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 301
+    PurchseArea: 1027
+
+- model: order.Biddinginfo
+  pk: 7
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361663.html
+    Title: 珠海电厂2号机组保安段400VPCC可靠性改造招标公告
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 1
+    PurchaseCategory: 10
+    PurchseArea: 5
+
+- model: order.Biddinginfo
+  pk: 8
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361702.html
+    Title: 西峡县田关乡中心学校教学、办公设备采购项目询价公告
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 2001
+    PurchseArea: 1201
+
+
+- model: order.Biddinginfo
+  pk: 9
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361583.html
+    Title: 吴忠市招标公告同心县教育局美术教学器材采购项目公开招标公告（二次）
+    LabelTime: 2017-04-02
+    PurchaseDept:  采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1027
+
+- model: order.Biddinginfo
+  pk: 10
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361693.html
+    Title: 天津市东丽区人民政府万新街道办事处采购台式计算机（不包括计算机工作站）等项目招标公告
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 22
+
+- model: order.Biddinginfo
+  pk: 11
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361577.html
+    Title: 2018年度枣庄市市中区税郭镇旱厕改造工程招标公告
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+
+- model: order.Biddinginfo
+  pk: 12
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361532.html
+    Title: 【询价信息】昭泸项目洒水车租赁询价信息
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+
+- model: order.Biddinginfo
+  pk: 13
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361555.html
+    Title: 兰太实业ERP传动链条采购705
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+
+- model: order.Biddinginfo
+  pk: 14
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361552.html
+    Title: 兰太实业ERP泵轴采购706
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+
+- model: order.Biddinginfo
+  pk: 15
+  fields:
+    TagName: 标签名
+    Url: http:http://www.qianlima.com/zb/detail/20180411_83361665.html
+    Title: 兰太实业ERP封口机配件采购704-2
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+
+- model: order.Biddinginfo
+  pk: 16
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361535.html
+    Title: 【询价信息】昭泸项目拖板车租赁询价信息
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+
+- model: order.Biddinginfo
+  pk: 17
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361553.html
+    Title: 雪山乡卫生院门诊综合楼建设项目采购水土保持方案编制及水土保持监测服务
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+
+- model: order.Biddinginfo
+  pk: 18
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361548.html
+    Title: 雪山乡卫生院门诊综合楼建设项目采购环境影响评价服务
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 1
+    PurchaseCategory: 2001
+    PurchseArea: 6
+
+- model: order.Biddinginfo
+  pk: 19
+  fields:
+    TagName: 标签名
+    Url: http://www.qianlima.com/zb/detail/20180411_83361500.html
+    Title: 度尾镇后埔村德兴至田庄水沟修建工程招标公告
+    LabelTime: 2017-04-02
+    PurchaseDept: 采购单位
+    GetViews: 25
+    PublishTime: 2018-04-12
+    DeadLine: 2018-04-15
+    TimestoFavo: 14
+    LabelByWhom: 手工标注人
+    BiddingType: 3
+    BiddingStatus: 1
+    BiddingSubject: 主体（招标内容）
+    OrgCategory: 2
+    PurchaseCategory: 10
+    PurchseArea: 1
+
+

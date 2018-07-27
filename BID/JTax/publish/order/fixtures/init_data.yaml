@@ -1,0 +1,560 @@
+- model: order.Area
+  pk: 1
+  fields:
+    Name: 北京市
+    Code: '010'
+    ParentId:
+
+- model: order.Area
+  pk: 2
+  fields:
+    Name: 北京市区
+    Code: '01001'
+    ParentId: 2
+    
+- model: order.Area
+  pk: 3
+  fields:
+    Name: 北京郊区
+    Code: '01002'
+    ParentId: 1
+
+- model: order.Area
+  pk: 4
+  fields:
+    Name: 西城区
+    Code: '01001'
+    ParentId: 2
+     
+- model: order.Area
+  pk: 5
+  fields:
+    Name: 东城区
+    Code: '01002'
+    ParentId: 2     
+     
+- model: order.Area
+  pk: 6
+  fields:
+    Name: 顺义区
+    Code: '01002'
+    ParentId: 3
+
+- model: order.Area
+  pk: 20
+  fields:
+    Name: 天津市
+    Code: '02001'
+    ParentId:
+
+- model: order.Area
+  pk: 21
+  fields:
+    Name: 天津市区
+    Code: '0200101'
+    ParentId:  20
+
+- model: order.Area
+  pk: 22
+  fields:
+    Name: 天津郊区
+    Code: '0200102'
+    ParentId:  20
+
+- model: order.Area
+  pk: 23
+  fields:
+    Name: 和平区
+    Code: '020010101'
+    ParentId:  21
+
+- model: order.Area
+  pk: 24
+  fields:
+    Name: 武清区
+    Code: '020010101'
+    ParentId:  22
+
+- model: order.Area
+  pk: 1027
+  fields:
+    Name: 湖北省
+    Code: '02701'
+    ParentId:
+
+- model: order.Area
+  pk: 10271
+  fields:
+    Name: 武汉市
+    Code: '0270101'
+    ParentId:  1027
+     
+- model: order.Area
+  pk: 102711
+  fields:
+    Name: 江汉区
+    Code: '02701011'
+    ParentId:  10271
+     
+- model: order.Area
+  pk: 102712
+  fields:
+    Name: 江岸区
+    Code: '02701012'
+    ParentId:  10271
+     
+- model: order.Area
+  pk: 102713
+  fields:
+    Name: 桥口区
+    Code: '02701013'
+    ParentId:  10271
+     
+- model: order.Area
+  pk: 102714
+  fields:
+    Name: 洪山区
+    Code: '02701014'
+    ParentId:  10271
+     
+- model: order.Area
+  pk: 102715
+  fields:
+    Name: 青山区
+    Code: '02701015'
+    ParentId:  10271
+     
+- model: order.Area
+  pk: 102716
+  fields:
+    Name: 武昌区
+    Code: '02701016'
+    ParentId:  10271
+     
+- model: order.Area
+  pk: 102717
+  fields:
+    Name: 汉阳区
+    Code: '02701017'
+    ParentId:  10271
+
+- model: order.Area
+  pk: 10272
+  fields:
+    Name: 黄石市
+    Code: '0270102'
+    ParentId:  1027
+     
+- model: order.Area
+  pk: 102721
+  fields:
+    Name: 黄石港区
+    Code: '02701021'
+    ParentId:  10272
+     
+- model: order.Area
+  pk: 102722
+  fields:
+    Name: 西塞山区
+    Code: '02701022'
+    ParentId:  10272
+     
+- model: order.Area
+  pk: 102723
+  fields:
+    Name: 下陆区
+    Code: '02701023'
+    ParentId:  10272
+     
+- model: order.Area
+  pk: 102724
+  fields:
+    Name: 铁山区
+    Code: '02701024'
+    ParentId:  10272
+     
+- model: order.Area
+  pk: 102725
+  fields:
+    Name: 阳新县
+    Code: '02701025'
+    ParentId:  10272
+     
+- model: order.Area
+  pk: 102726
+  fields:
+    Name: 大冶市
+    Code: '02701026'
+    ParentId:  10272
+     
+     
+- model: order.Area
+  pk: 10273
+  fields:
+    Name: 襄樊市
+    Code: '0270103'
+    ParentId:  1027
+     
+- model: order.Area
+  pk: 10274
+  fields:
+    Name: 荆州市
+    Code: '0270104'
+    ParentId:  1027
+  
+- model: order.Area
+  pk: 10275
+  fields:
+    Name: 宜昌市
+    Code: '0270105'
+    ParentId:  1027
+     
+
+
+
+- model: order.Area
+  pk: 2101
+  fields:
+    Name: 上海市
+    Code: '021'
+    ParentId:
+
+- model: order.Area
+  pk: 210101
+  fields:
+    Name: 上海市区
+    Code: '02101'
+    ParentId: 2101
+
+- model: order.Area
+  pk: 200102
+  fields:
+    Name: 上海郊区
+    Code: '02102'
+    ParentId: 2101
+ 
+    
+- model: order.Area
+  pk: 101
+  fields:
+    Name: 重庆市
+    Code: '111'
+    ParentId: 
+     
+- model: order.Area
+  pk: 201
+  fields:
+    Name: 黑龙江省
+    Code: '112'
+    ParentId: 
+     
+- model: order.Area
+  pk: 2012
+  fields:
+    Name: 哈尔滨
+    Code: '1121'
+    ParentId: 201
+     
+- model: order.Area
+  pk: 301
+  fields:
+    Name: 吉林省
+    Code: '113'
+    ParentId: 
+     
+- model: order.Area
+  pk: 3012
+  fields:
+    Name: 长春市
+    Code: '1131'
+    ParentId: 301    
+    
+- model: order.Area
+  pk: 401
+  fields:
+    Name: 辽宁省
+    Code: '114'
+    ParentId: 
+    
+- model: order.Area
+  pk: 4012
+  fields:
+    Name: 沈阳市
+    Code: '1141'
+    ParentId: 401
+    
+- model: order.Area
+  pk: 501
+  fields:
+    Name: 江苏省
+    Code: '115'
+    ParentId: 
+   
+- model: order.Area
+  pk: 5012
+  fields:
+    Name: 南京市
+    Code: '1151'
+    ParentId: 501
+    
+- model: order.Area
+  pk: 601
+  fields:
+    Name: 山东省
+    Code: '116'
+    ParentId:    
+    
+- model: order.Area
+  pk: 6012
+  fields:
+    Name: 济南市
+    Code: '1161'
+    ParentId: 601     
+   
+- model: order.Area
+  pk: 701
+  fields:
+    Name: 安徽省
+    Code: '117'
+    ParentId:   
+    
+- model: order.Area
+  pk: 7012
+  fields:
+    Name: 合肥市
+    Code: '1171'
+    ParentId: 701
+     
+- model: order.Area
+  pk: 801
+  fields:
+    Name: 河北省
+    Code: '118'
+    ParentId: 
+   
+- model: order.Area
+  pk: 8012
+  fields:
+    Name: 石家庄
+    Code: '1181'
+    ParentId: 801
+     
+- model: order.Area
+  pk: 901
+  fields:
+    Name: 河南省
+    Code: '119'
+    ParentId:
+      
+- model: order.Area
+  pk: 9012
+  fields:
+    Name: 郑州市
+    Code: '1191'
+    ParentId: 901
+     
+- model: order.Area
+  pk: 1001
+  fields:
+    Name: 湖南省
+    Code: '1110'
+    ParentId: 
+     
+- model: order.Area
+  pk: 10012
+  fields:
+    Name: 长沙市
+    Code: '11101'
+    ParentId: 1001 
+     
+- model: order.Area
+  pk: 1101
+  fields:
+    Name: 江西省
+    Code: '1111'
+    ParentId:  
+     
+- model: order.Area
+  pk: 11012
+  fields:
+    Name: 南昌市
+    Code: '11111'
+    ParentId: 1101
+     
+- model: order.Area
+  pk: 1201
+  fields:
+    Name: 陕西省
+    Code: '1112'
+    ParentId: 
+     
+- model: order.Area
+  pk: 12012
+  fields:
+    Name: 西安市
+    Code: '11121'
+    ParentId: 1201
+     
+- model: order.Area
+  pk: 1301
+  fields:
+    Name: 山西省
+    Code: '1113'
+    ParentId: 
+     
+- model: order.Area
+  pk: 13012
+  fields:
+    Name: 太原市
+    Code: '11131'
+    ParentId: 1301
+     
+- model: order.Area
+  pk: 1401
+  fields:
+    Name: 四川省
+    Code: '1114'
+    ParentId:
+     
+- model: order.Area
+  pk: 14012
+  fields:
+    Name: 成都市
+    Code: '11141'
+    ParentId: 1401
+     
+- model: order.Area
+  pk: 1501
+  fields:
+    Name: 青海省
+    Code: '1115'
+    ParentId:
+     
+- model: order.Area
+  pk: 15012
+  fields:
+    Name: 西宁市
+    Code: '11151'
+    ParentId: 1501
+     
+- model: order.Area
+  pk: 1601
+  fields:
+    Name: 海南省
+    Code: '1116'
+    ParentId: 
+    
+- model: order.Area
+  pk: 16012
+  fields:
+    Name: 海口市
+    Code: '11161'
+    ParentId:  1601
+     
+- model: order.Area
+  pk: 1701
+  fields:
+    Name: 广东省
+    Code: '1117'
+    ParentId: 
+     
+- model: order.Area
+  pk: 17012
+  fields:
+    Name: 广州市
+    Code: '11171'
+    ParentId: 1701
+     
+- model: order.Area
+  pk: 1801
+  fields:
+    Name: 贵州省
+    Code: '1118'
+    ParentId: 
+     
+- model: order.Area
+  pk: 18012
+  fields:
+    Name: 贵阳市
+    Code: '11181'
+    ParentId: 1801 
+     
+- model: order.Area
+  pk: 1901
+  fields:
+    Name: 浙江省
+    Code: '1119'
+    ParentId:
+    
+- model: order.Area
+  pk: 19012
+  fields:
+    Name: 杭州市
+    Code: '11191'
+    ParentId: 1901
+     
+- model: order.Area
+  pk: 2001
+  fields:
+    Name: 福建省
+    Code: '1120'
+    ParentId:
+     
+- model: order.Area
+  pk: 20012
+  fields:
+    Name: 福州市
+    Code: '11201'
+    ParentId: 2001
+     
+- model: order.Area
+  pk: 2101
+  fields:
+    Name: 台湾省
+    Code: '1121'
+    ParentId:
+     
+- model: order.Area
+  pk: 21012
+  fields:
+    Name: 台北市
+    Code: '11211'
+    ParentId: 2101
+     
+- model: order.Area
+  pk: 2201
+  fields:
+    Name: 甘肃省
+    Code: '1122'
+    ParentId:
+     
+- model: order.Area
+  pk: 22012
+  fields:
+    Name: 兰州市
+    Code: '11221'
+    ParentId: 2201
+     
+- model: order.Area
+  pk: 2301
+  fields:
+    Name: 云南省
+    Code: '1123'
+    ParentId:
+     
+- model: order.Area
+  pk: 23012
+  fields:
+    Name: 昆明市
+    Code: '11231'
+    ParentId:  2301
+     
+     
+     
+    
+     
+      
+     
+    
+                         
+

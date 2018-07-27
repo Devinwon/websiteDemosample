@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>欢迎使用学生成绩管理系统</title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 2%;
+            height: 100%;
+        }
+        .auto-style2 {
+            width: 96%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body height="100%" width="100%" padding="0px" margin="0px">
+    <form id="form1" runat="server">
+    <div>
+        <table border="0" cellpadding="0" cellspacing="0" style="align-content:center" width="100%" height="100%">
+            <tr height="20%">
+                <td colspan="3" style="width:100%;">
+                    <img src="images/banner.jpg" style="width: 100%;" alt="" />
+                </td>
+            </tr>
+            <tr>
+                <td style="background-image: url('images/edges.jpg');" class="auto-style1">
+                </td>
+                <td class="auto-style2">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td style="background-image: url('images/edges.jpg');" class="auto-style1">
+                </td>
+            </tr>
+            <tr  style="width:100%; height:20%">
+                <td colspan="3">
+                    <img src="images/bottom2.png" style="width: 100%;" alt=""/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

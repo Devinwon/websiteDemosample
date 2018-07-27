@@ -1,0 +1,201 @@
+- model: order.PurchaseCategory
+  pk: 10
+  fields:
+    Name: 工程
+    ParentId:
+
+- model: order.PurchaseCategory
+  pk: 1001
+  fields:
+    Name: 土建
+    ParentId: 10
+
+- model: order.PurchaseCategory
+  pk: 1002
+  fields:
+    Name: 园林
+    ParentId: 10
+    
+- model: order.PurchaseCategory
+  pk: 10021
+  fields:
+    Name: 绿化景观
+    ParentId: 1002
+    
+- model: order.PurchaseCategory
+  pk: 1003
+  fields:
+    Name: 水利水电
+    ParentId: 10
+    
+- model: order.PurchaseCategory
+  pk: 1004
+  fields:
+    Name: 交通设施
+    ParentId: 10
+    
+- model: order.PurchaseCategory
+  pk: 1006
+  fields:
+    Name: 化学
+    ParentId: 10
+
+- model: order.PurchaseCategory
+  pk: 20
+  fields:
+    Name: 货物
+    ParentId:
+
+- model: order.PurchaseCategory
+  pk: 2001
+  fields:
+    Name: 办公用品
+    ParentId: 20
+    
+- model: order.PurchaseCategory
+  pk: 2003
+  fields:
+    Name: 电梯
+    ParentId: 20
+    
+- model: order.PurchaseCategory
+  pk: 2002
+  fields:
+    Name: 采购
+    ParentId: 20
+    
+- model: order.PurchaseCategory
+  pk: 30
+  fields:
+    Name: 服务
+    ParentId:
+    
+- model: order.PurchaseCategory
+  pk: 301
+  fields:
+    Name: 中介服务
+    ParentId: 30
+    
+- model: order.PurchaseCategory
+  pk: 3011
+  fields:
+    Name: 工程勘察
+    ParentId: 301
+    
+- model: order.PurchaseCategory
+  pk: 3012
+  fields:
+    Name: 监理
+    ParentId: 301
+    
+- model: order.PurchaseCategory
+  pk: 3013
+  fields:
+    Name: 设计
+    ParentId: 301
+    
+- model: order.PurchaseCategory
+  pk: 3014
+  fields:
+    Name: 工程咨询评估
+    ParentId: 301
+    
+- model: order.PurchaseCategory
+  pk: 3015
+  fields:
+    Name: 财务
+    ParentId: 301
+    
+- model: order.PurchaseCategory
+  pk: 3016
+  fields:
+    Name: 法律
+    ParentId: 301
+    
+- model: order.PurchaseCategory
+  pk: 302
+  fields:
+    Name: 金融保险服务
+    ParentId: 30
+    
+- model: order.PurchaseCategory
+  pk: 3021
+  fields:
+    Name: 项目法人
+    ParentId: 302
+    
+- model: order.PurchaseCategory
+  pk: 3022
+  fields:
+    Name: 代建人
+    ParentId: 302
+    
+- model: order.PurchaseCategory
+  pk: 3023
+  fields:
+    Name: 特许经营
+    ParentId: 302
+    
+- model: order.PurchaseCategory
+  pk: 3024
+  fields:
+    Name: 科技项目
+    ParentId: 302
+    
+- model: order.PurchaseCategory
+  pk: 3025
+  fields:
+    Name: 科研课题
+    ParentId: 302
+    
+- model: order.PurchaseCategory
+  pk: 3026
+  fields:
+    Name: 国有资产产权转让
+    ParentId: 302
+    
+- model: order.PurchaseCategory
+  pk: 3027
+  fields:
+    Name: 物业管理
+    ParentId: 302
+
+- model: order.OrgCategory
+  pk: 1
+  fields:
+    Name: A-G
+    ParentId:
+
+- model: order.OrgCategory
+  pk: 10
+  fields:
+    Name: 公安
+    AliasName: 公安局,派出所
+    ParentId: 1
+
+- model: order.OrgCategory
+  pk: 11
+  fields:
+    Name: 城建
+    AliasName: 建委
+    ParentId: 1
+
+- model: order.OrgCategory
+  pk: 12
+  fields:
+    Name: 规划
+    AliasName: 规划局
+    ParentId: 1
+
+- model: order.OrgCategory
+  pk: 2
+  fields:
+    Name: H-N
+    ParentId:
+
+- model: order.OrgCategory
+  pk: 20
+  fields:
+    Name: 教育
+    AliasName: 教育局,教委
+    ParentId:   2

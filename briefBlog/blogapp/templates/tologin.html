@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正在跳转到登录页面</title>
+	<meta http-equiv="refresh" content="3;url={% url 'login' %}">
+</head>
+<body align="center">
+	<div><img src="{% static 'img/needlogin.jpg' %}" alt="俺是有身份的" width="150px"></div>
+	<div>
+		<h2 >系统检测到你没有登录，将自动跳转到登录页面 </h2>
+	</div>
+	<div >
+		<a href=" {% url 'login' %}" title="tologin">如果你的浏览器没有跳转，请点这里</a>
+	</div>
+</body>
+</html>
