@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewBag.Title = "企业注册";
+}
+<div class="login-container">
+
+    <div class="login-box animated fadeInDown">
+        <div class="login-logo"></div>
+        <div class="login-body">
+            <div class="login-title">企业注册</div>
+            <form id="fromvalidate" class="form-horizontal" method="post" action="/Enterprise/RegisterNewEnterprise">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input type="text" id="EmailName" name="EmailName" class="validate[required,custom[email]] form-control" placeholder="企业邮箱" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <span class="control-label text-warning" class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                        <input class="form-control validate[required]" data-val="true" id="Password" name="Password" placeholder="登录密码" type="password" value="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <span class="control-label text-warning" class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                        <input class="form-control validate[required,equals[Password]]" data-val="true" id="PasswordCheck" name="PasswordCheck" placeholder="确认密码" type="password" value="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4 pull-right">
+                        <button class="btn btn-info btn-block" type="submit" id="RegBtn">注册</button>
+                    </div>
+                    <div class="col-md-4 pull-right">
+                        <button class="btn btn-info btn-block" type="button">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="login-footer">
+            <div class="pull-left">
+                &copy; 2015 武汉尚云客网络技术有限公司
+            </div>
+            <div class="pull-right">
+                <a href="#">关于我们</a> |
+                <a href="#">联系我们</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/icheck/icheck.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/validationengine/languages/jquery.validationEngine-zh_CN.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/validationengine/jquery.validationEngine.js")"></script>
+<!-- END PAGE PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/Enterprise/Enterprise_Register.js")"></script>
+
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->

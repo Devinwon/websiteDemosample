@@ -1,0 +1,153 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewBag.Title = "建议与投诉";
+    var ParentActionName = "Suggest";
+    var ParentControllerName = "Service";
+}
+@model HPStudent.Student.ViewModel.Service.SuggestDetailList
+
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    @Html.Action("SideBar", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName })
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        @Html.Action("BodyHeader", "Common")
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">服务中心</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-title">
+            <h2><span class="fa fa-comment"></span> 建议与投诉</h2>
+            <input id="EventState" type="hidden" value="@ViewBag.State">
+        </div>
+        <div class="page-content-wrap">
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="search-results">
+                        <div class="sr-item">
+                            <span class="sr-item-title">
+
+                                @if (Model.IsSuggest == 0)
+                                {
+                                    @Html.Raw("【建议】" + Model.Title);
+                                }
+                                else
+                                {
+                                    @Html.Raw("【投诉】" + Model.Title);
+                                }
+                            </span>
+                            <p>
+                                @Model.Content
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="search-results">
+                        <div class="sr-item">
+                            <div class="content-frame-body content-frame-body-left">
+
+                                <div class="messages messages-img">
+                                    @foreach (var suggestitem in Model.SuggestItemList)
+                                    {
+                                        if (suggestitem.IsStudent == 1)
+                                        {
+                                            <div class="item">
+                                                <div class="image">
+                                                    <img src="~/Content/img/users/child_male.png" alt="我">
+                                                </div>
+                                                <div class="text">
+                                                    <div class="heading">
+                                                        <a href="javascript:void()">我</a>
+                                                        <span class="date">@suggestitem.CreateDate.ToString("yyyy-MM-dd HH:mm:ss")</span>
+                                                    </div>
+                                                    @suggestitem.Content
+                                                </div>
+                                            </div>
+
+                                        }
+                                        else
+                                        {
+                                            <div class="item in">
+                                                <div class="image">
+                                                    <img src="~/Content/img/users/support_female.png" alt="工作人员">
+                                                </div>
+                                                <div class="text  text-danger">
+                                                    <div class="heading">
+                                                        <a href="javascript:void()">工作人员 #@suggestitem.TeacherID</a>
+                                                        <span class="date">@suggestitem.CreateDate.ToString("yyyy-MM-dd HH:mm:ss")</span>
+                                                    </div>
+                                                    @suggestitem.Content
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+
+                                </div>
+
+                                <div class="panel panel-default push-up-30" id="ReplySuggestDIV">
+                                    <div class="panel-body panel-body-search">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><span class="fa fa-comment"></span></span>
+                                            <input type="text" name="tbSay" class="form-control" placeholder="你想说些什么..." />
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-default" onclick="ReplySuggest()">回复</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTENT -->
+
+</div>
+<!-- END PAGE CONTAINER -->
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+<audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/icheck/icheck.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/jquery.noty.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/noty/themes/default.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+
+<!-- END PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/Service/suggestDetail.js")"></script>
+
+
+
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->

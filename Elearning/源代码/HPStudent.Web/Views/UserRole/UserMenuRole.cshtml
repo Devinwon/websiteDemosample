@@ -1,0 +1,58 @@
+﻿<div class="modal" id="EditUserMenuRoleModal" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="CloseEditUserMenuRoelModal()" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 菜单权限</h4>
+            </div>
+            <form id="MenuFrom" class="form-horizontal" role="form">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="IncludeMenu" class="col-md-11">
+                            @{
+                                foreach (HPStudent.Entity.Sys_Menu itemP in ViewBag.MenuFList)
+                                {
+                                    <div class="panel panel-default">
+                                        <div class="col-md-3">
+                                            <label class="check ">@itemP.MenuName</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            @{string UserRoleNavPowrer = ViewBag.UserRoleNavPowrer;
+                                            if (string.IsNullOrEmpty(UserRoleNavPowrer))
+                                            {
+                                                UserRoleNavPowrer = "";
+                                            }
+                                            string[] arr = UserRoleNavPowrer.Split(',');
+                                            List<string> arrList = new List<string>(arr);
+                                            string strCheck = "checked";
+                                            }
+                                            @foreach (HPStudent.Entity.Sys_Menu itemS in ViewBag.MenuSList)
+                                            {
+                                                if (@itemS.PID == @itemP.MID)
+                                                {
+                                                    if (@arrList.Contains(@itemS.MID.ToString()))
+                                                    {
+                                                        <label class="check col-md-3"><input type="checkbox" data-id='@itemS.MID' @strCheck class="icheckbox" /> @itemS.MenuName</label>
+                                                    }
+                                                    else
+                                                    {
+                                                        <label class="check col-md-3"><input type="checkbox" data-id='@itemS.MID' class="icheckbox" /> @itemS.MenuName</label>
+                                                    }
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="SaveUserMenu()" id="UserMenuSave">保存</button>
+                <input id="hiddenUserRoleID" data-id="@ViewBag.RID" type="hidden">
+            </div>
+        </div>
+    </div>
+</div>

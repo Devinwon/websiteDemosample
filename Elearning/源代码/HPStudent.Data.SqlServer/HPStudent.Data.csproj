@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D189D00E-4CE9-4D1D-B31B-E65F26AF898A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HPStudent.Data</RootNamespace>
+    <AssemblyName>HPStudent.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Account.cs" />
+    <Compile Include="Admin\AdminRole.cs" />
+    <Compile Include="Admin\AdminRoleRelation.cs" />
+    <Compile Include="Admin\AdminRole_NavPowrer.cs" />
+    <Compile Include="Admin\Service.cs" />
+    <Compile Include="Admin\SysMenu.cs" />
+    <Compile Include="Admin\UserRole.cs" />
+    <Compile Include="Admin\UserRole_NavPowrer.cs" />
+    <Compile Include="Admin\VisitorLog.cs" />
+    <Compile Include="Admin\Exercises.cs" />
+    <Compile Include="Admin\Class.cs" />
+    <Compile Include="Admin\Projects.cs" />
+    <Compile Include="Admin\Resource.cs" />
+    <Compile Include="Admin\StudentInfo.cs" />
+    <Compile Include="Admin\SysManage.cs" />
+    <Compile Include="Admin\Teacher.cs" />
+    <Compile Include="Common\AdminCommon.cs" />
+    <Compile Include="Admin\School.cs" />
+    <Compile Include="Common\StudentCommon.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HPStudent.Core\HPStudent.Core.csproj">
+      <Project>{0a70d58c-501e-40ae-bb74-4a5c76bc50ed}</Project>
+      <Name>HPStudent.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPStudent.Entity\HPStudent.Entity.csproj">
+      <Project>{31df1a1d-66ee-4fe4-b71c-b4c1dec97ba9}</Project>
+      <Name>HPStudent.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPStudent.Student.ViewModel\HPStudent.Student.ViewModel.csproj">
+      <Project>{6bb45c83-b368-4992-95fd-9071b9dc76a4}</Project>
+      <Name>HPStudent.Student.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPStudent.ViewModel\HPStudent.ViewModel.csproj">
+      <Project>{74eb4a8e-8cde-4f96-bcb8-5f57d90d5882}</Project>
+      <Name>HPStudent.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

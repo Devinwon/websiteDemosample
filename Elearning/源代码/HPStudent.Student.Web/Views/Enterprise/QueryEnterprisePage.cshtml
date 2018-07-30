@@ -1,0 +1,49 @@
+﻿@model HPStudent.Student.ViewModel.Enterprise.Enterprise
+<div class="modal" id="previewEnterprisePanel" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span>企业详情</h4>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                    <!--基本信息开始-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading ui-draggable-handle">
+                            <h2 class="panel-title">基本信息</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="contact-info">
+                                <p><small>公司名称:</small>@Model.Profile.CompanyName</p>
+                                <p><small>公司规模:</small>@Model.Profile.Scale</p>
+                                <p><small>联系电话:</small>@Model.Profile.TelPhone</p>
+                                <p><small>电子邮箱:</small>@Model.Profile.Email</p>
+                                <p><small>公司网站:</small>@Model.Profile.WebSite</p>
+                                <p><small>联系地址:</small>@Model.Profile.Address</p>
+                                <p>
+                                    <small>发布职位:</small> <a id="AJobInfo" href="#" title="@Model.Profile.CompanyName">详情</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--基本信息结束-->
+                    <!--工作经验开始-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading ui-draggable-handle">
+                            <h2 class="panel-title">公司简介</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="contact-info">
+                                <p><small></small>@Model.Profile.CompanyProfile</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- END table content -->
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>

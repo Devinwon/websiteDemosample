@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "修改校区";
+}
+@model HPStudent.Entity.Common_School
+<div class="modal" id="edit-student-school" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 编辑校区</h4>
+            </div>
+            <div class="modal-body block">
+                <form id="user-points-form" class="form-horizontal">
+                    <!-- start -->
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">所属省份</label>
+
+                        <div class="col-md-3 col-xs-12">
+                            <input type="text" id="pop_SelProvince" class="form-control" value="湖北省" readonly />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">所属城市</label>
+
+                        <div class="col-md-3 col-xs-12">
+                            <input type="text" id="pop_SelCity" class="form-control" value="武汉市" readonly />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">校区名称</label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" id="pop_SchoolName" class="form-control" value="@Model.SchoolName" />
+                        </div>
+
+                    </div>
+
+                    <!-- end -->
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                @Html.Hidden("SchoolID", Model.SchoolID, new { @id = "hdnSchoolID" })
+                <button type="button" class="btn btn-primary" onclick="EditSchool()">修 改</button>
+            </div>
+
+        </div>
+    </div>
+</div>

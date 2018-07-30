@@ -1,0 +1,68 @@
+﻿<div class="modal" id="add-fee" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 单据上传</h4>
+            </div>
+            <div class="modal-body block">
+                <form id="user-points-form" class="form-horizontal">
+                    <!-- start -->
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">选择学年</label>
+
+                        <div class="col-md-5 col-xs-5">
+                            <select id="pop_selYear" name="selYear" class="form-control">
+                                <option value="0">== 选择学年 ==</option>
+                                <option value="1">第一学年</option>
+                                <option value="2">第二学年</option>
+                                <option value="3">第三学年</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">缴费科目</label>
+
+                        <div class="col-md-5 col-xs-5">
+                            <select id="pop_selTitle" name="selTitle" class="form-control">
+                                <option value="0">== 选择科目 ==</option>
+                                <option value="1">学费</option>
+                                <option value="2">学杂费</option>
+                                <option value="3">书本费</option>
+                                <option value="4">住宿费</option>
+                                <option value="5">其他费用</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">金额</label>
+
+                        <div class="col-md-3 col-xs-3">
+                            <input name="tbFee" type="text" class="form-control" value="" />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">上传凭证</label>
+
+                        <div class="col-md-3 col-xs-12">
+                            <input type="file" class="fileinput" name="uploadFile" id="uploadFile" title="选择上传的文件" />
+                        </div>
+
+                    </div>
+
+                    <!-- end -->
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button id="btnSubmit" type="button" class="btn btn-primary" onclick="AddFee()">提 交</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,84 @@
+﻿@model HPStudent.Student.ViewModel.Enterprise.CompanyInfoResult
+<div class="modal" id="edit-Company" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span>编辑企业 </h4>
+            </div>
+            <div class="modal-body block">
+                <!-- content -->
+                <form id="CompanyForm" class="form-horizontal" role="form">
+                    <!-- start -->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">企业名称</label>
+                        <div class="col-md-5 col-xs-12">
+                            <input id="EditCompanyName" name="EditCompanyName" type="text" class="form-control validate[required,maxSize[250]]" value="@Model.CompanyName" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">企业地址</label>
+                        <div class="col-md-5 col-xs-12">
+                            <input id="EditAddress" name="EditAddress" type="text" class="form-control validate[required,maxSize[120]]" value="@Model.Address" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">企业规模</label>
+                        <div class="col-md-5 col-xs-12">
+                            <select class="form-control select" id="selEditScale">
+                                @{
+                                    string Scale = "";
+                                    if (!string.IsNullOrEmpty(@Model.Scale))
+                                    {
+                                        Scale = @Model.Scale;
+                                    }
+                                    foreach (string item in Model.ScaleList)
+                                    {
+                                        if (Scale.Equals(item))
+                                        {
+                                            <option value="@item" selected="selected">@item</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item">@item</option>
+                                        }
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">联系电话</label>
+                        <div class="col-md-5 col-xs-12">
+                            <input id="EditTelPhone" name="EditTelPhone" type="text" class="form-control validate[required,maxSize[250],custom[phone]]" value="@Model.TelPhone" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">联系邮箱</label>
+                        <div class="col-md-5 col-xs-12">
+                            <input id="EditEmail" name="EditEmail" type="text" class="form-control validate[required,maxSize[32],custom[email]]" value="@Model.Email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">公司主页</label>
+                        <div class="col-md-5 col-xs-12">
+                            <input id="EditWebSite" name="EditWebSite" type="text" class="form-control validate[required,maxSize[32]]" value="@Model.WebSite" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">企业简介</label>
+                        <div class="col-md-5 col-xs-12">
+                            <textarea id="EditCompanyProfile" class="form-control validate[required]" rows="5">@Model.CompanyProfile</textarea>
+                        </div>
+                    </div>
+                    <!-- end -->
+                </form>
+            </div>
+            <!-- content end-->
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="SaveCompanyInfo()" type="button">保存</button>
+                <input type="hidden" value="@Model.SID" id="hidSID">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@model HPStudent.Entity.Sys_Menu
+<div class="modal" id="ChildMenuModal" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="Close()" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span>@Model.MenuName 的子菜单</h4>
+            </div>
+            <div class="panel-body">
+                <button id="btnAddMenu" onclick="EditChildMenuProfile(@Model.MID)" class="btn btn-primary btn-sm" type="button">
+                    <span class="fa fa-plus-square"></span> 添加菜单
+                </button>
+                <input id="dispalyPCategory" type="hidden" data-id="@ViewBag.PCategory">
+                <hr>
+                <!-- table content -->
+                <div id="class-list" class="table-responsive">
+                    <table class="table datatable_ChildMenus table-bordered table-actions table-hover">
+                        <thead>
+                            <tr>
+                                <th width="150">菜单名称</th>
+                                <th width="100">控制器</th>
+                                <th width="100">动作</th>
+                                <th width="100">子菜单数</th>
+                                <th width="100">图标</th>
+                                <th width="100">菜单类别</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END table content -->
+            <div class="modal-footer">
+                @*@Html.Hidden("StudentID", Model.SID, new { @id = "hdnStudentID" })*@
+                <button type="button" class="btn btn-default" onclick="Close()">关 闭</button>
+            </div>
+
+        </div>
+    </div>
+</div>

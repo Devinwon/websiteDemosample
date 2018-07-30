@@ -1,0 +1,149 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "项目宝典";
+    var ParentActionName = "Index";
+    var ParentControllerName = "Projects";
+}
+
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    @Html.Action("SideBar", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName })
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        @Html.Action("BodyHeader", "Common")
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li>云课堂</li>
+            <li>@ViewBag.Title</li>
+            <li class="active">项目详情</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+            <form class="form-inline" role="form">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="col-md-6">
+                                    <div class="col-md-2">
+                                        <label class="control-label">项目名称：</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <p id="lbProjectName" >基于项目驱动的微课</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-2">
+                                        <label class="control-label">讲课老师：</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <p id="lbTeacherName" >啧啧啧</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-2">
+                                        <label class="control-label">课时数量：</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <p id="lbClassHour" >0</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-2"><label class="control-label">涉及的技术：</label></div>
+                                        <div class="col-md-10">
+                                            <ul id="lbUseTechnology" class="list-tags">
+                                                相关技术
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+</form>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading ui-draggable-handle">
+                            <div class="btn-group ">
+                                <button id="btnAddProjectItem" class="btn btn-primary btn-sm" type="button">
+                                    <span class="fa fa-plus-square"></span> 添加课程
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="panel-body">
+
+                            <!-- table content -->
+                            <div id="Project-list" class="table-responsive">
+                                <table class="table datatable_question table-bordered table-actions table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>课程名称</th>
+                                            <th width="200" class="text-center">发布时间</th>
+                                            <th width="300">资源</th>
+                                            <th width="200">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="Data_SelectList">
+                                        <tr>
+                                            <td valign="top" colspan="5" class="dataTables_empty">无数据</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- END table content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTENT -->
+
+</div>
+<!-- END PAGE CONTAINER -->
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+<audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/Content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/icheck/icheck.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/noty/jquery.noty.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/noty/themes/default.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-file-input.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/ajaxfileupload/ajaxfileupload.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/plugins/tagsinput/jquery.tagsinput.min.js")"></script>
+<!-- END PAGE PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/Content/js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/Projects/page_projects_detail.js")"></script>
+
+    <!-- END TEMPLATE -->
+    <!-- END SCRIPTS -->

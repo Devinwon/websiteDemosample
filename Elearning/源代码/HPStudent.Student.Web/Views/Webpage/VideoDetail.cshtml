@@ -1,0 +1,115 @@
+﻿@model  HPStudent.Student.ViewModel.Project.DetailProject
+     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META SECTION -->
+    <title>视频列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- END META SECTION -->
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" id="theme" href="/content/css/theme-default.css" />
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body class="body-white">
+    
+        <div class="row body-white">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img src="@Model.ProjectPic" class="col-md-12" />
+                    </div>
+                    <div class="panel-body list-group border-bottom">
+                        
+                        <span class="list-group-item">
+                            <span class="glyphicon glyphicon-time"></span> 课时数量：@Model.ClassHour 学时
+                        </span>
+                        <span class="list-group-item">
+                            <h4>项目介绍:</h4>
+                            @Model.ProjectDesc
+                        </span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body ">
+                        <!-- table content -->
+
+                        <div id="task-list" class="table-responsive">
+                            <table class="table datatable_question table-bordered table-actions table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>标题</th>
+                                        <th width="120" class="text-center">发布时间</th>
+                                        <th width="300">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (HPStudent.Entity.ProjectItem myProjectItem in Model.ProjectItemList)
+                                    {
+                                        string pdfDisable = "";
+                                        string pptDisable = "";
+                                        string videoDisable = "";
+                                        string urlDisable = "";
+                                        pdfDisable = (@myProjectItem.PDF == "") ? "disabled" : "";
+                                        pptDisable = (@myProjectItem.PPT == "") ? "disabled" : "";
+                                        videoDisable = (@myProjectItem.Video == "") ? "disabled" : "";
+                                        urlDisable = (@myProjectItem.URL == "") ? "disabled" : "";
+                                        <tr>
+                                            <td>@myProjectItem.ProjectName</td>
+                                            <td>@myProjectItem.CreateDate.ToString("yyyy-MM-dd")</td>
+                                            <td>
+                                                <button class="btn btn-info btn-sm @pdfDisable" data-type="rar" data-src="@myProjectItem.PDF" data-id="@myProjectItem.ID">
+                                                    <span class="fa fa-cloud-download"></span>下载
+                                                </button>
+
+                                                <button class="btn btn-info btn-sm @pptDisable" data-type="ppt" data-src="@myProjectItem.PPT">
+                                                    <span class="glyphicon glyphicon-picture"></span>PPT
+                                                </button>
+
+                                                <button class="btn btn-info btn-sm @videoDisable" data-type="video" data-src="@myProjectItem.Video">
+                                                    <span class="fa fa-film"></span>视频
+                                                </button>
+
+                                                <button class="btn btn-info btn-sm @urlDisable" data-type="url" data-src="@myProjectItem.URL">
+                                                    <span class="fa fa-globe"></span>网站
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- END table content -->
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    <!-- START PLUGINS -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-select.js")"></script>
+    <!-- THIS PAGE PLUGINS -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+    <!-- END PAGE PLUGINS -->
+    <!-- START TEMPLATE -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/WebPage/VideoDetail.js")"></script>
+</body>
+</html>

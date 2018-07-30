@@ -1,0 +1,127 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewBag.Title = "注册";
+}
+<div class="login-container">
+
+    <div class="login-box animated fadeInDown">
+        <div class="login-logo"></div>
+        <div class="login-body">
+            <!-- START TABS -->
+            <div id="titleText" class="login-title">企业注册</div>
+            <div id="tab-Enterprise">
+                <form id="EnterpriseFrom" class="form-horizontal" method="post" action="/Account/EnterpriseRegister">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" id="EnterpriseName" name="EnterpriseName" class="validate[required,maxSize[32]] form-control" placeholder="企业名称" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" id="EnterpriseEmailName" name="EnterpriseEmailName" class="validate[required,custom[email]] form-control" placeholder="企业邮箱(登入账号)" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input class="form-control validate[required]" data-val="true" id="EnterprisePassword" name="EnterprisePassword" placeholder="登录密码" type="password" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input class="form-control validate[required,equals[EnterprisePassword]]" data-val="true" id="EnterprisePasswordCheck" name="EnterprisePasswordCheck" placeholder="确认密码" type="password" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" id="EnterpriseRealName" name="EnterpriseRealName" class="validate[required,maxSize[32]] form-control" placeholder="联系人" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" id="EnterprisePhone" name="EnterprisePhone" class="validate[required,custom[phone]] form-control" placeholder="电话" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4 pull-right">
+                            <button class="btn btn-info btn-block" type="submit" id="RegBtn">注册</button>
+                        </div>
+                        <div class="col-md-4 pull-right">
+                            <button class="btn btn-info btn-block GiveUpRes" type="button">取消</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane" id="tab-Student" style="display:none">
+                <form id="StudentFrom" class="form-horizontal" method="post" action="/Account/StudentRegister">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" id="StudentEmailName" name="StudentEmailName" class="validate[required,custom[email]] form-control" placeholder="邮箱(登入账号)" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input class="form-control validate[required]" data-val="true" id="StudentPassword" name="StudentPassword" placeholder="登录密码" type="password" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input class="form-control validate[required,equals[StudentPassword]]" data-val="true" id="StudentPasswordCheck" name="StudentPasswordCheck" placeholder="确认密码" type="password" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" id="StudentRealName" name="StudentRealName" class="validate[required,maxSize[32]] form-control" placeholder="姓名" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" id="StudentPhone" name="StudentPhone" class="validate[required,custom[phone]] form-control" placeholder="电话" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4 pull-right">
+                            <button class="btn btn-info btn-block" type="submit" id="StudentRegBtn">注册</button>
+                        </div>
+                        <div class="col-md-4 pull-right">
+                            <button class="btn btn-info btn-block GiveUpRes" type="button" >取消</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="login-or"><a id="ChangeRole" style="cursor:pointer">切换</a></div>
+            <!-- END TABS -->
+        </div>
+        <div class="login-footer">
+            <div class="pull-left">
+                &copy; 2015 武汉尚云客网络技术有限公司
+            </div>
+            <div class="pull-right">
+                <a href="#">关于我们</a> |
+                <a href="#">联系我们</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/icheck/icheck.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/validationengine/languages/jquery.validationEngine-zh_CN.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/validationengine/jquery.validationEngine.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/jquery.noty.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/noty/themes/default.js")"></script>
+<!-- END PAGE PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/Account/Register.js")"></script>
+
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->

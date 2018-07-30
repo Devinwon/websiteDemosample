@@ -1,0 +1,9 @@
+F:\学生学习网站\源代码\HPStudent.Tools.Winform\bin\Debug\HPStudent.Tools.Winform.exe.config
+F:\学生学习网站\源代码\HPStudent.Tools.Winform\bin\Debug\HPStudent.Tools.Winform.exe
+F:\学生学习网站\源代码\HPStudent.Tools.Winform\bin\Debug\HPStudent.Tools.Winform.pdb
+F:\学生学习网站\源代码\HPStudent.Tools.Winform\obj\Debug\HPStudent.Tools.Winform.csproj.ResolveComReference.cache
+F:\学生学习网站\源代码\HPStudent.Tools.Winform\obj\Debug\HPStudent.Tools.Winform.Form1.resources
+F:\学生学习网站\源代码\HPStudent.Tools.Winform\obj\Debug\HPStudent.Tools.Winform.Properties.Resources.resources
+F:\学生学习网站\源代码\HPStudent.Tools.Winform\obj\Debug\HPStudent.Tools.Winform.csproj.GenerateResource.Cache
+F:\学生学习网站\源代码\HPStudent.Tools.Winform\obj\Debug\HPStudent.Tools.Winform.exe
+F:\学生学习网站\源代码\HPStudent.Tools.Winform\obj\Debug\HPStudent.Tools.Winform.pdb

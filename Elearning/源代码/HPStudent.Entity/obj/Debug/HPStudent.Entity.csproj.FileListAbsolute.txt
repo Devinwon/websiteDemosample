@@ -1,0 +1,5 @@
+F:\学生学习网站\源代码\HPStudent.Entity\bin\Debug\HPStudent.Entity.dll
+F:\学生学习网站\源代码\HPStudent.Entity\bin\Debug\HPStudent.Entity.pdb
+F:\学生学习网站\源代码\HPStudent.Entity\obj\Debug\HPStudent.Entity.dll
+F:\学生学习网站\源代码\HPStudent.Entity\obj\Debug\HPStudent.Entity.pdb
+F:\学生学习网站\源代码\HPStudent.Entity\obj\Debug\HPStudent.Entity.csprojResolveAssemblyReference.cache

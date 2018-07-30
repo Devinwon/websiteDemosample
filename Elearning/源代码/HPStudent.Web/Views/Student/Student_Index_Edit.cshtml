@@ -1,0 +1,434 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "学生信息";
+    var ParentActionName = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+    var ParentControllerName = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+}
+@model HPStudent.ViewModel.Student.StudentInfo
+<div class="page-container">
+
+    <!-- START PAGE SIDEBAR -->
+    <div class="page-sidebar">
+        <!-- START X-NAVIGATION -->
+        @Html.Action("SideBar", "Common", new { ParentAction = "Student", ParentController = "Index" })
+        <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <!-- START X-NAVIGATION VERTICAL -->
+        @Html.Action("BodyHeader", "Common")
+
+        <!-- END X-NAVIGATION VERTICAL -->
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">学生系统</a></li>
+            <li>学生信息管理</li>
+            <li class="active">编辑</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <!-- PAGE CONTENT LEFT -->
+                    <div class="panel panel-default">
+                        <div class="panel-body profile" style="background: url('@Url.Content("~/content/img/backgrounds/wall_2.jpg")') center center no-repeat;">
+                            <div class="profile-image">
+                                <img src="@Url.Content(@Model.Avatar)" alt="@Model.RealName" />
+
+                            </div>
+                            <div class="profile-data">
+                                <div class="profile-data-name">@Model.RealName</div>
+                                <div class="profile-data-name">[学号]@Model.StudentCode</div>
+                            </div>
+
+                        </div>
+
+                        <div class="panel-body list-group border-bottom">
+                            <ul class="list-group">
+                                <li class="list-group-item"><span class="fa fa-square"></span> @Model.SchoolName</li>
+                                <li class="list-group-item"><span class="fa fa-square"></span> @Model.CName  [@Model.CCode]</li>
+                                <li class="list-group-item"><span class="fa fa-square"></span> 缴费 @Model.PaidFee      </li>
+                                <li class="list-group-item"><span class="fa fa-square"></span> 积分 @Model.Credits         </li>
+                            </ul>
+
+                        </div>
+                        <div class="panel-body">
+                            <h4 class="text-title">相关记录</h4>
+                            <div class="row">
+                                <div class="col-md-4 col-xs-4">
+                                    <a href="#" class="friend">
+                                        <img src="@Url.Content("~/content/img/buttons/button_00.png")" />
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-xs-4">
+                                    <a href="#" class="friend">
+                                        <img src="@Url.Content("~/content/img/buttons/button_01.png")" />
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-xs-4">
+                                    <a href="#" class="friend">
+                                        <img src="@Url.Content("~/content/img/buttons/button_02.png")" />
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-xs-4">
+                                    <a href="#" class="friend">
+                                        <img src="@Url.Content("~/content/img/buttons/button_03.png")" />
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END PAGE CONTENT LEFT -->
+
+                <div class="col-md-9">
+                    <!-- PAGE CONTENT RIGHT -->
+                    <form class="form-horizontal">
+
+                        <div class="panel panel-default tabs">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">学生信息</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">学生档案</a></li>
+                                <li><a href="#tab-third" role="tab" data-toggle="tab">考试成绩</a></li>
+                            </ul>
+                            <div class="panel-body tab-content">
+                                <div class="tab-pane active" id="tab-first">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">姓名</label>
+                                            <div class="col-md-3 col-xs-12">
+                                                <input type="text" id="txtName" class="form-control" value="@Model.RealName" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">入学年份</label>
+                                            <div class="col-md-3 col-xs-12">
+                                                @*@Html.DropDownList("StartYear", Model.StartYear)*@
+                                                <select id="selStartYear" class="form-control select">
+                                                    @{
+                                                        foreach (int item in (int[])ViewData["StartYear"])
+                                                        {
+                                                            if (Model.StartYear == item.ToString())
+                                                            {
+                                                                <option value="@item" selected>@item</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@item">@item</option>
+                                                            }
+                                                        }
+
+                                                    }
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">性别</label>
+                                            <div class="col-md-2 col-xs-12">
+                                                <div class="radio">
+                                                    @{
+
+                                                        if (Model.Sex == "0")
+                                                        {
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="0" checked="checked" />男生
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" />女生
+                                                            </label>
+                                                        }
+                                                        else
+                                                        {
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="0" />男生
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked />女生
+                                                            </label>
+                                                        }
+                                                    }
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">邮箱</label>
+                                            <div class="col-md-4 col-xs-12">
+                                                <input type="text" class="form-control" value="@Model.Email" readonly />
+                                                <span class="help-block">如需修改请联系超级管理员</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">登录密码</label>
+                                            <div class="col-md-4 col-xs-12">
+                                                <button class="btn btn-danger btn-sm" type="button"><i class="glyphicon glyphicon-repeat"></i> 重置</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">出生日期</label>
+                                            <div class="col-md-3 col-xs-12">
+                                                <input type="text" id="txtBrithday" class="form-control datepicker" value="@Model.Brithday" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">最后登录时间</label>
+                                            <div class="col-md-3 col-xs-12">
+                                                <input type="text" class="form-control" value="@Model.LastLoginTime" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">用户端角色分配</label>
+                                            <div class="col-md-3 col-xs-12">
+                                                <select id="selUserRole" class="form-control select">
+                                                    @{
+                                                        foreach (HPStudent.Entity.UserRole item in ViewBag.UserRoleDate)
+                                                        {
+                                                            if (ViewBag.RolId == item.RID)
+                                                            {
+                                                                <option value="@item.RID" selected>@item.RoleName</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@item.RID">@item.RoleName</option>
+                                                            }
+                                                        }
+                                                    }
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 col-xs-12 control-label"></label>
+                                            <button class="btn btn-primary" onclick="UpdateStudentInfo()" type="button">修改</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane " id="tab-second">
+                                    <!-- 学生档案 -->
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">学籍号</label>
+                                            <div class="col-md-3 col-xs-12">
+                                                <input type="text" class="form-control" value="@Model.StudentCode" readonly />
+                                                <span class="help-block">如需修改请联系超级管理员</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">民族</label>
+                                            <div class="col-md-3 col-xs-12">
+                                                <input type="text" class="form-control" value="@Model.Nation" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">班级</label>
+                                            <div class="col-md-2 col-xs-12">
+                                                <select id="selMajor" class="form-control select">
+                                                    @{
+
+                                                        foreach (HPStudent.Entity.Major item in (List<HPStudent.Entity.Major>)ViewData["MajorList"])
+                                                        {
+                                                            if (item.MID == Convert.ToInt32(Model.MajorID))
+                                                            {
+                                                                <option value="@item.MID" selected>@item.MajorName</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@item.MID">@item.MajorName</option>
+                                                            }
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2 col-xs-12">
+                                                <select id="selCLass" class="form-control select">
+
+                                                    @{
+                                                        foreach (HPStudent.ViewModel.Common.StudentClass item in (List<HPStudent.ViewModel.Common.StudentClass>)ViewData["ClassList"])
+                                                        {
+                                                            if (Model.CID == item.CID.ToString())
+                                                            {
+                                                                <option value="@item.CID" selected>@item.CName</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@item.CID">@item.CName</option>
+                                                            }
+                                                        }
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">高中</label>
+                                            <div class="col-md-3 col-xs-12">
+                                                <input type="text" class="form-control" value="@Model.HighSchool" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">家庭住址</label>
+                                            <div class="col-md-5 col-xs-12">
+                                                <input type="text" class="form-control" value="@Model.HomeAddress" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">联系电话</label>
+                                            <div class="col-md-5 col-xs-12">
+                                                <input type="text" class="form-control" value="@Model.HomeMobile" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">QQ</label>
+                                            <div class="col-md-5 col-xs-12">
+                                                <input type="text" class="form-control" value="@Model.QQ" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">身份证</label>
+                                            <div class="col-md-5 col-xs-12">
+                                                <input type="text" class="form-control" value="@Model.IDCard" readonly />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 col-xs-12 control-label">是否统招</label>
+                                            <div class="col-md-2 col-xs-12">
+                                                <div class="radio">
+                                                    @{
+                                                        if (Model.Unify == "0")
+                                                        {
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="0" checked disabled />是
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" disabled />否
+                                                            </label>
+                                                        }
+                                                        else
+                                                        {
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="0" disabled />是
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked disabled />否
+                                                            </label>
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-6 col-xs-12 control-label"></label>
+                                            <button class="btn btn-primary" id="btnBaseInfo" onclick="UpdateBaseInfo()" type="button">修改</button>
+                                        </div>
+                                    </form>
+
+                                    <!-- 学生档案 结束 -->
+                                </div>
+                                <div class="tab-pane " id="tab-third">
+                                    <!-- 考试成绩 -->
+                                    <button id="btnAddMark" class="btn btn-primary btn-sm" type="button">
+                                        <span class="fa fa-plus-square"></span> 添加成绩
+                                    </button>
+                                    <hr>
+
+                                    <!-- table content -->
+                                    <div id="exam-list" class="table-responsive">
+                                        <table class="table datatable_student table-bordered table-actions table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th width="100">学期</th>
+                                                    <th width="100">笔试</th>
+                                                    <th width="100">机试</th>
+                                                    <th>老师评价</th>
+                                                    <th width="200">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="StudentExamList">
+                                                <tr>
+                                                    <td valign="top" colspan="5" class="dataTables_empty">无数据</td>
+                                                </tr>
+                                            </tbody>
+                                            @*<tbody>
+                                                    @{
+                                                        foreach (HPStudent.Entity.StudentScore item in (List<HPStudent.Entity.StudentScore>)ViewData["ScoreList"])
+                                                        {
+                                                            <tr>
+                                                                <td>第 @item.Term 学年</td>
+                                                                <td><strong>@item.Examination1</strong></td>
+                                                                <td><strong>@item.Examination2</strong></td>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="@item.Evaluate">评价</button>
+
+                                                                </td>
+                                                                <td>
+                                                                    <button class="btn btn-primary btn-sm" type="button" data-action="edit" data-id="@item.SID,@item.Term">
+                                                                        <span class="fa fa-pencil"></span> 编辑
+                                                                    </button>
+
+                                                                    <button class="btn btn-primary btn-sm" type="button" data-id="@item.SID,@item.Term">
+                                                                        <span class="fa fa-times"></span> 删除
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                    }
+                                                </tbody>*@
+                                        </table>
+                                    </div>
+                                    <!-- END table content -->
+                                    <!-- 考试成绩 结束 -->
+                                </div>
+
+                            </div>
+                        </div>
+
+                </div>
+                <!-- END PAGE CONTENT RIGHT -->
+
+            </div>
+
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTENT -->
+    <input type="hidden" id="hdnStudentID" value="@Model.StudentID" />
+</div>
+<div id="pop_modaldialog">
+</div>
+
+<!-- END PAGE CONTAINER -->
+<!-- MESSAGE BOX-->
+<audio id="audio-alert" src="Content/audio/alert.mp3" preload="auto"></audio>
+<audio id="audio-fail" src="Content/audio/fail.mp3" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-datepicker.js")"></script>
+
+<!-- END PAGE PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/Student/page_student_info.js")"></script>

@@ -1,0 +1,7 @@
+F:\学生学习网站\源代码\HPStudent.Student.ViewModel\bin\Debug\HPStudent.Student.ViewModel.dll
+F:\学生学习网站\源代码\HPStudent.Student.ViewModel\bin\Debug\HPStudent.Student.ViewModel.pdb
+F:\学生学习网站\源代码\HPStudent.Student.ViewModel\bin\Debug\HPStudent.Entity.dll
+F:\学生学习网站\源代码\HPStudent.Student.ViewModel\bin\Debug\HPStudent.Entity.pdb
+F:\学生学习网站\源代码\HPStudent.Student.ViewModel\obj\Debug\HPStudent.Student.ViewModel.csprojResolveAssemblyReference.cache
+F:\学生学习网站\源代码\HPStudent.Student.ViewModel\obj\Debug\HPStudent.Student.ViewModel.dll
+F:\学生学习网站\源代码\HPStudent.Student.ViewModel\obj\Debug\HPStudent.Student.ViewModel.pdb

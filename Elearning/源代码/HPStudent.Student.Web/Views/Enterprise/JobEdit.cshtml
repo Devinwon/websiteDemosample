@@ -1,0 +1,112 @@
+﻿@model HPStudent.Student.ViewModel.Job.JobList
+<div class="modal" id="EditJobModal" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"  data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 编辑岗位</h4>
+            </div>
+            <form id="MenuFrom" class="form-horizontal" role="form">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">岗位名称</label>
+                            <div class="col-md-10">
+                                <input class="form-control validate[required,maxSize[120]]" type="text" value="@Model.Name" id="TxtNameEidt">
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">工作性质</label>
+                            <div class="col-md-4">
+                                <select class="form-control" id="selWorkTypeEdit">
+                                    @{
+                                        List<HPStudent.Entity.OptionList> WorkTypeList = (List<HPStudent.Entity.OptionList>)ViewBag.WorkTypeEdit;
+                                        foreach (HPStudent.Entity.OptionList item in WorkTypeList)
+                                        {
+                                            <option value="@item.OptionValue">@item.OptionValue</option>
+                                        }
+                                    }
+                                </select>
+                                <input type="hidden" value="@Model.Worktype" id="hiddenWorkType">
+                            </div>
+                            <label class="col-md-2 control-label">要求学历</label>
+                            <div class="col-md-4">
+                                <select class="form-control" id="selDegreeRequiredEdit">
+                                    @{
+                                        List<HPStudent.Entity.OptionList> DegreeRequiredList = (List<HPStudent.Entity.OptionList>)ViewBag.DegreeRequiredEdit;
+                                        foreach (HPStudent.Entity.OptionList item in DegreeRequiredList)
+                                        {
+                                            <option value="@item.OptionValue">@item.OptionValue</option>
+                                        }
+                                    }
+                                </select>
+                                <input type="hidden" value="@Model.Degreerequired" id="hiddenDegreeRequired">
+                            </div>
+                        </div>     
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">要求工作年限</label>
+                            <div class="col-md-4">
+                                <select class="form-control" id="selExperienceRequiredEdit">
+                                    @{
+                                        List<HPStudent.Entity.OptionList> ExperiencerequiredList = (List<HPStudent.Entity.OptionList>)ViewBag.ExperiencerequiredEdit;
+                                        foreach (HPStudent.Entity.OptionList item in ExperiencerequiredList)
+                                        {
+                                            <option value="@item.OptionValue">@item.OptionValue</option>
+                                        }
+                                    }
+                                </select>
+                                <input type="hidden" value="@Model.Experiencerequired" id="hiddenExperienceRequired">
+                            </div>
+                            <label class="col-md-2 control-label">薪资范围</label>
+                            <div class="col-md-4">
+                                <select class="form-control" id="selMoneyEdit">
+                                    @{
+                                        List<HPStudent.Entity.OptionList> SalaryRangeList = (List<HPStudent.Entity.OptionList>)ViewBag.SalaryRangeEdit;
+                                        foreach (HPStudent.Entity.OptionList item in SalaryRangeList)
+                                        {
+                                            <option value="@item.OptionValue">@item.OptionValue</option>
+                                        }
+                                    }
+                                </select>
+                                <input type="hidden" value="@Model.Salaryrange" id="hiddenSalaryRange">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">工作城市</label>
+                            <div class="col-md-5">
+                                <select class="form-control" id="selProvinceEdit">
+                                    <option>== 请选省 ==</option>
+                                    @{
+                                        List<HPStudent.Entity.Common_Area> EntitySchoolList = (List<HPStudent.Entity.Common_Area>)ViewBag.Province;
+                                        foreach (HPStudent.Entity.Common_Area item in EntitySchoolList)
+                                        {
+                                            <option value="@item.AreaID">@item.AreaName</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-5">
+                                <select class="form-control" id="selCityEdit"><option value="0">== 请选市 ==</option></select>
+                            </div>
+                            <input type="hidden" value="@ViewBag.IsCheckProvince" id="hiddenIsCheckProvince">
+                            <input type="hidden" value="@Model.City" id="hiddenCity">
+                        </div>
+                          
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">岗位描述</label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" id="jobContent" maxlength="3000" style="height:300px">@Model.JobDescription</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="EditOnclick()" id="FormSave">保存</button>
+                <input type="hidden" value="@Model.JId" id="hiddenJId">
+            </div>
+        </div>
+    </div>
+</div>

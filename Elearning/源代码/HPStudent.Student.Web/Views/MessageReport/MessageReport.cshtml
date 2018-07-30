@@ -1,0 +1,24 @@
+﻿<!-- END PAGE CONTENT WRAPPER -->
+<div class="modal" id="MessageReportPanel" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="ClosepreviewMessagesPanel()" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span>举报</h4>
+            </div><div class="panel-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">举报信息</label>
+                        <div class="col-md-10">
+                            <textarea id="MessageReportContent" style="resize:none" maxlength="1000" class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- END table content -->
+            <div class="modal-footer">
+                <button id="MessageReportSend" data-id="@ViewBag.Tid" style="margin-bottom:12px" class="btn btn-primary" type="button">发送举报信息</button>
+            </div>
+        </div>
+    </div>
+</div>

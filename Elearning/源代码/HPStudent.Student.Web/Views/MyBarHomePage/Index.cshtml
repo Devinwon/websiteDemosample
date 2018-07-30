@@ -1,0 +1,204 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewBag.Title = "我的主页";
+    var ParentActionName = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+    var ParentControllerName = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+}
+@model HPStudent.Student.ViewModel.MyBarHomePage.MyBarHomePageTable
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    @Html.Action("SideBar", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName })
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        @Html.Action("BodyHeader", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName })
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">我的贴吧</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+
+
+                        <div class="panel-body">
+
+                            <div class="list-group list-group-contacts border-bottom push-down-10 col-md-3">
+                                <a href="#" class="list-group-item">
+                                    <img src="assets/images/users/user.jpg" class="pull-left" alt="Dmitry Ivaniuk">
+                                    <span class="contacts-title" id="PostBarName">@Model.RealName</span>
+                                    <p>@Model.Signature</p>
+                                </a>
+                            </div>
+                            <div class="list-group list-group-contacts border-bottom push-down-10 col-md-7">
+
+                                <p>吧龄：<span class="text-danger">@Model.BarAge</span></p>
+                                <p>等级：<span class="text-danger">@Model.BarLV</span></p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- START PANELS WITH CONTROLS -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- START PANEL WITH STATIC CONTROLS -->
+                        <div class="gallery" id="datatable_myBarHomePage">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h2>爱逛的吧</h2>
+                                        </div>
+                                        @if (@Model.LoveStrollBar != "")
+                                        {
+                                            <div class="panel-body">
+                                                @foreach (var item in @Model.List)
+                                                {
+                                                    if (item.Type == 0)
+                                                    {
+                                                        <a href="/PostTheme/Index?PBID=@item.ID">@item.Name</a><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                    }
+                                                }
+
+                                            </div>
+
+                                        }
+                                        else 
+                                        {
+                                        <div class="panel-body"><a href="/PostBarClassify/Index">你还没有逛过论坛哦，点击逛一逛吧！^_^</a></div>
+                                        
+                                        }
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h2>关注的吧</h2>
+                                        </div>
+                                        @if (@Model.LoveStrollBar != "")
+                                        {
+                                            <div class="panel-body">
+                                                @foreach (var item in @Model.List)
+                                                {
+                                                    if (item.Type == 1)
+                                                    {
+                                                        <a href="/PostTheme/Index?PBID=@item.ID">@item.Name</a><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                    }
+                                                }
+
+                                            </div>
+
+                                        }
+                                        else 
+                                        {
+                                        <div class="panel-body"><a href="/PostBarClassify/Index">你还没有关注的帖吧哦，点击逛一逛吧！^_^</a></div>
+                                        
+                                        }
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h2>关注的帖子</h2>
+                                        </div>
+                                        @if (@Model.LoveStrollBar != "")
+                                        {
+                                            <div class="panel-body">
+                                                @foreach (var item in @Model.List)
+                                                {
+                                                    if (item.Type == 2)
+                                                    {
+                                                        <a href="/PostReply/Index?PTID=@item.ID">@item.Name</a><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                    }
+                                                }
+
+                                            </div>
+
+                                        }
+                                        else
+                                        {
+                                            <div class="panel-body"><a href="/PostBarClassify/Index">你还没有关注的帖子哦，点击逛一逛吧！^_^</a></div>
+
+                                        }
+                                    </div>
+                                    </div>
+                                </div>
+
+
+
+
+                               
+
+                            </div>
+
+                        </div>
+                        <!--sadfasdf-->
+
+
+                        
+
+                        
+
+
+
+
+                        <!--sdfdsfsdf -->
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+    </div>
+<!-- END PAGE CONTAINER -->
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+<audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/summernote/summernote.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/icheck/icheck.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-datepicker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/tocify/jquery.tocify.min.js")"></script>
+<script type=text/javascript src="@Url.Content("~/content/js/plugins/noty/jquery.noty.js")"></script>
+<script type=text/javascript src="@Url.Content("~/content/js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/noty/themes/default.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/plugins/gridview/jquery.gridView.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/plugins/morris/raphael-min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/plugins/morris/morris.min.js")"></script>
+
+<!-- END PAGE PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+
+
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->

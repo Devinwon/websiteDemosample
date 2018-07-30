@@ -1,0 +1,42 @@
+﻿<!-- END PAGE CONTENT WRAPPER -->
+<div class="modal" id="SendInvitationPanel" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"  data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span>邀请</h4>
+            </div><div class="panel-body">
+                <form class="form-horizontal" role="form">
+                    <!--邀请信息开始-->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">职位</label>
+                        <div class="col-md-10">
+                            <select class="form-control select" id="selJob">
+                                <option value="-1">== 请选择 ==</option>
+                                @{
+                                    List<HPStudent.Entity.JobTittle> EntityJobTittleList = (List<HPStudent.Entity.JobTittle>)ViewBag.Job;
+                                    foreach (HPStudent.Entity.JobTittle item in EntityJobTittleList)
+                                    {
+                                        <option value="@item.JID">@item.Name</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">邀请函</label>
+                        <div class="col-md-10">
+                            <textarea id="InvitationContent" style="resize:none" maxlength="512" class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <!--邀请信息结束-->
+                </form>
+            </div>
+            <!-- END table content -->
+            <div class="modal-footer">
+                <button id="InvitationSend" data-id="@ViewBag.StudentID" style="margin-bottom:12px" class="btn btn-primary" type="button">发送职位邀请</button>
+                <input type="hidden" value="@ViewBag.StudentName" id="HiddenStudentName">
+            </div>
+        </div>
+    </div>
+</div>

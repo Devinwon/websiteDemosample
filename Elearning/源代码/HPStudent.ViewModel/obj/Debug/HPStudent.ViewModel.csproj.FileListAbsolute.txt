@@ -1,0 +1,6 @@
+F:\学生学习网站\源代码\HPStudent.ViewModel\bin\Debug\HPStudent.ViewModel.dll
+F:\学生学习网站\源代码\HPStudent.ViewModel\bin\Debug\HPStudent.ViewModel.pdb
+F:\学生学习网站\源代码\HPStudent.ViewModel\bin\Debug\HPStudent.Entity.dll
+F:\学生学习网站\源代码\HPStudent.ViewModel\bin\Debug\HPStudent.Entity.pdb
+F:\学生学习网站\源代码\HPStudent.ViewModel\obj\Debug\HPStudent.ViewModel.dll
+F:\学生学习网站\源代码\HPStudent.ViewModel\obj\Debug\HPStudent.ViewModel.pdb

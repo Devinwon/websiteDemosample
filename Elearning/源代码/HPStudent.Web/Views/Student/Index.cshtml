@@ -1,0 +1,201 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "学生信息管理";
+    var ParentActionName = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+    var ParentControllerName = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+}
+@model HPStudent.Entity.StudentInfo
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    <!-- START PAGE SIDEBAR -->
+    <div class="page-sidebar">
+        <!-- START X-NAVIGATION -->
+        @Html.Action("SideBar", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName }) ;
+        <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <!-- START X-NAVIGATION VERTICAL -->
+        @Html.Action("BodyHeader", "Common")
+        <!-- END X-NAVIGATION VERTICAL -->
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">学生系统</a></li>
+            <li class="active">学生信息管理</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form class="form-inline" role="form">
+
+                                <div class="form-group">
+
+                                    <label>学生信息搜索：</label>
+
+                                    <select id="selSchool" class="form-control">
+                                        <option>== 选择校区 ==</option>
+                                        @{
+                                            List<HPStudent.ViewModel.Common.SchoolCommon> ViewList = (List<HPStudent.ViewModel.Common.SchoolCommon>)ViewData["ViewSchoolList"];
+                                            foreach (HPStudent.ViewModel.Common.SchoolCommon item in ViewList)
+                                            {
+                                                <option value="@item.SchoolID">@item.SchoolName</option>
+                                            }
+                                        }
+                                    </select>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <select id="selGrade" class="form-control">
+                                        <option>== 选择年级 ==</option>
+                                       
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <select id="selCLass" class="form-control">
+                                        <option>== 选择班级 ==</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" id="StudentName" class="form-control" placeholder="学生姓名" />
+                                </div>
+
+                                <button type="button" id="btnSearch" class="btn btn-primary">搜 索</button>
+                                <button type="button" id="btnImport" class="btn btn-danger pull-right">导入学生信息</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!-- table content -->
+                            <div id="student-list" class="table-responsive">
+                                <table class="table datatable_index table-bordered table-actions table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th width="200">校区</th>
+                                            <th width="200">班级</th>
+                                            <th width="100">头像</th>
+                                            <th width="100">姓名</th>                                     
+                                            <th width="100" class="text-center">缴费情况</th>
+                                            <th width="60" class="text-center">积分</th>
+                                            <th width="60" class="text-center">性别</th>
+                                            <th width="60" class="text-center">激活</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="StudentInfoList">
+                                        <tr>
+                                            <td valign="top" colspan="9" class="dataTables_empty">无数据</td>
+                                        </tr>
+                                    </tbody>
+
+                                       <!--  <tbody>
+                                        <tr>
+                                            <td>荆职校区</td>
+                                            <td><strong>国信1307</strong></td>
+                                            <td><img src="/Content/img/users/user.jpg" width="36" /></td>
+                                            <td>邓喜喜</td>
+                                            <th class="text-center">文苑1413</th>
+                                            <th class="text-center">11000</th>
+                                            <td class="text-center">25</td>
+                                            <td class="text-center">男</td>
+                                            <td class="text-center">
+                                                <span class="label label-danger">
+                                                    <span class=" fa fa-times"></span>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm" data-action="edit" data-id="12">
+                                                    <span class="fa fa-pencil"></span>编辑
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>荆职校区</td>
+                                            <td><strong>国信1307</strong></td>
+                                            <td><img src="/Content/img/users/user02.jpg" width="36" /></td>
+                                            <td>郭丹丹</td>
+                                            <th class="text-center">楚辞1120</th>
+                                            <th class="text-center">8800</th>
+                                            <td class="text-center">58</td>
+                                            <td class="text-center">女</td>
+                                            <td class="text-center">
+                                                <span class="label label-info">
+                                                    <span class="fa fa-check"></span>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button id='btn-edit' data-action="edit" class="btn btn-primary btn-sm" data-id="15"><span class="fa fa-pencil"></span>编辑</button>
+                                            </td>
+                                        </tr>
+
+
+
+                                    </tbody>
+                                           -->
+                                </table>
+                            </div>
+                            <!-- END table content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row block">
+                <div class="col-md-12">
+                </div>
+            </div>
+
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="/Content/audio/alert.mp3" preload="auto"></audio>
+<audio id="audio-fail" src="/Content/audio/fail.mp3" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-file-input.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/jquery.noty.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/noty/themes/default.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/ajaxfileupload/ajaxfileupload.js")"></script>
+<!-- END PAGE PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/Student/page_student_info.js")"></script>
+
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->

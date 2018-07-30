@@ -1,0 +1,145 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewBag.Title = "岗位信息";
+    var ParentActionName = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+    var ParentControllerName = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+}
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+    <!-- START PAGE SIDEBAR -->
+    @Html.Action("SideBar", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName })
+    <!-- END PAGE SIDEBAR -->
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+        @Html.Action("BodyHeader", "Common")
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">岗位库</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form class="form-inline" role="form" onsubmit="return false">
+                                <div class="form-group">
+                                    <label>岗位信息搜索：</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="公司名称" id="TxtCompanyName" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="岗位名称" id="TxtJobName" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="城市" id="TxtCity" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" id="selMoney">
+                                        <option>== 薪资范围 ==</option>
+                                        @{
+                                            List<string> SalaryRangeList = (List<string>)ViewBag.SalaryRange;
+                                            foreach (string item in SalaryRangeList)
+                                            {
+                                                <option value="@item">@item</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <button type="button" class="btn btn-primary" onclick="SearchEnterpriseInfo()">搜 索</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body scroll">
+                            <!-- table content -->
+                            <div id="question-list" class="table-responsive ">
+                                <table class="table datatable_question table-bordered table-actions table-hover ">
+                                    <thead>
+                                        <tr>
+                                            <th width="60">企业名称</th>
+                                            <th width="60">岗位名称</th>
+                                            <th width="60">工作城市</th>
+                                            <th width="60">薪资范围</th>
+                                            <th width="60">工作性质</th>
+                                            <th width="60">要求学历</th>
+                                            <th width="60">要求工作年限</th>
+                                            <th width="60">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="QA_SelectList">
+                                        <tr>
+                                            <td valign="top" colspan="7" class="dataTables_empty">无数据</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- END table content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row block">
+                <div class="col-md-12">
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+<!-- MODALS -->
+<!-- EOF MODALS -->
+<!-- MESSAGE BOX-->
+<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-power-off"></span>确定要注销本次登录 ?</div>
+            <div class="mb-content">
+                <p>点击确定键将清除本地登录信息。</p>
+            </div>
+            <div class="mb-footer">
+                <div class="pull-right">
+                    <a href="pages-login.html" class="btn btn-success btn-lg">确定</a>
+                    <button class="btn btn-default btn-lg mb-control-close">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MESSAGE BOX-->
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+<audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+<!-- END PAGE PLUGINS -->
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/jquery.noty.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/noty/themes/default.js")"></script>
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/Job/JobIndex.js")"></script>
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->

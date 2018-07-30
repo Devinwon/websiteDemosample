@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6BB45C83-B368-4992-95FD-9071B9DC76A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HPStudent.Student.ViewModel</RootNamespace>
+    <AssemblyName>HPStudent.Student.ViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\UserLogin.cs" />
+    <Compile Include="Account\UserRegister.cs" />
+    <Compile Include="ClassManage\ClassStudentTable.cs" />
+    <Compile Include="ClassManage\PTClassTable.cs" />
+    <Compile Include="Common\DataTable.cs" />
+    <Compile Include="Common\GetYear.cs" />
+    <Compile Include="Common\GridView.cs" />
+    <Compile Include="Common\RequestResult.cs" />
+    <Compile Include="Common\SchoolCommon.cs" />
+    <Compile Include="Enterprise\CompanyInfoResult.cs" />
+    <Compile Include="Enterprise\CompanyInfoViewModel.cs" />
+    <Compile Include="Enterprise\Enterprise.cs" />
+    <Compile Include="Enterprise\QA_Category.cs" />
+    <Compile Include="Enterprise\StatisticsQuestion_Select.cs" />
+    <Compile Include="ExerCises\TestPaper.cs" />
+    <Compile Include="Fee\FeeInfo.cs" />
+    <Compile Include="FloorReply\FloorReplyTable.cs" />
+    <Compile Include="InterviewInvitation\InterviewInvitationTable.cs" />
+    <Compile Include="Job\Job.cs" />
+    <Compile Include="MyBarHomePage\BarInfoTable.cs" />
+    <Compile Include="MyBarHomePage\MyBarHomePageTable.cs" />
+    <Compile Include="PostReply\PostReplyDataTable.cs" />
+    <Compile Include="PostReply\PostReplyTable.cs" />
+    <Compile Include="PostTheme\PostBarInfoTable.cs" />
+    <Compile Include="PostTheme\PostThemeTable.cs" />
+    <Compile Include="Project\DetailProject.cs" />
+    <Compile Include="Project\MainProject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResumeInbox\ResumeInboxTable.cs" />
+    <Compile Include="Resume\ResumeBasic.cs" />
+    <Compile Include="Resume\ResumeMain.cs" />
+    <Compile Include="Service\SuggestDetailList.cs" />
+    <Compile Include="Student\EnterpriseSearchBase.cs" />
+    <Compile Include="Student\InterviewInvitationBase.cs" />
+    <Compile Include="Student\StudentClass.cs" />
+    <Compile Include="Student\StudentInfo.cs" />
+    <Compile Include="Student\StudentSchool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HPStudent.Entity\HPStudent.Entity.csproj">
+      <Project>{31df1a1d-66ee-4fe4-b71c-b4c1dec97ba9}</Project>
+      <Name>HPStudent.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

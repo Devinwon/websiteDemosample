@@ -1,0 +1,13 @@
+F:\学生学习网站\源代码\HPStudent.Student.Data\bin\Debug\HPStudent.Student.Data.dll
+F:\学生学习网站\源代码\HPStudent.Student.Data\bin\Debug\HPStudent.Student.Data.pdb
+F:\学生学习网站\源代码\HPStudent.Student.Data\bin\Debug\HPStudent.Core.dll
+F:\学生学习网站\源代码\HPStudent.Student.Data\bin\Debug\HPStudent.Entity.dll
+F:\学生学习网站\源代码\HPStudent.Student.Data\bin\Debug\HPStudent.Student.ViewModel.dll
+F:\学生学习网站\源代码\HPStudent.Student.Data\bin\Debug\Newtonsoft.Json.dll
+F:\学生学习网站\源代码\HPStudent.Student.Data\bin\Debug\HPStudent.Core.pdb
+F:\学生学习网站\源代码\HPStudent.Student.Data\bin\Debug\HPStudent.Entity.pdb
+F:\学生学习网站\源代码\HPStudent.Student.Data\bin\Debug\HPStudent.Student.ViewModel.pdb
+F:\学生学习网站\源代码\HPStudent.Student.Data\bin\Debug\Newtonsoft.Json.xml
+F:\学生学习网站\源代码\HPStudent.Student.Data\obj\Debug\HPStudent.Student.Data.csprojResolveAssemblyReference.cache
+F:\学生学习网站\源代码\HPStudent.Student.Data\obj\Debug\HPStudent.Student.Data.dll
+F:\学生学习网站\源代码\HPStudent.Student.Data\obj\Debug\HPStudent.Student.Data.pdb

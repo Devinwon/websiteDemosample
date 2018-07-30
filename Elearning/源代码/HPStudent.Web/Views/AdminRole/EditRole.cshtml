@@ -1,0 +1,26 @@
+﻿@model  HPStudent.Entity.AdminRole
+<div class="modal" id="EditAdminRoleModal" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="CloseEditAdminRoelModal()" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 用户权限</h4>
+            </div>
+            <form id="AdminRoleFrom" class="form-horizontal" role="form">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">角色名称</label>
+                            <div class="col-md-6">
+                                <input class="form-control validate[required,maxSize[100]]" type="text" id="TxtAdminRoleName" value="@Model.RoleName">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="EidtInfo(@Model.RID)" id="FormSave">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+   <title>视频播放页面</title>
+
+    <!-- CSS -->
+    <link href="~/Content/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/video-js/video-js.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" id="theme" href="/content/css/theme-default.css" />
+    <!-- JAVASCRIPT -->
+    <script src="~/Content/js/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Content/js/plugins/video-js/videojs-ie8.min.js"></script>
+    <script src="~/Content/js/plugins/video-js/video.min.js"></script>
+    <script src="~/Content/js/plugins/video-js/video-controler.js"></script>
+
+    <style type="text/css">
+        body {
+            background-color: black;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default panel-fullscreen-wrap">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="fa fa-female"></span> 视频播放
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-8">
+                        <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" height="300"
+                               poster="http://video-js.zencoder.com/oceans-clip.png"
+                               data-setup="{}">
+
+                            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                        </video>
+                    </div>
+
+                    <div class="col-md-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

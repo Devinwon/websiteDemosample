@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{31DF1A1D-66EE-4FE4-B71C-B4C1DEC97BA9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HPStudent.Entity</RootNamespace>
+    <AssemblyName>HPStudent.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptT4\AdminRole.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\AdminRoleRelation.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\AdminRole_NavPowrer.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Agreement.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\AlreadyAnswer_Select.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\api_StudentInfo.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Bigdate_VisitorByDay.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\ClassGroup.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Common_Area.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Common_Failedlogin.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Common_School.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\CompanyInfo.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Credit_Log.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Credit_Rule.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\EntityGeneration.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\FamilyRelation.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\FeeAttachment.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\FeeInfo.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\FloorReply.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\ImportStudentError.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\InterviewInvitation.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\JobTittle.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Major.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\MajorToCategory.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\ManagerInfo.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\MessageReport.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Messages.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\MyBarHomePage.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\OptionList.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\PostBarClassify.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\PostBarInfo.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\PostBarStudentRelation.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\PostReply.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\PostTheme.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\ProjectBook.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\ProjectItem.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\PTClass.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Purpose.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\QA_Category.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\QA_Fill.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\QA_Question.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\QA_Select.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\ResourceBook.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\ResourceItem.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Role.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\RolePermission.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\SchoolDetail.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\SendResume.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\StatisticsQuestion_Select.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\StudentBaseInfo.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\StudentClass.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\StudentInfo.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\StudentProjectExp.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\StudentResume.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\StudentScore.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\StudentWorkExp.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Suggestions.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\SuggestItem.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Sys_Admin_SideBar.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Sys_Log.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Sys_Menu.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\Sys_Student_SideBar.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\TeacherInfo.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\test01.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\TestPaper.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\UserOnline.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\UserRole.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\UserRole_NavPowrer.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\WorkList.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptT4\WrokerInfo.cs">
+      <DependentUpon>EntityGeneration.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ScriptT4\EntityGeneration.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityGeneration.cs</LastGenOutput>
+    </None>
+    <None Include="ScriptT4\Manager.ttinclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,86 @@
+﻿@model HPStudent.Entity.TestPaper
+<div class="modal" id="Exercises_Details" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="close" data-dismiss= "modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 查看测试</h4>
+            </div>
+            <div class="modal-body block">
+                <form id="user-points-form" class="form-horizontal">
+                    @{
+                        string[] RightItems = Model.SelectRightItem.Split('|');
+                        string[] AnswerItems = Model.SelectAnswer.Split('|');
+                        string[] ABCD = { "A", "B", "C", "D" };
+                        List<HPStudent.Entity.QA_Select> ListSelect = (List<HPStudent.Entity.QA_Select>)ViewData["SelList"];
+                        for (int i = 0; i < ListSelect.Count; i++)
+                        {                           
+                            string[] ListABCD = { ListSelect[i].A, ListSelect[i].B, ListSelect[i].C, ListSelect[i].D };
+                            <h4>@(i + 1) @Html.Raw(@ListSelect[i].Title) </h4>
+                            for (int k = 0; k < 4; k++)
+                            {
+                                if (AnswerItems[i].Contains(ABCD[k]))
+                                {
+                                    if (RightItems[i].Contains(ABCD[k]))
+                                    {
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" checked="checked" class="icheckbox" value="@ABCD[k]" />
+                                                <span > @ABCD[k] . @Html.Raw(@ListABCD[k]) </span><span class="label label-warning">正确答案</span>
+                                            </label>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" checked="checked" class="icheckbox" value="@ABCD[k]" />
+                                                @ABCD[k] . @Html.Raw(@ListABCD[k])
+                                            </label>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    if (RightItems[i].Contains(ABCD[k]))
+                                    {
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" class="icheckbox" value="@ABCD[k]" />
+                                                <span > @ABCD[k] . @Html.Raw(@ListABCD[k])</span><span class="label label-warning">正确答案</span>
+                                            </label>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" class="icheckbox" value="@ABCD[k]" />
+                                                @ABCD[k] . @Html.Raw(@ListABCD[k])
+                                            </label>
+                                        </div>
+                                    }
+                                }
+                                
+                        
+                            <div>　</div>
+                            }
+                        }
+                    }
+                    <!-- start -->
+                    
+
+
+
+                    <!-- end -->
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="CloseTest()">关 闭</button>
+            </div>
+
+        </div>
+    </div>
+</div>

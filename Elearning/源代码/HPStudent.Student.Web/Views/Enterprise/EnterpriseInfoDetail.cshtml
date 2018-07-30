@@ -1,0 +1,147 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewBag.Title = "企业信息详情";
+    var ParentActionName = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+    var ParentControllerName = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+}
+
+@model HPStudent.Student.ViewModel.Enterprise.Enterprise
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+    <!-- START PAGE SIDEBAR -->
+    @Html.Action("SideBar", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName })
+    <!-- END PAGE SIDEBAR -->
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+        @Html.Action("BodyHeader", "Common")
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">企业管理</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- PAGE CONTENT LEFT -->
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body profile" style="background: url('@Url.Content("~/content/img/backgrounds/wall_2.jpg")') center center no-repeat;">
+                                <div class="profile-image">
+                                    @*<img src="@Url.Content(Model.Avatar)" alt="@Model.Profile.CompanyName" />*@
+                                    <img src="@Url.Content("~/content/img/users/child_male.png")" />
+                                </div>
+                                <div class="profile-data">
+                                    <div class="profile-data-name">@Model.Profile.CompanyName</div>
+                                </div>
+
+                            </div>
+
+                            <div class="panel-body list-group border-bottom">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><span class="fa fa-square"></span> 公司名称: @Model.Profile.CompanyName</li>
+                                    <li class="list-group-item"><span class="fa fa-square"></span> 公司规模：@Model.Profile.Scale</li>
+                                    <li class="list-group-item"><span class="fa fa-square"></span> 电子邮箱：@Model.Profile.Email</li>
+                                    <li class="list-group-item"><span class="fa fa-square"></span> 联系电话：@Model.Profile.TelPhone</li>
+                                    <li class="list-group-item"><span class="fa fa-square"></span> 官方网站：@Model.Profile.WebSite</li>
+                                    <li class="list-group-item"><span class="fa fa-square"></span> 联系地址：@Model.Profile.Address</li>
+                                </ul>
+                            </div>
+                            <div class="panel-body">
+                                <h4 class="text-title">更多</h4>
+                                <div class="row">
+                                    <div class="col-md-6 col-xs-2">
+                                        <a  id="AJobInfo" href="#" title="@Model.Profile.CompanyName" class="tile tile-info">
+                                            @ViewBag.JobCount
+                                            <p>职位数</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 col-xs-2">
+                                        <a href="#" class="tile tile-info">
+                                            主页
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- END PAGE CONTENT LEFT -->
+                    <!-- PAGE CONTENT RIGHT -->
+                    <div class="col-md-9">
+                        <!--基本信息开始-->
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="#accOneColOne">
+                                        公司简介
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-body  scroll" style="height: 200px;">
+                                @Model.Profile.CompanyProfile
+                            </div>
+                        </div>
+                        <!--基本信息结束-->
+                    </div>
+                    <!-- END PAGE CONTENT RIGHT -->
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+<!-- MODALS -->
+<!-- EOF MODALS -->
+<!-- MESSAGE BOX-->
+<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-power-off"></span>确定要注销本次登录 ?</div>
+            <div class="mb-content">
+                <p>点击确定键将清除本地登录信息。</p>
+            </div>
+            <div class="mb-footer">
+                <div class="pull-right">
+                    <a href="pages-login.html" class="btn btn-success btn-lg">确定</a>
+                    <button class="btn btn-default btn-lg mb-control-close">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MESSAGE BOX-->
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+<audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/icheck/icheck.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-datepicker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/tocify/jquery.tocify.min.js")"></script>
+<!-- END PAGE PLUGINS -->
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/jquery.noty.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/noty/themes/default.js")"></script>
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/Enterprise/Enterprise_Index.js")"></script>
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->

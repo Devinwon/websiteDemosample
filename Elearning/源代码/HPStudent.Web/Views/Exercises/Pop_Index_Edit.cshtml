@@ -1,0 +1,169 @@
+﻿@{
+    ViewBag.Title = "修改题库";
+}
+@model HPStudent.ViewModel.Exercises.QA_Select
+
+
+<div class="modal" id="edit-exercises-library" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss= ="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 修改题目</h4>
+            </div>
+            <div class="modal-body block">
+                <form id="user-points-form" class="form-horizontal">
+                    <!-- start -->
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">题库分类</label>
+
+                        <div class="col-md-3 col-xs-12">
+
+                            <input type="text" id="QA_Select_Major" name="QA_Select_Major" class="form-control" value="Dotnet软件技术" readonly />
+                        </div>
+
+                        <div class="col-md-3 col-xs-12">
+                            <input type="text" id="QA_Select_Category" name="QA_Select_Category" class="form-control" value="SQLServer数据库基础" readonly />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">题目</label>
+
+                        <div class="col-md-9 col-xs-12">
+                            <textarea id="QA_Select_Title" class="form-control">@Model.Title</textarea>
+                        </div>
+
+                    </div>
+                    @{
+                        bool[] checkAnswer = { false, false, false, false };
+                        if (Model.Answer.Contains("A"))
+                        {
+                            checkAnswer[0] = true;
+                        }
+                        if (Model.Answer.Contains("B"))
+                        {
+                            checkAnswer[1] = true;
+                        }
+                        if (Model.Answer.Contains("C"))
+                        {
+                            checkAnswer[2] = true;
+                        }
+                        if (Model.Answer.Contains("D"))
+                        {
+                            checkAnswer[3] = true;
+                        }
+                        bool[] checkLevel = { false, false, false, false, false };
+                        switch (Model.Level)
+                        {
+                            case 1:
+                                checkLevel[0] = true;
+                                break;
+                            case 2:
+                                checkLevel[1] = true;
+                                break;
+                            case 3:
+                                checkLevel[2] = true;
+                                break;
+                            case 4:
+                                checkLevel[3] = true;
+                                break;
+                            case 5:
+                                checkLevel[4] = true;
+                                break;
+                        }
+                    }
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            @Html.CheckBox("checkbox", checkAnswer[0], new { @class = " icheckbox", @value = "A" })选项 A.
+
+                        </label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" id="QA_Select_A" class="form-control" value="@Model.A" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            @Html.CheckBox("checkbox", checkAnswer[1], new { @class = " icheckbox", @value = "B" })选项 B.
+                        </label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" id="QA_Select_B" class="form-control" value="@Model.B" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            @Html.CheckBox("checkbox", checkAnswer[2], new { @class = " icheckbox", @value = "C" })选项 C.
+                        </label>
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" id="QA_Select_C" class="form-control" value="@Model.C" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            @Html.CheckBox("checkbox", checkAnswer[3], new { @class = " icheckbox", @value = "D" })选项D.
+                        </label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" id="QA_Select_D" class="form-control" value="@Model.D" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">答案解析</label>
+
+                        <div class="col-md-9 col-xs-12">
+                            <textarea id="AnswerAnalysis" class="form-control">@Model.AnswerAnalysis</textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            难 易 程 度 .
+                        </label>
+                        <div class="col-md-9 col-xs-12">
+                            <label class="col-md-2 control-label">
+
+
+                                @Html.RadioButton("level", "1", checkLevel[0], new { @class = "iradio" }) 一星
+                            </label>
+
+                            <label class="col-md-2 control-label">
+                                @Html.RadioButton("level", "2", checkLevel[1], new { @class = "iradio" })二星
+                            </label>
+
+                            <label class="col-md-2 control-label">
+                                @Html.RadioButton("level", "3", checkLevel[2], new { @class = "iradio" })三星
+                            </label>
+
+                            <label class="col-md-2 control-label">
+                                @Html.RadioButton("level", "4", checkLevel[3], new { @class = "iradio" }) 四星
+                            </label>
+
+                            <label class="col-md-2 control-label">
+                                @Html.RadioButton("level", "5", checkLevel[4], new { @class = "iradio" })五星
+                            </label>
+                        </div>
+                    </div>
+                    <!-- end -->
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                @Html.Hidden("QID", Model.QID, new { @id = "hdnQID" })
+                <button type="button" class="btn btn-primary" onclick="EditQuestion()">修 改</button>
+            </div>
+
+        </div>
+    </div>
+</div>

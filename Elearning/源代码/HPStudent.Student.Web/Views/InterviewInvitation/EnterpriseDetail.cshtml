@@ -1,0 +1,54 @@
+﻿@model HPStudent.Student.ViewModel.InterviewInvitation.InterviewInvitationTable
+<div class="modal" id="edit-detail" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 查看详细</h4>
+            </div>
+            <div class="modal-body block">
+                    <div id="question_list" class=" col-md-12" style="height:100%">
+                        <div class="panel panel-default">
+                            <!-- table content -->
+                            <div class="panel-body">
+                                <form class="form-horizontal" role="form">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading ui-draggable-handle">
+                                            <h2 class="panel-title">基本信息</h2>
+                                        </div>
+                                        <div class="panel-body">
+                                            @*<a href="../Enterprise/EnterpriseInfoDetail?NowSid=@Model.SId">*@
+                                            <div class="contact-info">
+                                                <p><small>企业名称:</small>@Model.CompanyName</a></p>
+                                                <p><small>岗位名称:</small>@Model.Name</p>
+                                                <p><small>工作城市:</small>@Model.City</p>
+                                                <p><small>联系电话:</small>@Model.TelPhone</p>
+                                                <p><small>联系地址:</small>@Model.Address</p>
+                                                <p><small>薪资范围:</small>@Model.SalaryRange</p>
+                                                <p><small>工作性质:</small>@Model.WorkType</p>
+                                                <p><small>要求学历:</small>@Model.DegreeRequired</p>
+                                                <p><small>工作年限:</small>@Model.ExperienceRequired</p>
+                                                <p><small>面试邀请正文:</small>@Model.Content</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading ui-draggable-handle">
+                                            <h2 class="panel-title">职位描述</h2>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="contact-info scroll" style="height: 100px;">
+                                                @Model.JobDescription
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>

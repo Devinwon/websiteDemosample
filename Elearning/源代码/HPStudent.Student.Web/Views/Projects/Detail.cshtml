@@ -1,0 +1,162 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewBag.Title = "项目宝典";
+    var ParentActionName = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+    var ParentControllerName = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    
+}
+@model  HPStudent.Student.ViewModel.Project.DetailProject
+
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    @Html.Action("SideBar", "Common", new { ParentAction = "Index", ParentController = ParentControllerName })
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        @Html.Action("BodyHeader", "Common")
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">云课堂</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-title">
+            <h2><span class="glyphicon glyphicon-book"></span> @Model.ProjectName</h2>
+        </div>
+        <div class="page-content-wrap">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <img src="@Model.ProjectPic" class="col-md-12" />
+                        </div>
+                        <div class="panel-body list-group border-bottom">
+                            <span class="list-group-item">
+                                <span class="glyphicon glyphicon-user"></span> 课程讲师：@Model.TeacherName 老师
+                            </span>
+                            <span class="list-group-item">
+                                <span class="glyphicon glyphicon-time"></span> 课时数量：@Model.ClassHour 学时
+                            </span>
+                            <span class="list-group-item">
+                                <h4>项目介绍:</h4>
+                                @Model.ProjectDesc
+                            </span>
+                        </div>
+                        <div class="panel-body">
+                            <h4>涉及到的技术:</h4>
+                            <ul id="UseTechnology" class="list-tags">
+                                @Model.UseTechnology
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="col-md-9">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!-- table content -->
+                            <div id="task-list" class="table-responsive">
+                                <table class="table datatable_question table-bordered table-actions table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>标题</th>
+                                            <th width="120" class="text-center">发布时间</th>
+                                            <th width="300">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (HPStudent.Entity.ProjectItem myProjectItem in Model.ProjectItemList)
+                                        {
+                                            string  pdfDisable = "";
+                                            string pptDisable = "";
+                                            string videoDisable = "";
+                                            string urlDisable = "";
+                                            pdfDisable = (@myProjectItem.PDF == "") ? "disabled" : "";
+                                            pptDisable = (@myProjectItem.PPT == "") ? "disabled" : "";
+                                            videoDisable = (@myProjectItem.Video == "") ? "disabled" : "";
+                                            urlDisable = (@myProjectItem.URL == "") ? "disabled" : "";     
+                                            <tr>
+                                                <td>@myProjectItem.ProjectName</td>
+                                                <td>@myProjectItem.CreateDate.ToString("yyyy-MM-dd")</td>
+                                                <td>
+                                                    <button class="btn btn-info btn-sm @pdfDisable" data-type="pdf" data-src="@myProjectItem.PDF">
+                                                        <span class="fa fa-cloud-download"></span>下载
+                                                    </button>
+
+                                                    <button class="btn btn-info btn-sm @pptDisable" data-type="ppt" data-src="@myProjectItem.PPT">
+                                                        <span class="glyphicon glyphicon-picture"></span>PPT
+                                                    </button>
+
+                                                    <button class="btn btn-info btn-sm @videoDisable" data-type="video" data-src="@myProjectItem.Video">
+                                                        <span class="fa fa-film"></span>视频
+                                                    </button>
+
+                                                    <button class="btn btn-info btn-sm @urlDisable" data-type="url" data-src="@myProjectItem.URL">
+                                                        <span class="fa fa-globe"></span>网站
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- END table content -->
+
+                        </div>
+                    </div>
+                            
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            
+            <!-- END PAGE CONTENT -->
+
+        </div>
+            <!-- END PAGE CONTAINER -->
+            <!-- Modal AJAX -->
+            <div id="pop_modaldialog">
+            </div>
+            <!-- END Modal AJAX -->
+            <!-- START PRELOADS -->
+            <audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+            <audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+            <!-- END PRELOADS -->
+            <!-- START SCRIPTS -->
+            <!-- START PLUGINS -->
+            <script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+            <script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+            <script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+            <script type="text/javascript" src="@Url.Content("~/content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+            <script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-select.js")"></script>
+            <script type='text/javascript' src="@Url.Content("~/content/js/plugins/icheck/icheck.min.js")"></script>
+
+    <script type='text/javascript' src="@Url.Content("~/content/js/plugins/pdf-js/compatibility.js")"></script>
+    <link rel="resource" type="application/l10n" href="@Url.Content("~/content/js/plugins/pdf-js/)locale/locale.properties")" />
+    <script type='text/javascript' src="@Url.Content("~/content/js/plugins/pdf-js/l10n.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/content/js/plugins/pdf-js/build/pdf.js")"></script>
+    <script type='text/javascript' src="@Url.Content("~/content/js/plugins/pdf-js/debugger.js")"></script>
+            <script type='text/javascript' src="@Url.Content("~/content/js/plugins/pdf-js/viewer.js")"></script>
+
+
+            <!-- END PLUGINS -->
+            <!-- THIS PAGE PLUGINS -->
+            <script type="text/javascript" src="@Url.Content("~/content/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+            <!-- END PAGE PLUGINS -->
+            <!-- START TEMPLATE -->
+            <script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+            <script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+            <script type="text/javascript" src="@Url.Content("~/content/js/Projects/ProjectDetail.js")"></script>
+
+
+
+            <!-- END TEMPLATE -->
+            <!-- END SCRIPTS -->

@@ -1,0 +1,22 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+    hello wowrld!这是一个测试
+        <h1>Test</h1>
+        @using (Html.BeginForm()) {
+        <p>@Html.TextBox("tbConnect", "", new { @style = "width:600px;" })</p>
+        <b>@ViewBag.Password</b>
+        <p>@ViewBag.EnPassword</p>
+        <input type="submit" value="确定" />
+        }
+    </div>
+</body>
+</html>

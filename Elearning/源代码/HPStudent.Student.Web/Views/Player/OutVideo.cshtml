@@ -1,0 +1,96 @@
+﻿
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>视频播放</title>
+
+    <!-- CSS -->
+    <link href="~/Content/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/video-js/video-js.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" id="theme" href="/content/css/theme-default.css" />
+    <!-- JAVASCRIPT -->
+    <script src="~/Content/js/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Content/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Content/js/Player/videojs-ie8.min.js"></script>
+    <script src="~/Content/js/Player/video.min.js"></script>
+    <script src="~/Content/js/Player/video-controler.js"></script>
+
+    <style type="text/css">
+        body{
+            background-color:black;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default panel-fullscreen-wrap">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="fa fa-female"></span> 视频播放
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-3">
+                    </div>
+                            <div class="col-md-8">
+                                <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" height="300"
+                                       poster="http://video-js.zencoder.com/oceans-clip.png"
+                                       data-setup="{}">
+
+                                    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                                </video>
+                            </div>
+
+                    <div class="col-md-2">
+                    </div>
+                        </div>
+           </div>
+        </div>
+    </div>
+    <div id="RegisterModal" class="modal fade bs-example-modal-sm" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">注册</h4>
+                </div>
+                <div class="modal-body">
+                    
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="realname" name="realname">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">手机号:</label>
+                        <input type="text" class="form-control" id="mobile" name="mobile">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">QQ邮箱:</label>
+                        <input type="text" class="form-control" id="email" name="email">
+                    </div>
+
+                    <div class="form-group" id="alertarea">
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="fnRegister()">提交</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@model  HPStudent.Entity.Suggestions
+<div class="modal" id="ScoreStarModal" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 服务评分</h4>
+            </div>
+            <form id="MenuFrom" class="form-horizontal" role="form">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">星级评分</label>
+                            <div class="col-md-8">
+                                <div id="divStar" data-score="@Model.ScoreStar"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">评分详情</label>
+                            <div class="col-md-6">
+                                <textarea id="txtScoreDetail" style="height:100px;width:200px;" maxlength="200">@Model.ScoreDetail</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="SaveScoreStar(@Model.SID)" id="FormSave">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

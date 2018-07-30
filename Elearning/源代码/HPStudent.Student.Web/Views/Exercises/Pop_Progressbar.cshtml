@@ -1,0 +1,18 @@
+﻿@model HPStudent.Entity.TestPaper
+<div class="modal" id="Create-Exercises" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="false" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>*@
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 正在生成练习题</h4>
+            </div>
+            <div class="modal-body block">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">&nbsp; </div>
+            </div>
+            <div class="modal-footer">
+                @Html.Hidden("TID", Model.TID, new { @id = "hdnTID" })
+                @Html.Hidden("StudentID", Model.StudentID, new { @id = "hdnStudentID" })
+            </div>
+        </div>
+    </div>
+</div>

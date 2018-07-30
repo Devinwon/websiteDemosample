@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "添加题库";
+}
+@model HPStudent.ViewModel.Exercises.QA_Select
+
+
+    <div class="modal" id="add-exercises-library" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"  data-dismiss= ="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 添加题目</h4>
+            </div>
+            <div class="modal-body block">
+                <form id="user-points-form" class="form-horizontal">
+                    <!-- start -->
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">题库分类</label>
+
+                        <div class="col-md-3 col-xs-12">
+
+                            <input type="text" id="QA_Select_Major" name="QA_Select_Major" class="form-control" value="Dotnet软件技术" readonly />
+                        </div>
+
+                        <div class="col-md-3 col-xs-12">
+                            <input type="text" id="QA_Select_Category" name="QA_Select_Category" class="form-control" value="SQLServer数据库基础" readonly />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">题目</label>
+
+                        <div class="col-md-9 col-xs-12">
+                            <textarea id="QA_Select_Title" class="form-control"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <input type="checkbox" id="ck_a" name="checkbox" class="icheckbox" value="A" /> 选项 A.
+                        </label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" id="QA_Select_A" class="form-control" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <input type="checkbox" id="ck_b" name="checkbox" class="icheckbox" value="B" /> 选项 B.
+                        </label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" id="QA_Select_B" class="form-control" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <input type="checkbox" id="ck_c" name="checkbox" class="icheckbox" value="C" /> 选项 C.
+                        </label>
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" id="QA_Select_C" class="form-control" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <input type="checkbox" id="ck_d" name="checkbox" class="icheckbox" value="D" /> 选项 D.
+                        </label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" id="QA_Select_D" class="form-control" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">答案解析</label>
+
+                        <div class="col-md-9 col-xs-12">
+                            <textarea id="AnswerAnalysis" class="form-control"></textarea>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            难 易 程 度 .
+                        </label>
+                        <div class="col-md-9 col-xs-12">
+                            <label class="col-md-2 control-label">
+                                <input type="radio" class="iradio" name="level" value="1" checked /> 一星
+                            </label>
+
+                            <label class="col-md-2 control-label">
+                                <input type="radio" class="iradio" name="level" value="2" /> 二星
+                            </label>
+
+                            <label class="col-md-2 control-label">
+                                <input type="radio" class="iradio" name="level" value="3" /> 三星
+                            </label>
+
+                            <label class="col-md-2 control-label">
+                                <input type="radio" class="iradio" name="level" value="4" /> 四星
+                            </label>
+
+                            <label class="col-md-2 control-label">
+                                <input type="radio" class="iradio" name="level" value="5" /> 五星
+                            </label>
+                        </div>
+                    </div>
+                    <!-- end -->
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="AddQuestion()">添 加</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+

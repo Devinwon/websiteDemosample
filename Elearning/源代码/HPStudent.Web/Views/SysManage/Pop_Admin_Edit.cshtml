@@ -1,0 +1,73 @@
+﻿@model HPStudent.Entity.ManagerInfo
+<div class="modal" id="edit-manager" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 修改管理员</h4>
+            </div>
+            <div class="modal-body block">
+                <form id="user-points-form" class="form-horizontal">
+                    <!-- start -->
+                    @Html.HiddenFor(m => m.MID)
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">管理员名称</label>
+
+                        <div class="col-md-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.ManagerName, new { @class = "form-control", @readonly = "readonly" })
+
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">登录密码</label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input name="Password" type="password" class="form-control" value="" />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">重复登录密码</label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input name="RePassword" type="password" class="form-control" value="" />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">角色设置</label>
+
+                        <div class="col-md-7 col-xs-12">
+                            @{
+                                foreach (HPStudent.Entity.AdminRole item in ViewBag.AdminRole)
+                                {
+                                    <label class="check col-md-6">
+
+                                        @{  List<HPStudent.Entity.AdminRoleRelation> arList = ViewBag.AdminRoleRelation;
+                                          if (arList.FindIndex(x => x.RoleID == item.RID) == -1)
+                                          {
+                                            <input type="checkbox" data-id='@item.RID' class="icheckbox" /> @item.RoleName
+                                          }
+                                          else
+                                          {
+                                            <input type="checkbox" data-id='@item.RID' checked class="icheckbox" /> @item.RoleName
+                                          }
+                                        }
+                                    </label>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                    <!-- end -->
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="EditManager()">修 改</button>
+            </div>
+
+        </div>
+    </div>
+</div>

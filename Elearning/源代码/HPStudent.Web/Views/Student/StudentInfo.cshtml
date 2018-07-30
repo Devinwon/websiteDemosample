@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META SECTION -->
+    <title>后台管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- END META SECTION -->
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" id="theme" href="Content/css/theme-default.css" />
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body>
+    <!-- START PAGE CONTAINER -->
+    <div class="page-container">
+
+        <!-- START PAGE SIDEBAR -->
+        <div class="page-sidebar">
+            <!-- START X-NAVIGATION -->
+            <ul class="x-navigation">
+                <li class="xn-logo">
+                    <a href="index.html">ATLANT</a>
+                    <a href="#" class="x-navigation-control"></a>
+                </li>
+                <li class="xn-title">导航菜单</li>
+                <li>
+                    <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">后台首页</span><div class="informer informer-warning">No.1</div></a>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-gears"></span> <span class="xn-text">系统管理</span></a>
+                    <ul>
+                        <li><a href="announcement.html"><span class="glyphicon glyphicon-bullhorn"></span> 资讯与公告</a></li>
+                        <li><a href="administrators.html"><span class="fa fa-user"></span> 管理员管理</a></li>
+                        <li><a href="user-points.html"><span class="fa fa-heart"></span> 积分管理</a><div class="informer informer-warning">No.1</div></li>
+                        <li><a href="admin-permission.html"><span class="glyphicon glyphicon-check"></span> 权限设置</a></li>
+                        <li><a href="setting.html"><span class="fa fa-cog"></span> 系统设置</a><div class="informer informer-warning">No.1</div></li>
+                    </ul>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-file-o"></span> <span class="xn-text">练习管理</span></a>
+                    <ul>
+                        <li><a href="exercises-library.html"><span class="fa fa-file-o"></span> 练习题库</a><div class="informer informer-warning">No.1</div></li>
+                        <li><a href="exercises-category.html"><span class="fa fa-list-ul"></span> 练习题分类管理</a><div class="informer informer-warning">No.1</div></li>
+                        <li><a href="exercises-setting.html"><span class="fa fa-clipboard"></span> 练习题设置</a><div class="informer informer-warning">No.1</div></li>
+                    </ul>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-file"></span> <span class="xn-text">考试管理</span></a>
+                    <ul>
+                        <li><a href="exam-library.html"><span class="fa fa-file"></span> 考试题库</a></li>
+                        <li><a href="exam-category.html"><span class="fa fa-list"></span> 考试题分类管理</a></li>
+                        <li><a href="exam-setting.html"><span class="fa fa-clipboard"></span> 考试题设置</a></li>
+                    </ul>
+                </li>
+                <li class="xn-openable active">
+                    <a href="#"><span class="fa fa-male"></span> <span class="xn-text">学生系统</span></a>
+                    <ul>
+                        <li class="active"><a href="student-info.html"><span class="fa fa-male"></span> 学生信息管理</a><div class="informer informer-warning">No.1</div></li>
+                        <li><a href="student-class.html"><span class="fa fa-th-large"></span> 班级设置</a><div class="informer informer-warning">No.1</div></li>
+                        <li><a href="student-school.html"><span class="glyphicon glyphicon-map-marker"></span> 校区设置</a><div class="informer informer-warning">No.1</div></li>
+                        <li><a href="student-fee.html"><span class="fa fa-rmb"></span> 费用管理</a><div class="informer informer-warning">No.1</div></li>
+                    </ul>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="glyphicon glyphicon-wrench"></span> <span class="xn-text">就业系统</span></a>
+                    <ul>
+                        <li><a href="work-agreement.html"><span class="glyphicon glyphicon-file"></span> 就业协议书</a></li>
+                        <li><a href="work-.html"><span class="glyphicon glyphicon-user"></span> 就业信息</a></li>
+                    </ul>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-smile-o"></span> <span class="xn-text">活动管理</span></a>
+                    <ul>
+                        <li><a href="arena.html"><span class="fa fa-trophy"></span> 竞技场</a></li>
+                    </ul>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="glyphicon glyphicon-cloud"></span> <span class="xn-text">大数据分析</span></a>
+                    <ul>
+                        <li><a href="website-statistics.html"><span class="fa fa-th"></span> 网站统计</a></li>
+                        <li><a href="website-statistics.html"><span class="fa fa-dollar"></span> 薪资分析</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- END X-NAVIGATION -->
+        </div>
+        <!-- END PAGE SIDEBAR -->
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+
+            <!-- START X-NAVIGATION VERTICAL -->
+            <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                <!-- TOGGLE NAVIGATION -->
+                <li class="xn-icon-button">
+                    <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+                </li>
+                <!-- END TOGGLE NAVIGATION -->
+                <!-- SEARCH -->
+                <li class="xn-search">
+                    <form role="form">
+                        <input type="text" name="search" placeholder="学生姓名..." />
+                    </form>
+                </li>
+                <!-- END SEARCH -->
+                <!-- SIGN OUT -->
+                <li class="xn-icon-button pull-right">
+                    <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-power-off"></span></a>
+                </li>
+                <!-- END SIGN OUT -->
+                <!-- MESSAGE -->
+                <li class="xn-icon-button pull-right">
+                    <a href="#"><span class="fa fa-envelope"></span></a>
+                    <div class="informer informer-danger">4</div>
+                </li>
+                <!-- END MESSAGE -->
+                <li class="button pull-right">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user"></span>
+                        范爷
+                    </a>
+                </li>
+            </ul>
+            <!-- END X-NAVIGATION VERTICAL -->
+            <!-- START BREADCRUMB -->
+            <ul class="breadcrumb">
+                <li><a href="#">学生系统</a></li>
+                <li class="active">学生信息管理</li>
+            </ul>
+            <!-- END BREADCRUMB -->
+            <!-- PAGE CONTENT WRAPPER -->
+            <div class="page-content-wrap">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <form class="form-inline" role="form">
+
+                                    <div class="form-group">
+
+                                        <label>学生信息搜索：</label>
+                                        <select class="form-control">
+                                            <option>== 选择校区 ==</option>
+                                            <option>荆职校区</option>
+                                            <option>武软校区</option>
+                                            <option>科职校区</option>
+                                            <option>外语外事</option>
+                                            <option>国土校区</option>
+                                            <option>黄冈校区</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option>== 选择年级 ==</option>
+                                            <option>2015</option>
+                                            <option>2014</option>
+                                            <option>2013</option>
+                                            <option>2012</option>
+                                            <option>2011</option>
+                                            <option>2010</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option>== 选择班级 ==</option>
+                                            <option>国信1307</option>
+                                            <option>国信1306</option>
+                                            <option>国信1305</option>
+                                            <option>国信1304</option>
+                                            <option>国信1303</option>
+                                            <option>国信1302</option>
+                                            <option>国信1301</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="学生姓名" />
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">搜 索</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <!-- table content -->
+                                <div id="student-list" class="table-responsive">
+                                    <table class="table datatable_simple table-bordered table-actions table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>校区</th>
+                                                <th width="200">班级</th>
+                                                <th width="100">头像</th>
+                                                <th width="100">姓名</th>
+                                                <th width="100" class="text-center">寝室</th>
+                                                <th width="100" class="text-center">缴费情况</th>
+                                                <th width="60" class="text-center">积分</th>
+                                                <th width="60" class="text-center">性别</th>
+                                                <th width="60" class="text-center">激活</th>
+                                                <th width="100">操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>荆职校区</td>
+                                                <td><strong>国信1307</strong></td>
+                                                <td><img src="/Content/img/users/user.jpg" width="36" /></td>
+                                                <td>邓喜喜</td>
+                                                <th class="text-center">文苑1413</th>
+                                                <th class="text-center">11000</th>
+                                                <td class="text-center">25</td>
+                                                <td class="text-center">男</td>
+                                                <td class="text-center">
+                                                    <span class="label label-danger">
+                                                        <span class=" fa fa-times"></span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-primary btn-sm" data-id="12">
+                                                        <span class="fa fa-pencil"></span>编辑
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>荆职校区</td>
+                                                <td><strong>国信1307</strong></td>
+                                                <td><img src="/Content/img/users/user02.jpg" width="36" /></td>
+                                                <td>郭丹丹</td>
+                                                <th class="text-center">楚辞1120</th>
+                                                <th class="text-center">8800</th>
+                                                <td class="text-center">58</td>
+                                                <td class="text-center">女</td>
+                                                <td class="text-center">
+                                                    <span class="label label-info">
+                                                        <span class="fa fa-check"></span>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <button id='btn-edit' class="btn btn-primary btn-sm" data-id="15"><span class="fa fa-pencil"></span>编辑</button>
+                                                </td>
+                                            </tr>
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END table content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row block">
+                    <div class="col-md-12">
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- END PAGE CONTENT WRAPPER -->
+        </div>
+        <!-- END PAGE CONTENT -->
+    </div>
+    <!-- END PAGE CONTAINER -->
+    <!-- MESSAGE BOX-->
+    <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+        <div class="mb-container">
+            <div class="mb-middle">
+                <div class="mb-title"><span class="fa fa-power-off"></span>确定要注销本次登录 ?</div>
+                <div class="mb-content">
+                    <p>点击确定键将清除本地登录信息。</p>
+                </div>
+                <div class="mb-footer">
+                    <div class="pull-right">
+                        <a href="pages-login.html" class="btn btn-success btn-lg">确定</a>
+                        <button class="btn btn-default btn-lg mb-control-close">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MESSAGE BOX-->
+    <!-- START PRELOADS -->
+    <audio id="audio-alert" src="Content/audio/alert.mp3" preload="auto"></audio>
+    <audio id="audio-fail" src="Content/audio/fail.mp3" preload="auto"></audio>
+    <!-- END PRELOADS -->
+    <!-- START SCRIPTS -->
+    <!-- START PLUGINS -->
+    <script type="text/javascript" src="content/js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="content/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="content/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="content/js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <!-- END PLUGINS -->
+    <!-- THIS PAGE PLUGINS -->
+    <!-- END PAGE PLUGINS -->
+    <!-- START TEMPLATE -->
+    <script type="text/javascript" src="content/js/plugins.js"></script>
+    <script type="text/javascript" src="content/js/actions.js"></script>
+    <script type="text/javascript" src="content/js/page_student_info.js"></script>
+    <!-- END TEMPLATE -->
+    <!-- END SCRIPTS -->
+</body>
+</html>
+
+
+
+
+
+

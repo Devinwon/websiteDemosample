@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewBag.Title = "用户登录";
+}
+@model HPStudent.Student.ViewModel.Account.UserLogin
+
+<div class="login-container">
+
+    <div class="login-box animated fadeInDown">
+        <div class="login-logo"></div>
+        <div class="login-body">
+            <div class="login-title">用户登录</div>
+            <form action="/Account/Login" class="form-horizontal" method="post">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @Class = "control-label text-warning" })
+                        @Html.TextBoxFor(model => model.Email, new { @Class = "form-control", @type = "text", @placeholder = "登录账号" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @Class = "control-label text-warning" })
+                        @Html.TextBoxFor(model => model.Password, new { @Class = "form-control", @type = "password", @placeholder = "登录密码" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.ValidationMessageFor(model => model.VerificationCode, "", new { @Class = "control-label text-warning" })
+                    </div>
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(model => model.VerificationCode, new { @Class = "form-control", @type = "text", @placeholder = "验证码" })
+                    </div>
+                    <div class="col-md-6">
+                        <a id="ChageValidateCode" style="cursor: pointer"><img id="validatecodeGraphic" src="/Account/GetValidateCode" /></a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                            @*<a href="#" class="btn btn-link btn-block">忘记了登录密码？</a>*@
+                        </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-info btn-block" type="submit">登 录</button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-info btn-block" type="button" id="Register">注册</button>
+                    </div>
+                </div>
+                <div class="login-or">或者</div>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <button class="btn btn-info btn-block btn-twitter"><span class="fa fa-heart"></span> 尚云客</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-info btn-block btn-facebook"><span class="fa fa-heart-o"></span> 厚溥教育</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-info btn-block btn-google"><span class="fa fa-heart"></span> 双谷人才</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="login-footer">
+            <div class="pull-left">
+                &copy; 2015 武汉尚云客网络技术有限公司
+            </div>
+            <div class="pull-right">
+                <a href="#">关于我们</a> |
+                <a href="#">联系我们</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/Account/login.js")"></script>
+

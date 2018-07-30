@@ -1,0 +1,154 @@
+﻿@model HPStudent.ViewModel.Student.StudentFee
+<div class="modal" id="view-student-fee" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="Close()" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 学生缴费记录</h4>
+            </div>
+            <div class="modal-body block">
+                <!-- table content -->
+                <div id="class-list" class="table-responsive">
+                    <table class="table datatable_fee table-bordered table-actions table-hover">
+                        <thead>
+                            <tr>
+                                <th class="text-center" width="100">学年</th>
+                                <th class="text-center" width="150">缴费日期</th>
+                                <th class="text-center" width="200">缴费科目</th>
+                                <th class="text-center" width="100">缴费金额</th>
+                                <th class="text-center" width="50">附件</th>
+                                <th class="text-center" width="100">单据状态</th>
+                                <th class="text-center">管理</th>
+                            </tr>
+                        </thead>
+                        <tbody id="StudentFeeList">
+                            @{
+                                foreach (HPStudent.ViewModel.Student.StudentFee item in (List<HPStudent.ViewModel.Student.StudentFee>)ViewData["FeeList"])
+                                {
+                                    string StrYear = "第一学年";
+                                    if (item.Year == "2")
+                                    {
+                                        StrYear = "第二学年";
+                                    }
+                                    else if (item.Year == "3")
+                                    {
+                                        StrYear = "第三学年";
+                                    }
+                                    string StrClass = "fa fa-times";
+                                    if (item.IsCheck == "1")
+                                    {
+                                        StrClass = "fa fa-check";
+                                    }
+                                    <tr>
+                                        <td class="text-center">@StrYear</td>
+                                        <td class="text-center">@item.Dateline</td>
+                                        <td>@item.FeeTitle</td>
+                                        <td class="text-right">@item.Fee</td>
+                                        <td class="text-center">
+                                            <a class="feelinks" href="@item.Attachment" data-toggle="tooltip" data-placement="top" title="@item.FeeTitle:@item.Fee" data-id="@item.FeeID" data-action="view" data-gallery>
+                                                <span class="fa fa-picture-o"></span>
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="label label-info">
+                                                <span class="@StrClass"></span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            @{
+                                    if (item.IsCheck == "1")
+                                    {
+                                        <button class="btn btn-primary btn-sm" onclick="CancleStudentFeeCheck(@item.FeeID,@item.SID,0)" data-id="@item.FeeID,@item.SID" data-action="cancel">取消</button>
+                                    }
+                                    else if (item.IsCheck == "2")
+                                    {
+                                        <button class="btn btn-danger btn-sm" disabled="disabled">已退回</button>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn btn-success btn-sm" data-id="@item.FeeID,@item.SID" onclick="PassStudentFeeCheck(@item.FeeID,@item.SID,1)" data-action="Pass">通过</button>
+    <button class="btn btn-danger btn-sm" data-id="@item.FeeID,@item.SID" onclick="BackStudentFeeCheck(@item.FeeID,@item.SID,2)" data-action="Back">退回</button>
+                                    }
+
+}
+
+
+                                        </td>
+                                    </tr>
+                                }
+
+                            }
+                            @*<tr>
+                                    <td class="text-center">2014</td>
+                                    <td class="text-center">2014年03月14日</td>
+                                    <td>书本费</td>
+                                    <td class="text-right">300.00</td>
+                                    <td class="text-center">
+                                        <a class="feelinks" href="content/img/UserUploadFee/3.jpg" data-toggle="tooltip" data-placement="top" title="书本费：300.00" data-id="12" data-action="view" data-gallery>
+                                            <span class="fa fa-picture-o"></span>
+                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="label label-info">
+                                            <span class="fa fa-check"></span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-id="12" data-action="Cancel">取消</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2014</td>
+                                    <td class="text-center">2014年03月14日</td>
+                                    <td>学费</td>
+                                    <td class="text-right">4500.00</td>
+                                    <td class="text-center">
+                                        <a class="feelinks" href="content/img/UserUploadFee/2.jpg" data-toggle="tooltip" data-placement="top" title="学费：4500.00" data-id="12" data-action="view" data-gallery>
+                                            <span class="fa fa-picture-o"></span>
+                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="label label-danger">
+                                            <span class="fa fa-times"></span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm" data-id="12" data-action="Pass">通过</button>
+                                        <button class="btn btn-danger btn-sm" data-id="12" data-action="Back">退回</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2014</td>
+                                    <td class="text-center">2014年03月14日</td>
+                                    <td>住宿费</td>
+                                    <td class="text-right">500.00</td>
+                                    <td class="text-center">
+                                        <a class="feelinks" href="content/img/UserUploadFee/1.jpg" data-toggle="tooltip" data-placement="top" title="住宿费：500.00" data-id="12" data-action="view" data-gallery>
+                                            <span class="fa fa-picture-o"></span>
+                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="label label-danger">
+                                            <span class="fa fa-times"></span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm" data-id="12" data-action="Pass">通过</button>
+                                        <button class="btn btn-danger btn-sm" data-id="12" data-action="Back">退回</button>
+                                    </td>
+                                </tr>*@
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- END table content -->
+
+            </div>
+            <div class="modal-footer">
+                @*@Html.Hidden("StudentID", Model.SID, new { @id = "hdnStudentID" })*@
+                <button type="button" class="btn btn-default" onclick="Close()">关 闭</button>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,170 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewBag.Title = "题库练习";
+    var ParentActionName = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+    var ParentControllerName = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+}
+
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    @Html.Action("SideBar", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName })
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        @Html.Action("BodyHeader", "Common")
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">云课堂</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-title">
+            <a href="/Exercises/Pop_PracticeIndex"><h2><span class="fa fa-arrow-circle-o-left"></span> 返回</h2></a>
+        </div>
+        <div class="page-content-wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- START COLORFUL PANEL -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" id="HTitle">1.题目XXXXX</h3>
+                        </div>
+                        <div class="panel-body col-md-12">
+                            <form id="checkForm"></form>
+                        </div>
+                        <div class="panel-footer">
+                            <button id="UpButton" class="btn btn-primary">上一题</button>
+                            <button id="NextButton" class="btn btn-primary pull-right">下一题</button>
+                        </div>
+                    </div>
+                    <!-- END COLORFUL PANEL -->
+                </div>
+                <!-- START DEFAULT BUTTONS -->
+                <div class="panel panel-default panel-toggled">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <i id="TrueI" class="glyphicon glyphicon-ok-sign">@ViewBag.TrueNum</i>
+                            <i id="FalseI" class="glyphicon glyphicon-remove-sign">@ViewBag.FalseNum</i>
+                            <i id="SumI" class="glyphicon glyphicon-gift">@ViewBag.AlreadyTestNum/@ViewBag.TestSumNum </i>
+                        </h3>
+                        <ul class="panel-controls">
+                            <li><a class="panel-collapse"><span class="fa fa-angle-up"></span></a></li>
+                        </ul>
+                        <input type="hidden" id="testTitle" value="@ViewBag.QA_SelectResultModelList">
+                        <input type="hidden" id="MaxRowID" value="@ViewBag.TestSumNum">
+                        <input type="hidden" id="hiddenQID" value="">
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group col-md-12">
+                            <ul class="pagination">
+                                @{
+                                    List<HPStudent.Student.ViewModel.Exercises.Answer_Json> Answer_JsonList = (List<HPStudent.Student.ViewModel.Exercises.Answer_Json>)ViewBag.Answer_JsonList;
+                                    HPStudent.Student.ViewModel.Exercises.Answer_Json answer_Json = new HPStudent.Student.ViewModel.Exercises.Answer_Json();
+                                    string number = "";
+                                    int SumCountStr = ViewBag.TestSumNum;
+                                    int SumCount = SumCountStr.ToString().Length;
+                                    string buttonID = "";
+                                    string buttoncolor = "";
+                                    if (Answer_JsonList.Count > 0)
+                                    {
+                                        for (int i = 1; i <= ViewBag.TestSumNum; i++)
+                                        {
+                                            buttonID = "btnAnswer" + i;
+                                            number = i.ToString();
+                                            int numLength = number.Length;
+                                            if (number.Length < SumCount)
+                                            {
+                                                for (int j = 0; j < SumCount - numLength; j++)
+                                                {
+                                                    number = "0" + number;
+                                                }
+                                            }
+                                            answer_Json = Answer_JsonList.Find(x => x.RowID == i);
+
+                                            if (answer_Json != null)
+                                            {
+
+                                                switch (answer_Json.IsTrue)
+                                                {
+                                                    case true:
+                                                        buttoncolor = "btn-success";
+                                                        break;
+                                                    case false:
+                                                        buttoncolor = "btn-danger";
+                                                        break;
+                                                }
+                                                <li><button id="@buttonID" answeranalysis="@answer_Json.AnswerAnalysis" istrue="@answer_Json.IsTrue.ToString()" trueanswer="@answer_Json.TrueAnswer" youranswer="@answer_Json.YourAnswer.TrimEnd(',')" class="btn @buttoncolor btn-rounded ButtonNull">@number</button></li>
+                                            }
+                                            else
+                                            {
+                                                <li><button id="@buttonID" class="btn btn-default btn-rounded ButtonNull">@number</button></li>
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        for (int i = 1; i <= ViewBag.TestSumNum; i++)
+                                        {
+                                            number = i.ToString();
+                                            buttonID = "btnAnswer" + i;
+                                            int numLength = number.Length;
+                                            if (number.Length < SumCount)
+                                            {
+                                                for (int j = 0; j < SumCount - numLength; j++)
+                                                {
+                                                    number = "0" + number;
+                                                }
+                                            }
+                                            <li><button value="" id="@buttonID" class="btn btn-default btn-rounded ButtonNull">@number</button></li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- END DEFAULT BUTTONS -->
+            </div>
+            <!-- END PAGE CONTENT WRAPPER -->
+        </div>
+        <!-- END PAGE CONTENT -->
+    </div>
+</div>
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+<audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+<style type="text/css">
+    .ButtonNull {
+        margin-top: 2px;
+        margin-left: 2px;
+    }
+</style>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/icheck/icheck.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/jquery.noty.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/noty/themes/default.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+@Html.BundleScripts(
+    @<script src="~/Content/js/Exercises/Pop_Practice.js"></script>
+                        )
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->

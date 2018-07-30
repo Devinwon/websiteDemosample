@@ -1,0 +1,45 @@
+﻿@model HPStudent.Student.ViewModel.Job.JobList
+<div class="modal" id="previewJobPanel" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span>职位详情</h4>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                    <div class="panel panel-default">
+                        <div class="panel-heading ui-draggable-handle">
+                            <h2 class="panel-title">基本信息</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="contact-info">
+                                <p><small>企业名称:</small><a href="../Enterprise/EnterpriseInfoDetail?NowSid=@Model.SId">@Model.CompanyName</a></p>
+                                <p><small>岗位名称:</small>@Model.Name</p>
+                                <p><small>工作城市:</small>@Model.City</p>
+                                <p><small>薪资范围:</small>@Model.Salaryrange</p>
+                                <p><small>工作性质:</small>@Model.Worktype</p>
+                                <p><small>要求学历:</small>@Model.Degreerequired</p>
+                                <p><small>工作年限:</small>@Model.Experiencerequired</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading ui-draggable-handle">
+                            <h2 class="panel-title">职位描述</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="contact-info scroll" style="height: 100px;">
+                                @Model.JobDescription
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- END table content -->
+            <div class="modal-footer">
+                <button id="JobSend" style="margin-bottom:12px" data-id="@Model.SId,@Model.JId" class="btn btn-success" type="button">申请职位</button>
+            </div>
+        </div>
+    </div>
+</div>

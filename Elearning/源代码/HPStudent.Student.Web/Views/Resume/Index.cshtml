@@ -1,0 +1,453 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    ViewBag.Title = "我的简历";
+    var ParentActionName = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+    var ParentControllerName = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+}
+@model HPStudent.Student.ViewModel.Resume.ResumeMain
+
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+    <!-- START PAGE SIDEBAR -->
+    @Html.Action("SideBar", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName })
+    <!-- END PAGE SIDEBAR -->
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+        @Html.Action("BodyHeader", "Common")
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">简历系统</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <button id="btnShowResume" class="btn btn-primary btn-sm" type="button" onclick="PreviewResume(@Model.MID)">
+                                <!-- data-toggle="modal"  data-target="/PreviewResume"---->
+                                <span class="fa fa-plus-square"></span>简历预览
+                            </button>
+                            <hr>
+                            <div class="col-md-3  " style="position: relative;">
+                                <div id="tocify">
+                                </div>
+                            </div>
+
+                            <div class="col-md-9">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <form class="form-horizontal" role="form">
+                                            <div class="tocify-content">
+                                                <!--基本信息开始-->
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading ui-draggable-handle">
+                                                        <h2 class="panel-title">基本信息</h2>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="contact-info">
+                                                            <p><small>姓名:</small>@Model.ResumeBasic.RealName</p>
+                                                            <p><small>性别:</small>@Model.ResumeBasic.Gender</p>
+                                                            <p><small>邮箱:</small>@Model.ResumeBasic.Email</p>
+                                                            <p><small>期望城市:</small>@Model.ResumeBasic.CityName</p>
+                                                            <p><small>当前状态:</small>@Model.ResumeBasic.CurrentStatus</p>
+                                                            <input type="hidden" value="@Model.ResumeBasic.City" id="hiddenCity">
+                                                            <input type="hidden" value="@ViewBag.IsCheckProvince" id="hiddenIsCheckProvince">
+                                                            <div class="list-group-controls">
+                                                                <button data-toggle="modal" data-target="#modal_basic" onclick="basicOnclick()" type="button" class="btn btn-primary btn-rounded"><span class="fa fa-pencil"></span></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--基本信息结束-->
+                                                <!--工作经验开始-->
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading ui-draggable-handle">
+                                                        <h2 class="panel-title">工作经验</h2>
+                                                        <ul class="panel-controls">
+                                                            <li><a id="workingAdd" class="FormAdd" onclick="ClearJobText()"><span class="fa fa-plus"></span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--工作经验显示区开始-->
+                                                    <div id="divWorkingShow" class="panel-body list-group list-group-contacts" tag="@Model.MID">
+                                                        @{if (Model.WorkExperience != null && Model.WorkExperience.Count > 0)
+                                                        {
+                                                            foreach (var item in Model.WorkExperience)
+                                                            {
+                                                                <a class="list-group-item ">
+                                                                    <span class="contacts-title item-company">@item.Company</span>
+                                                                    <p class="item-position">@item.Position</p>
+                                                                    <p><span class="item-startdate" tag="@item.startDate.ToString("yyyy-MM-dd")">@item.startDate.ToString("yyyy.M") </span>--<span class="item-enddate" tag="@(item.EndDate ==DateTime.MinValue?DateTime.Now.ToString("yyyy-MM-dd"):item.EndDate.ToString("yyyy-MM-dd"))">  @(item.EndDate == System.DateTime.MinValue ? "至今" : item.EndDate.ToString("yyyy.M"))</span></p>
+                                                                    <p class="item-jobcontent">@item.JobContent</p>
+                                                                    <div class="list-group-controls">
+                                                                        <button type="button" class="btn btn-primary btn-rounded workingEidt" tag="@item.WID"><span class="fa fa-pencil"></span></button>
+                                                                    </div>
+                                                                </a>
+                                                            }
+                                                        }
+                                                        else
+                                                        { <a class="list-group-item ">
+                                                            <span class="contacts-title">您还没有工作经历哦，赶紧去添加吧！</span>
+                                                        </a>
+                                                        }}
+                                                    </div>
+                                                </div>
+                                                <!--工作经验显示区结束-->
+                                                <!--工作经验编辑区开始-->
+                                                <div id="divWorkingWrite" class="panel-body" style="display:none;">
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">公司名称</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <input type="text" class="form-control" id="CompanyName" maxlength="60" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">职位</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <input type="text" class="form-control" id="JobPosition" maxlength="125" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">在职起始时间</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                                                <input type="text" class="form-control datepicker" id="job_startdate" readonly="readonly" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">在职结束时间</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                                                <input type="text" class="form-control datepicker" id="job_enddate" readonly="readonly" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">工作内容</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <textarea class="form-control" id="jobContent" maxlength="2500"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-md-6 col-xs-12 control-label"></label>
+                                                        <div class="col-md-6 pull-left">
+                                                            <button id="workingSave" class="btn btn-success btn-rounded FormSave" type="button" tag="0">保存</button>
+                                                            <button id="workingRenounce" class="btn btn-default btn-rounded FormRenounce" type="button">取消</button>
+                                                        </div>
+                                                        <div class="col-md-8 pull-right">
+                                                            <button id="workingDelete" class="btn btn-danger FormDelete" style="display:none" type="button">删除本条</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--工作经验编辑区结束-->
+                                                <!--工作经验结束-->
+                                                <!--项目经历开始-->
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading ui-draggable-handle">
+                                                        <h2 class="panel-title">项目经历</h2>
+                                                        <ul class="panel-controls">
+                                                            <li><a id="projectAdd" class="FormAdd" onclick="ClearProjectText()"><span class="fa fa-plus"></span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--项目经历显示区开始-->
+                                                    <div id="divProjectShow" class="panel-body list-group list-group-contacts" tag="@Model.MID">
+                                                        @{ if (Model.ProjectExperience != null && Model.ProjectExperience.Count > 0)
+                                                         {
+                                                             foreach (var item in Model.ProjectExperience)
+                                                             {
+                                                                <a class="list-group-item ">
+                                                                    <span class="contacts-title item-proname">@item.ProjectName</span>
+                                                                    <p class="item-position">@item.Position</p>
+                                                                    <p><span class="item-startdate" tag="@item.startDate.ToString("yyyy-MM-dd")">@item.startDate.ToString("yyyy.M") </span>--<span class="item-enddate" tag="@(item.EndDate ==DateTime.MinValue?DateTime.Now.ToString("yyyy-MM-dd"):item.EndDate.ToString("yyyy-MM-dd"))">  @(item.EndDate == System.DateTime.MinValue ? "至今" : item.EndDate.ToString("yyyy.M"))</span></p>
+                                                                    <p class="item-jobcontent">@item.JobContent</p>
+                                                                    <div class="list-group-controls">
+                                                                        <button type="button" class="btn btn-primary btn-rounded projectEidt" tag="@item.PID"><span class="fa fa-pencil"></span></button>
+                                                                    </div>
+                                                                </a>
+                                                             }
+                                                         }
+                                                         else
+                                                         {
+                                                            <a class="list-group-item ">
+                                                                <span class="contacts-title">您还没有项目经验哦，赶紧去添加吧！</span>
+                                                            </a>
+                                                         }}
+                                                    </div>
+                                                </div>
+                                                <!--项目经历显示区结束-->
+                                                <!--项目经历编辑区开始-->
+                                                <div id="divProjectWrite" class="panel-body" style="display:none;">
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">项目名称</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <input type="text" class="form-control" id="projectName"  maxlength="100"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">你的职责</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <input type="text" class="form-control" id="projectJob" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">起始时间</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                                                <input type="text" class="form-control datepicker" id="pro_startdate" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">结束时间</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                                                <input type="text" class="form-control datepicker" id="pro_enddate" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">项目描述</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <textarea class="form-control" id="proContent"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-md-6 col-xs-12 control-label"></label>
+                                                        <div class="col-md-6 pull-left">
+                                                            <button id="projectSave" class="btn btn-success btn-rounded FormSave" type="button" tag="0">保存</button>
+                                                            <button id="projectRenounce" class="btn btn-default btn-rounded FormRenounce" type="button">取消</button>
+                                                        </div>
+                                                        <div class="col-md-8 pull-right">
+                                                            <button id="projectDelete" class="btn btn-danger FormDelete" style="display:none" type="button">删除本条</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--项目经历编辑区结束-->
+                                                <!--项目经历结束-->
+                                                <!--学习履历开始-->
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading ui-draggable-handle">
+                                                        <h2 class="panel-title">学习履历</h2>
+                                                        <ul class="panel-controls">
+                                                            <li><a id="studyAdd" class="FormAdd" onclick="ClearEducationText"><span class="fa fa-plus"></span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--学习履历显示区开始-->
+                                                    <div id="divStudyShow" class="panel-body list-group list-group-contacts" tag="@Model.MID">
+                                                        @{if (Model.EducationRecord != null && Model.EducationRecord.Count > 0)
+                                                        {
+                                                            foreach (var item in Model.EducationRecord)
+                                                            {
+                                                                <a class="list-group-item ">
+                                                                    <span class="contacts-title  item-school">@item.School</span>
+                                                                    <p><span class="item-year">@item.Year</span>届</p>
+                                                                    <p class="item-major">@item.Major</p>
+                                                                    <p><span class="item-startdate" tag="@item.StartDate.ToString("yyyy-MM-dd")">@item.StartDate.ToString("yyyy.M") </span>--<span class="item-enddate" tag="@(item.EndDate ==DateTime.MinValue?DateTime.Now.ToString("yyyy-MM-dd"):item.EndDate.ToString("yyyy-MM-dd"))">  @(item.EndDate == System.DateTime.MinValue ? "至今" : item.EndDate.ToString("yyyy.M"))</span></p>
+                                                                    <div class="list-group-controls">
+                                                                        <button type="button" class="btn btn-primary btn-rounded studyEidt" tag="@item.Did"><span class="fa fa-pencil"></span></button>
+                                                                    </div>
+                                                                </a>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <a class="list-group-item ">
+                                                                <span class="contacts-title">您还没有学习履历哦，赶紧去添加吧！</span> 
+                                                            </a>
+                                                        } } 
+                                                    </div>
+
+                                                </div>
+                                                <!--学习履历显示区结束-->
+                                                <!--学习履历编辑区开始-->
+                                                <div id="divStudyWrite" class="panel-body" style="display:none;">
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">学习起始时间</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                                                <input type="text" class="form-control datepicker" id="edu_startdate" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">学习结束时间</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon add-on"><span class="fa fa-calendar"></span></span>
+                                                                <input type="text" class="form-control datepicker" id="edu_enddate" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">毕业学校名称</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <input type="text" class="form-control" id="schoolname" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">专业</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <input type="text" class="form-control" id="major" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 col-xs-12 control-label">毕业年份</label>
+                                                        <div class="col-md-3 col-xs-12">
+                                                            <select id="edu_year" class="form-control">
+                                                                @{
+                                                                    int i = (int)ViewData["year"];
+                                                                    for (int k = i; k > 0; k--)
+                                                                    {
+                                                                        <option value="@(2008+k+1)">@(2008 + k + 1)</option>
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label class="col-md-6 col-xs-12 control-label"></label>
+                                                        <div class="col-md-6 pull-left">
+                                                            <button id="studySave" class="btn btn-success btn-rounded FormSave" type="button">保存</button>
+                                                            <button id="studyRenounce" class="btn btn-default btn-rounded FormRenounce" type="button">取消</button>
+                                                        </div>
+                                                        <div class="col-md-8 pull-right">
+                                                            <button id="studyDelete" class="btn btn-danger FormDelete" style="display:none" type="button">删除本条</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--学习履历编辑区结束-->
+                                                <!--学习履历结束-->
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+<!-- MODALS -->
+<div class="modal" id="modal_basic" tabindex="-1" style="margin-top:10%" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead">求职意向</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">期望城市</label>
+                        <div class="col-md-3 col-xs-12">
+                            <select class="form-control" id="selProvince">
+                                <option>== 请选省 ==</option>
+                                @{
+                                    List<HPStudent.Entity.Common_Area> EntitySchoolList = (List<HPStudent.Entity.Common_Area>)ViewBag.Province;
+                                    foreach (HPStudent.Entity.Common_Area item in EntitySchoolList)
+                                    {
+                                        <option value="@item.AreaID">@item.AreaName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-xs-12">
+                            <select class="form-control" id="selCity"><option value="0">== 请选市 ==</option></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">求职状态</label>
+                        <div class="col-md-3 col-xs-12">
+                            <select class="form-control" id="satusOpstion">
+                                <option value="-1">== 请选择 ==</option>
+                                @{
+                                    foreach (var item in HPStudent.Student.ViewModel.Resume.ResumeBasic.HuntJobStatus)
+                                    {
+                                        if (item.Key == Model.ResumeBasic.Status)
+                                        {
+                                            <option value="@item.Key" selected>@item.Value</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Key">@item.Value</option>
+                                        }
+
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="SaveResumeChoice" tag="@Model.MID">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- EOF MODALS -->
+<!-- MESSAGE BOX-->
+<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-power-off"></span>确定要注销本次登录 ?</div>
+            <div class="mb-content">
+                <p>点击确定键将清除本地登录信息。</p>
+            </div>
+            <div class="mb-footer">
+                <div class="pull-right">
+                    <a href="pages-login.html" class="btn btn-success btn-lg">确定</a>
+                    <button class="btn btn-default btn-lg mb-control-close">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MESSAGE BOX-->
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+<audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/icheck/icheck.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap-datepicker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/tocify/jquery.tocify.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/jquery.noty.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/content/js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/noty/themes/default.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins/summernote/summernote.js")"></script>
+<!-- END PAGE PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/content/js/Resume/my_resume.js")"></script>
+
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->

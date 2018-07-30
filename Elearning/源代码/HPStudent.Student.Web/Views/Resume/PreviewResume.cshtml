@@ -1,0 +1,95 @@
+﻿@model HPStudent.Student.ViewModel.Resume.ResumeMain
+<div class="modal" id="previewResumepanel" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 简历预览</h4>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                    <div class="tocify-content">
+                        <!--基本信息开始-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading ui-draggable-handle">
+                                <h2 class="panel-title">基本信息</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="contact-info">
+                                    <p><small>姓名:</small>@Model.ResumeBasic.RealName</p>
+                                    <p><small>性别:</small>@Model.ResumeBasic.Gender</p>
+                                    <p><small>邮箱:</small>@Model.ResumeBasic.Email</p>
+                                    <p><small>期望城市:</small>@Model.ResumeBasic.CityName</p>
+                                    <p><small>当前状态:</small>@Model.ResumeBasic.CurrentStatus</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--基本信息结束-->
+                        <!--工作经验开始-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading ui-draggable-handle">
+                                <h2 class="panel-title">工作经验</h2>
+                            </div>
+                            <!--工作经验显示区开始-->
+                            <div id="divWorkingShow" class="panel-body list-group list-group-contacts">
+                                @foreach (var item in Model.WorkExperience)
+                                {
+                                    <a class="list-group-item ">
+                                        <span class="contacts-title">@item.Company</span>
+                                        <p>@item.Position</p>
+                                        <p><span>@item.startDate.ToString("yyyy.M")</span>--<span>@(item.EndDate == System.DateTime.MinValue ? "至今" : item.EndDate.ToString("yyyy.M"))</span></p>
+                                        <p>@item.JobContent</p>
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                        <!--工作经验显示区结束-->
+                        <!--工作经验结束-->
+                        <!--项目经历开始-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading ui-draggable-handle">
+                                <h2 class="panel-title">项目经验</h2>
+                            </div>
+                            <!--项目经历显示区开始-->
+                            <div id="divProjectShow" class="panel-body list-group list-group-contacts">
+                                @foreach (var item in Model.ProjectExperience)
+                                {
+                                    <a class="list-group-item ">
+                                        <span class="contacts-title">@item.ProjectName</span>
+                                        <p>@item.Position</p>
+                                        <p><span>@item.startDate.ToString("yyyy.M")</span>--<span>@(item.EndDate == System.DateTime.MinValue ? "至今" : item.EndDate.ToString("yyyy.M"))</span></p>
+                                        <p>@item.JobContent</p>
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                        <!--项目经历显示区结束-->
+                        <!--项目经历结束-->
+                        <!--学习履历开始-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading ui-draggable-handle">
+                                <h2 class="panel-title">学习履历</h2>
+                            </div>
+                            <!--学习履历显示区开始-->
+                            <div id="divStudyShow" class="panel-body list-group list-group-contacts">
+                                @foreach (var item in Model.EducationRecord)
+                                {
+                                    <a class="list-group-item ">
+                                        <span class="contacts-title">@item.School</span>
+                                        <p class="item-major">@item.Major</p>
+                                        <p><span>@item.Year</span>届</p>
+                                        <p><span>@item.StartDate.ToString("yyyy.M") </span>--<span>@(item.EndDate == System.DateTime.MinValue ? "至今" : item.EndDate.ToString("yyyy.M"))</span></p>
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                        <!--学习履历显示区结束-->
+                        <!--学习履历结束-->
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>

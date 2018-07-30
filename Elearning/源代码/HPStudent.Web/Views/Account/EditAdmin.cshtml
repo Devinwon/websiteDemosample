@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "练习题分类";
+}
+@model HPStudent.ViewModel.Exercises.QA_Select
+
+<div class="page-container">
+    @{
+        bool[] checkAnswer = {false,false,false,false};
+        switch(Model.Answer.ToUpper()){
+            case "A":
+                checkAnswer[0] =true;
+                break;
+            case "B":
+                checkAnswer[1] =true;
+                break;
+            case "C":
+                checkAnswer[2] =true;
+                break;
+            case "D":
+                checkAnswer[3] =true;
+                break;                
+        }
+    }    
+
+
+
+    
+    @Html.CheckBox("选项 A.", checkAnswer[0], new { name = "checkbox", @class = " icheckbox" })
+    @Html.CheckBox("B", checkAnswer[1], new { name = "checkbox", @class = " icheckbox" })选项 B.    
+    @Html.CheckBox("C", checkAnswer[2], new { name = "checkbox", @class = " icheckbox" })选项 C.
+    @Html.CheckBox("D", checkAnswer[3], new { name = "checkbox", @class = " icheckbox" })选项 D.
+
+</div>

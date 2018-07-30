@@ -1,0 +1,12 @@
+F:\学生学习网站\源代码\HPStudent.Core\bin\Debug\HPStudent.Core.dll
+F:\学生学习网站\源代码\HPStudent.Core\bin\Debug\HPStudent.Core.pdb
+F:\学生学习网站\源代码\HPStudent.Core\bin\Debug\log4net.dll
+F:\学生学习网站\源代码\HPStudent.Core\bin\Debug\System.Web.Mvc.dll
+F:\学生学习网站\源代码\HPStudent.Core\bin\Debug\log4net.pdb
+F:\学生学习网站\源代码\HPStudent.Core\bin\Debug\System.Web.Mvc.xml
+F:\学生学习网站\源代码\HPStudent.Core\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+F:\学生学习网站\源代码\HPStudent.Core\obj\Debug\Interop.LCC11.dll
+F:\学生学习网站\源代码\HPStudent.Core\obj\Debug\HPStudent.Core.csproj.ResolveComReference.cache
+F:\学生学习网站\源代码\HPStudent.Core\obj\Debug\HPStudent.Core.dll
+F:\学生学习网站\源代码\HPStudent.Core\obj\Debug\HPStudent.Core.pdb
+F:\学生学习网站\源代码\HPStudent.Core\obj\Debug\HPStudent.Core.csprojResolveAssemblyReference.cache

@@ -1,0 +1,71 @@
+﻿@model  HPStudent.Entity.Sys_Menu
+<div class="modal" id="EditMenuModal" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="CloseEditMenuModal()" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 菜单编辑</h4>
+            </div>
+            <form id="MenuFrom" class="form-horizontal" role="form">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">菜单名称</label>
+                            <div class="col-md-6">
+                                <input class="form-control validate[required,maxSize[125]]" type="text" value="@Model.MenuName" id="TxtMenuName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">控制器</label>
+                            <div class="col-md-6">
+                                <input class="form-control validate[required,maxSize[25]]" type="text" value="@Model.Controller" id="TxtControl">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Action</label>
+                            <div class="col-md-6">
+                                <input class="form-control validate[maxSize[25]]" type="text" value="@Model.Action" id="TxtAction">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">子菜单个数</label>
+                            <div class="col-md-6">
+                                <input class="form-control validate[required,custom[number]]" type="text" value="@Model.ChildNum" id="TxtSonNum">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">图标</label>
+                            <div class="col-md-6">
+                                <input class="form-control validate[required,maxSize[25]]" type="text" value="@Model.Icon" id="TxtIcon">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">菜单适用范围</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="selCategory">
+                                    @{
+                                        if (Model.Category == 1)
+                                        {
+                                            <option value="0">学生端</option>
+                                            <option selected="selected" value="1">管理员端</option>
+                                        }
+                                        else
+                                        {
+                                            <option value=" 0">学生端</option>
+                                            <option value="1">管理员端</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="EidtInfo(@Model.MID)" id="FormSave">保存</button>
+                <input id="dispalyPID" type="hidden" data-id="@Model.PID">
+            </div>
+
+        </div>
+    </div>
+</div>

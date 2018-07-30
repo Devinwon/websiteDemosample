@@ -1,0 +1,40 @@
+﻿<div class="modal" id="JobListModal" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="closejobPop()" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span>编辑岗位</h4>
+            </div>
+            <div class="panel-body">
+                <button id="btnAddMenu" class="btn btn-primary btn-sm" type="button">
+                    <span class="fa fa-plus-square"></span> 添加岗位
+                </button>
+                <hr>
+                <!-- table content -->
+                <div id="jobdatatable_question" class="table-responsive ">
+                    <table class="table jobdatatable_question table-bordered table-actions table-hover ">
+                        <thead>
+                            <tr>
+                                <th width="60">岗位名称</th>
+                                <th width="60">工作城市</th>
+                                <th width="60">薪资范围</th>
+                                <th width="60">工作性质</th>
+                                <th width="60">要求学历</th>
+                                <th width="60">要求工作年限</th>
+                                <th width="60">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="QA_SelectJobList">
+                            <tr>
+                                <td valign="top" colspan="7" class="dataTables_empty">无数据</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END table content -->
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+﻿
+<div class="modal" id="UpdateEnterpriseModal" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" data-backdrop="static">
+    <!-- PAGE CONTENT WRAPPER row  -->
+    @model HPStudent.Student.ViewModel.Enterprise.Enterprise
+    <div class="modal-dialog">
+        <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="defModalHead"><span class="fa fa-text-width"></span>&nbsp;信息管理</h4>
+                    </div>
+                    <form class="form-horizontal" role="form">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                @*<div class="form-group">
+                                    <label class="col-md-2 control-label">头像上传</label>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="file">
+                                    </div>
+                                </div>*@
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">企业名称</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" id="EnterpriseName" value="@Model.Profile.CompanyName" tag="@Model.EID">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">企业规模</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="EnterpriseScale">
+                                            <option value="-1" selected>===请选择===</option>
+                                            @{
+                                                List<string> lstOptions = ViewBag.EnterpriseScaleList as List<string>;
+                                                foreach (string item in lstOptions)
+                                                {
+                                                    if (item == Model.Profile.Scale)
+                                                    {
+                                                        <option value="@item" selected>@item</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@item">@item</option>
+                                                    }
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">联系电话</label>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" id="EnterpriseTelPhone" value="@Model.Profile.TelPhone">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">电子邮件</label>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" id="EnterpriseEmail" value="@Model.Profile.Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">官方网站</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" id="EnterpriseWebSite" value="@Model.Profile.WebSite">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">联系地址</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control" type="text" id="EnterpriseAddress" value="@Model.Profile.Address">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">公司简介</label>
+                                    <div class="col-md-10">
+                                        <textarea style="height:100px;" class="form-control" id="EnterpriseProfile">@Model.Profile.CompanyProfile</textarea>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </form>
+            <div class="modal-footer">
+                <button class="btn btn-primary  FormSave" type="button" id="FormSave">保存</button>
+                <button class="btn btn-primary  FormClose" type="button" id="FormClose">取消</button>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTENT WRAPPER -->
+    <script src="~/Content/js/Enterprise/Enterprise_Index.js"></script>
+</div>

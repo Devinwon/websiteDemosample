@@ -1,0 +1,319 @@
+﻿@model HPStudent.Entity .TestPaper 
+<div class="modal" id="Exercises_Details" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss= ="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 在线测试</h4>
+            </div>
+            <div class="modal-body block">
+                <form id="user-points-form" class="form-horizontal">
+                    @{
+                       
+                        int i=0;
+                        foreach (HPStudent.Entity.QA_Select item in (List<HPStudent.Entity.QA_Select>)ViewData["SelList"])
+                        {
+                            <h4>@(++i) @Html.Raw(@item.Title) </h4>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="icheckbox" value="A" />
+                                    A.@Html.Raw(@item.A)
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="icheckbox" value="B" />
+                                    B.@Html.Raw(@item.B)
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="icheckbox" value="C" />
+                                    C.@Html.Raw(@item.C)
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="icheckbox" value="D" />
+                                    D.@Html.Raw(@item.D)
+                                </label>
+                            </div>
+    <div>　</div>
+                        }
+}
+                    <!-- start -->
+                    @*<h4>1.在ASP.NET的内建对象中，必须要有Lock和Unlock方法以确保多个用户无法同时 改变某一变量的对象是?</h4>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="A" />
+                            A.Cache
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="B" />
+                            B.Session
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            C.Request
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            D.Application
+                        </label>
+                    </div>
+
+
+                    <h4>2.有关ASP.NET脚本和HTML说法正确的是?</h4>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="A" />
+                            A.HTML元素的ID属性值直接对应ASP.NET脚本的一个对象名
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="B" />
+                            B.一个HTML元素不需要添加“runat=server”，ASP.NET脚本也可以引用该HTML元素
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            C.一个ASP.NET页面中脚本可以直接引用另一个ASP.NET页面的HTML元素
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            D.ASP.NET在原有的HTML元素的基础之上，又新增加一整套Web Server控件,加强页面内容和脚本的设计能力。
+                        </label>
+                    </div>
+
+                    <h4>3.在ASP.NET的内建对象中，必须要有Lock和Unlock方法以确保多个用户无法同时 改变某一变量的对象是?</h4>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="A" />
+                            A.Cache
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="B" />
+                            B.Session
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            C.Request
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            D.Application
+                        </label>
+                    </div>
+                    <h4>4.有关ASP.NET脚本和HTML说法正确的是?</h4>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="A" />
+                            A.HTML元素的ID属性值直接对应ASP.NET脚本的一个对象名
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="B" />
+                            B.一个HTML元素不需要添加“runat=server”，ASP.NET脚本也可以引用该HTML元素
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            C.一个ASP.NET页面中脚本可以直接引用另一个ASP.NET页面的HTML元素
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            D.ASP.NET在原有的HTML元素的基础之上，又新增加一整套Web Server控件,加强页面内容和脚本的设计能力。
+                        </label>
+                    </div>
+
+                    <h4>5.在ASP.NET的内建对象中，必须要有Lock和Unlock方法以确保多个用户无法同时 改变某一变量的对象是?</h4>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="A" />
+                            A.Cache
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="B" />
+                            B.Session
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            C.Request
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            D.Application
+                        </label>
+                    </div>
+
+                    <h4>6.有关ASP.NET脚本和HTML说法正确的是?</h4>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="A" />
+                            A.HTML元素的ID属性值直接对应ASP.NET脚本的一个对象名
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="B" />
+                            B.一个HTML元素不需要添加“runat=server”，ASP.NET脚本也可以引用该HTML元素
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            C.一个ASP.NET页面中脚本可以直接引用另一个ASP.NET页面的HTML元素
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            D.ASP.NET在原有的HTML元素的基础之上，又新增加一整套Web Server控件,加强页面内容和脚本的设计能力。
+                        </label>
+                    </div>
+
+                    <h4>7.在ASP.NET的内建对象中，必须要有Lock和Unlock方法以确保多个用户无法同时 改变某一变量的对象是?</h4>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="A" />
+                            A.Cache
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="B" />
+                            B.Session
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            C.Request
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            D.Application
+                        </label>
+                    </div>
+
+                    <h4>8.有关ASP.NET脚本和HTML说法正确的是?</h4>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="A" />
+                            A.HTML元素的ID属性值直接对应ASP.NET脚本的一个对象名
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="B" />
+                            B.一个HTML元素不需要添加“runat=server”，ASP.NET脚本也可以引用该HTML元素
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            C.一个ASP.NET页面中脚本可以直接引用另一个ASP.NET页面的HTML元素
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            D.ASP.NET在原有的HTML元素的基础之上，又新增加一整套Web Server控件,加强页面内容和脚本的设计能力。
+                        </label>
+                    </div>
+
+                    <h4>9.在ASP.NET的内建对象中，必须要有Lock和Unlock方法以确保多个用户无法同时 改变某一变量的对象是?</h4>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="A" />
+                            A.Cache
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="B" />
+                            B.Session
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            C.Request
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            D.Application
+                        </label>
+                    </div>
+
+                    <h4>10.有关ASP.NET脚本和HTML说法正确的是?</h4>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="A" />
+                            A.HTML元素的ID属性值直接对应ASP.NET脚本的一个对象名
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="B" />
+                            B.一个HTML元素不需要添加“runat=server”，ASP.NET脚本也可以引用该HTML元素
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            C.一个ASP.NET页面中脚本可以直接引用另一个ASP.NET页面的HTML元素
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="icheckbox" value="D" />
+                            D.ASP.NET在原有的HTML元素的基础之上，又新增加一整套Web Server控件,加强页面内容和脚本的设计能力。
+                        </label>
+                    </div>*@
+
+
+
+                    <!-- end -->
+                </form>
+
+            </div>
+            <div class="modal-footer">
+               
+                @Html.Hidden("TID", Model.TID, new { @id = "hdnTID" })
+                <button type="button" class="btn btn-primary" onclick="FinishTest()">提 交</button>
+            </div>
+
+        </div>
+    </div>
+</div>

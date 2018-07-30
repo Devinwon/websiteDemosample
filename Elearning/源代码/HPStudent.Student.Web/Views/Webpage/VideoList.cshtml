@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META SECTION -->
+    <title>视频列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- END META SECTION -->
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" id="theme" href="/content/css/theme-default.css" />
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body class="body-white">
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <!-- table content -->
+                    <div class="gallery" id="gridview">
+
+
+
+                        <div class="gridview_empty">没有找到符合条件的数据</div>
+
+
+
+                    </div>
+
+                    <ul id="gridview_page" class="pagination pagination-sm pull-right push-down-20 push-up-20 gridview_page"></ul>
+                    <!-- END table content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- START PLUGINS -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins/jquery/jquery-ui.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins/bootstrap/bootstrap.min.js")"></script>
+    <!-- THIS PAGE PLUGINS -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins/gridview/jquery.gridView.js")"></script>
+    <!-- END PAGE PLUGINS -->
+    <!-- START TEMPLATE -->
+    <script type="text/javascript" src="@Url.Content("~/content/js/plugins.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/actions.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/content/js/WebPage/VideoList.js")"></script>
+</body>
+</html>

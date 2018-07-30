@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{284F16DD-3FBE-4527-ACAA-F9F05F892BC4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HPStudent.Student.Data</RootNamespace>
+    <AssemblyName>HPStudent.Student.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="AlreadyAnswer_Select.cs" />
+    <Compile Include="ClassManage.cs" />
+    <Compile Include="InterviewInvitation.cs" />
+    <Compile Include="Common\School.cs" />
+    <Compile Include="Enterprise.cs" />
+    <Compile Include="Exercises.cs" />
+    <Compile Include="Fee.cs" />
+    <Compile Include="Job.cs" />
+    <Compile Include="MessageReport.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="MyBarHomePage.cs" />
+    <Compile Include="PostBarClassify.cs" />
+    <Compile Include="PostBarInfo.cs" />
+    <Compile Include="PostReply.cs" />
+    <Compile Include="PostTheme.cs" />
+    <Compile Include="Projects.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterManager.cs" />
+    <Compile Include="Resume.cs" />
+    <Compile Include="ResumeInbox.cs" />
+    <Compile Include="SQLHelper.cs" />
+    <Compile Include="Common\StudentCommon.cs" />
+    <Compile Include="StatisticsQuestion_Select.cs" />
+    <Compile Include="StudentDao.cs" />
+    <Compile Include="Suggestions.cs" />
+    <Compile Include="TestPaper.cs" />
+    <Compile Include="UserOnline.cs" />
+    <Compile Include="Webpage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HPStudent.Core\HPStudent.Core.csproj">
+      <Project>{0a70d58c-501e-40ae-bb74-4a5c76bc50ed}</Project>
+      <Name>HPStudent.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPStudent.Entity\HPStudent.Entity.csproj">
+      <Project>{31df1a1d-66ee-4fe4-b71c-b4c1dec97ba9}</Project>
+      <Name>HPStudent.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPStudent.Student.ViewModel\HPStudent.Student.ViewModel.csproj">
+      <Project>{6bb45c83-b368-4992-95fd-9071b9dc76a4}</Project>
+      <Name>HPStudent.Student.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,56 @@
+﻿<div class="modal" id="edit-student-class" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 添加班级</h4>
+            </div>
+            <div class="modal-body block">
+                <form id="user-points-form" class="form-horizontal">
+                    <!-- start -->
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">校区</label>
+
+                        <div class="col-md-3 col-xs-12">
+                            <input type="text" id="Pop_selSchool" class="form-control" value="荆职校区" readonly />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">入学年份</label>
+
+                        <div class="col-md-3 col-xs-12">
+                            <input type="text" id="Pop_selYear" class="form-control" value="2015" readonly />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">班级名称</label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" id="Pop_CName" class="form-control" value="" />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">班级编码</label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" id="Pop_CCode" class="form-control" value="" />
+                        </div>
+
+                    </div>
+
+
+                    <!-- end -->
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="AddClass()">添 加</button>
+            </div>
+
+        </div>
+    </div>
+</div>
