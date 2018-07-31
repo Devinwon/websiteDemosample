@@ -1,0 +1,5 @@
+F:\问卷调查系统\源代码\HPFv1.Entity\bin\Debug\HPFv1.Entity.dll
+F:\问卷调查系统\源代码\HPFv1.Entity\bin\Debug\HPFv1.Entity.pdb
+F:\问卷调查系统\源代码\HPFv1.Entity\obj\Debug\HPFv1.Entity.dll
+F:\问卷调查系统\源代码\HPFv1.Entity\obj\Debug\HPFv1.Entity.pdb
+F:\问卷调查系统\源代码\HPFv1.Entity\obj\Debug\HPFv1.Entity.csprojResolveAssemblyReference.cache

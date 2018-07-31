@@ -1,0 +1,16 @@
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\HPFv1.Business.dll
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\HPFv1.Business.pdb
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\HPFv1.Core.dll
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\HPFv1.Data.dll
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\HPFv1.Entity.dll
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\HPFv1.ViewModel.dll
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\Newtonsoft.Json.dll
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\ThoughtWorks.QRCode.dll
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\HPFv1.Core.pdb
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\HPFv1.Data.pdb
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\HPFv1.Entity.pdb
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\HPFv1.ViewModel.pdb
+F:\问卷调查系统\源代码\HPFv1.Business\bin\Debug\Newtonsoft.Json.xml
+F:\问卷调查系统\源代码\HPFv1.Business\obj\Debug\HPFv1.Business.csprojResolveAssemblyReference.cache
+F:\问卷调查系统\源代码\HPFv1.Business\obj\Debug\HPFv1.Business.dll
+F:\问卷调查系统\源代码\HPFv1.Business\obj\Debug\HPFv1.Business.pdb

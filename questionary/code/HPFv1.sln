@@ -1,0 +1,139 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Web", "HPFv1.Web\HPFv1.Web.csproj", "{02CC8268-9194-4941-B88C-7E0F6A437824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Logic", "HPFv1.Logic\HPFv1.Logic.csproj", "{E22E4806-4BAE-484D-91A0-8C1C15292AB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Core", "HPFv1.Core\HPFv1.Core.csproj", "{ACB8F507-B289-4FA9-AFBD-15E9A0932BD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Data", "HPFv1.Data\HPFv1.Data.csproj", "{DD58AA7C-D453-41D2-A0E3-1B006ADFA55E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Business", "HPFv1.Business\HPFv1.Business.csproj", "{B0F30FE7-38F0-4E47-8A18-B7FB5D9DA358}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Entity", "HPFv1.Entity\HPFv1.Entity.csproj", "{11781684-CF1A-4EC9-B84F-87249EF6CA84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.ViewModel", "HPFv1.ViewModel\HPFv1.ViewModel.csproj", "{4D8310C0-9D09-4BFD-9186-EBEC103CC008}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Tools", "HPFv1.Tools\HPFv1.Tools.csproj", "{9910CADF-E7CC-4E85-8366-FD32E4208C98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Manage.Data", "HPFv1.Manage.Data\HPFv1.Manage.Data.csproj", "{43CF0A50-F747-48FB-8E0B-21C8568BA34F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Manage.Logic", "HPFv1.Manage.Logic\HPFv1.Manage.Logic.csproj", "{0CCE6372-78B1-4EC9-BCB2-1C8FA60295A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Manage.ViewModel", "HPFv1.Manage.ViewModel\HPFv1.Manage.ViewModel.csproj", "{44137FBA-6487-4FC3-A932-F125A61939AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Manage.Business", "HPFv1.Manage.Business\HPFv1.Manage.Business.csproj", "{6354CB7E-0666-44B1-A10C-1F637246B9A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPFv1.Manage.Web", "HPFv1.Manage.Web\HPFv1.Manage.Web.csproj", "{1C16B545-B7CB-4B3C-8A0B-748C866EDDB4}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 14
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.1.196:8080/tfs/demo
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = HPFv1.Web\\HPFv1.Web.csproj
+		SccProjectName1 = HPFv1.Web
+		SccLocalPath1 = HPFv1.Web
+		SccProjectUniqueName2 = HPFv1.Logic\\HPFv1.Logic.csproj
+		SccProjectName2 = HPFv1.Logic
+		SccLocalPath2 = HPFv1.Logic
+		SccProjectUniqueName3 = HPFv1.Core\\HPFv1.Core.csproj
+		SccProjectName3 = HPFv1.Core
+		SccLocalPath3 = HPFv1.Core
+		SccProjectUniqueName4 = HPFv1.Data\\HPFv1.Data.csproj
+		SccProjectName4 = HPFv1.Data
+		SccLocalPath4 = HPFv1.Data
+		SccProjectUniqueName5 = HPFv1.Business\\HPFv1.Business.csproj
+		SccProjectName5 = HPFv1.Business
+		SccLocalPath5 = HPFv1.Business
+		SccProjectUniqueName6 = HPFv1.Entity\\HPFv1.Entity.csproj
+		SccProjectName6 = HPFv1.Entity
+		SccLocalPath6 = HPFv1.Entity
+		SccProjectUniqueName7 = HPFv1.ViewModel\\HPFv1.ViewModel.csproj
+		SccProjectName7 = HPFv1.ViewModel
+		SccLocalPath7 = HPFv1.ViewModel
+		SccProjectUniqueName8 = HPFv1.Tools\\HPFv1.Tools.csproj
+		SccProjectName8 = HPFv1.Tools
+		SccLocalPath8 = HPFv1.Tools
+		SccProjectUniqueName9 = HPFv1.Manage.Data\\HPFv1.Manage.Data.csproj
+		SccProjectName9 = HPFv1.Manage.Data
+		SccLocalPath9 = HPFv1.Manage.Data
+		SccProjectUniqueName10 = HPFv1.Manage.Logic\\HPFv1.Manage.Logic.csproj
+		SccProjectName10 = HPFv1.Manage.Logic
+		SccLocalPath10 = HPFv1.Manage.Logic
+		SccProjectUniqueName11 = HPFv1.Manage.ViewModel\\HPFv1.Manage.ViewModel.csproj
+		SccProjectName11 = HPFv1.Manage.ViewModel
+		SccLocalPath11 = HPFv1.Manage.ViewModel
+		SccProjectUniqueName12 = HPFv1.Manage.Business\\HPFv1.Manage.Business.csproj
+		SccProjectName12 = HPFv1.Manage.Business
+		SccLocalPath12 = HPFv1.Manage.Business
+		SccProjectUniqueName13 = HPFv1.Manage.Web\\HPFv1.Manage.Web.csproj
+		SccProjectName13 = HPFv1.Manage.Web
+		SccLocalPath13 = HPFv1.Manage.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02CC8268-9194-4941-B88C-7E0F6A437824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02CC8268-9194-4941-B88C-7E0F6A437824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02CC8268-9194-4941-B88C-7E0F6A437824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02CC8268-9194-4941-B88C-7E0F6A437824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E22E4806-4BAE-484D-91A0-8C1C15292AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E22E4806-4BAE-484D-91A0-8C1C15292AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E22E4806-4BAE-484D-91A0-8C1C15292AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E22E4806-4BAE-484D-91A0-8C1C15292AB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACB8F507-B289-4FA9-AFBD-15E9A0932BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB8F507-B289-4FA9-AFBD-15E9A0932BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB8F507-B289-4FA9-AFBD-15E9A0932BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB8F507-B289-4FA9-AFBD-15E9A0932BD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD58AA7C-D453-41D2-A0E3-1B006ADFA55E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD58AA7C-D453-41D2-A0E3-1B006ADFA55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD58AA7C-D453-41D2-A0E3-1B006ADFA55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD58AA7C-D453-41D2-A0E3-1B006ADFA55E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F30FE7-38F0-4E47-8A18-B7FB5D9DA358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F30FE7-38F0-4E47-8A18-B7FB5D9DA358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F30FE7-38F0-4E47-8A18-B7FB5D9DA358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F30FE7-38F0-4E47-8A18-B7FB5D9DA358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11781684-CF1A-4EC9-B84F-87249EF6CA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11781684-CF1A-4EC9-B84F-87249EF6CA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11781684-CF1A-4EC9-B84F-87249EF6CA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11781684-CF1A-4EC9-B84F-87249EF6CA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D8310C0-9D09-4BFD-9186-EBEC103CC008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D8310C0-9D09-4BFD-9186-EBEC103CC008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D8310C0-9D09-4BFD-9186-EBEC103CC008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D8310C0-9D09-4BFD-9186-EBEC103CC008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9910CADF-E7CC-4E85-8366-FD32E4208C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9910CADF-E7CC-4E85-8366-FD32E4208C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9910CADF-E7CC-4E85-8366-FD32E4208C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9910CADF-E7CC-4E85-8366-FD32E4208C98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43CF0A50-F747-48FB-8E0B-21C8568BA34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43CF0A50-F747-48FB-8E0B-21C8568BA34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43CF0A50-F747-48FB-8E0B-21C8568BA34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43CF0A50-F747-48FB-8E0B-21C8568BA34F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CCE6372-78B1-4EC9-BCB2-1C8FA60295A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CCE6372-78B1-4EC9-BCB2-1C8FA60295A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CCE6372-78B1-4EC9-BCB2-1C8FA60295A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CCE6372-78B1-4EC9-BCB2-1C8FA60295A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44137FBA-6487-4FC3-A932-F125A61939AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44137FBA-6487-4FC3-A932-F125A61939AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44137FBA-6487-4FC3-A932-F125A61939AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44137FBA-6487-4FC3-A932-F125A61939AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6354CB7E-0666-44B1-A10C-1F637246B9A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6354CB7E-0666-44B1-A10C-1F637246B9A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6354CB7E-0666-44B1-A10C-1F637246B9A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6354CB7E-0666-44B1-A10C-1F637246B9A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C16B545-B7CB-4B3C-8A0B-748C866EDDB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C16B545-B7CB-4B3C-8A0B-748C866EDDB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C16B545-B7CB-4B3C-8A0B-748C866EDDB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C16B545-B7CB-4B3C-8A0B-748C866EDDB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

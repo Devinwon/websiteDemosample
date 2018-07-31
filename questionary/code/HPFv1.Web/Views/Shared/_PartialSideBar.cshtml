@@ -1,0 +1,74 @@
+﻿@model IEnumerable<HPFv1.Entity.UsersMenu>
+@{
+    var actionName = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+    var controllerName = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var isActive = "";
+}
+<!-- START PAGE SIDEBAR -->
+<div class="page-sidebar page-sidebar-fixed scroll ">
+    <!-- START X-NAVIGATION -->
+    <ul class="x-navigation">
+        <li class="xn-logo">
+            <a href="/Home/Index">调查问卷系统</a>
+            <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="xn-title">导航菜单</li>
+        @foreach (HPFv1.Entity.UsersMenu sideitem in Model)
+        {
+            if (sideitem.PID == 0)
+            {
+                int CurrentID = sideitem.MID;
+                if (sideitem.ChildNum == 0)
+                {
+                    <li>
+                        <a href="/@sideitem.ControllerName/@sideitem.ActionName">
+                            <span class="@sideitem.Icon"></span> <span class="xn-text">@sideitem.MenuName</span>
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    if (controllerName.ToLower() == sideitem.ControllerName.ToLower())
+                    {
+                        isActive = "active";
+                    }
+                    else
+                    {
+                        isActive = "";
+                    }
+                    <li class="xn-openable @isActive">
+                        <a href="#"><span class="@sideitem.Icon"></span> <span class="xn-text">@sideitem.MenuName</span></a>
+                        <ul>
+                            @foreach (HPFv1.Entity.UsersMenu sideChild in Model)
+                            {
+                                if (sideChild.PID == CurrentID)
+                                {
+                                    if (actionName.ToLower() == sideChild.ActionName.ToLower())
+                                    {
+                                        isActive = "active";
+                                    }
+                                    else
+                                    {
+                                        isActive = "";
+                                    }
+
+                                    <li class="@isActive">
+                                        <a href="/@sideChild.ControllerName/@sideChild.ActionName">
+                                            <span class="@sideChild.Icon"></span> @sideChild.MenuName
+                                        </a>
+                                    </li>
+                                }
+
+                            }
+                        </ul>
+                    </li>
+                }
+
+            }
+
+        }
+
+    </ul>
+    <!-- END X-NAVIGATION -->
+</div>
+<!-- END PAGE SIDEBAR -->

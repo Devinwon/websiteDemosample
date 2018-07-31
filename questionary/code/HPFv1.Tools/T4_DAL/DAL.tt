@@ -1,0 +1,316 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ include file="$(ProjectDir)include/Using.ttinclude"  #>
+<#@ include file="$(ProjectDir)include/DbHelper.ttinclude"  #>
+<#@ include file="$(ProjectDir)include/Manager.ttinclude"  #>
+<#    var manager = Manager.Create(Host, GenerationEnvironment); #>
+<# manager.StartHeader(); #>
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data.SqlClient;
+using System.Data;
+using HPFv1.Entity;
+
+
+namespace <#=manager.DefaultProjectNamespace #>
+{   
+<#manager.EndBlock(); #>
+<#
+    const string connStr="Data Source=.;Initial Catalog=HPOpinion;User ID=sa;password=123456";
+    var DbTables=DbHelper.GetDbTables(connStr);
+ #>
+<#
+    foreach(DbTable table in DbTables){
+       
+        var DbCol=DbHelper.GetDbColumns(connStr,table.TableName);
+        var ColModel= DbCol.Where(p => p.IsPrimary == 1).FirstOrDefault();
+
+        if(ColModel!=null)
+        {
+             manager.StartNewFile("DAL_"+table.TableName+".cs");
+#>
+    /// <summary>
+    /// <#=table.Remark#> 
+    /// </summary>
+public partial class <#="DAL_"+table.TableName #>
+    { 
+             
+        /// <summary>
+        /// 是否存在该记录
+        /// </summary>
+        public bool Exists(<#=ColModel.ColType #> <#=ColModel.ColName #>)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from <#=table.TableName #>");
+            strSql.Append(" where <#=ColModel.ColName #>=@<#=ColModel.ColName #> ");
+            SqlParameter[] parameters = {
+        			new SqlParameter("@<#=ColModel.ColName #>",<#=ColModel.ColName #>)			
+            };
+            return DbHelperSQL.Exists(strSql.ToString(), parameters);
+        }
+
+
+
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        public bool Add( <#=table.TableName #> model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("insert into <#=table.TableName #>(");                  
+            strSql.Append("<#=string.Join(",",DbCol.Select(p=>p.ColName).ToArray()) #>)");
+            strSql.Append(" values (");
+            strSql.Append("<#=string.Join(",",DbCol.Select(p=>"@"+p.ColName).ToArray()) #>)");
+            SqlParameter[] parameters = {
+
+                    <#foreach(DbColumn col in DbCol){#>                                    
+                                new SqlParameter("@<#=col.ColName #>", model.<#=col.ColName #>),
+                    <#}#>
+                        
+            };
+                int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+                if (rows > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        
+        }
+
+                
+            /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        public bool Update(<#=table.TableName #> model)
+        {
+            StringBuilder strSql = new StringBuilder();
+                strSql.Append("update <#=table.TableName #> set ");
+                <#
+            var i=0;
+            foreach(DbColumn col in DbCol){
+                 
+            if(col.IsPrimary==0){
+                #>     
+                    strSql.Append(" <#= i==0?"":","#>  <#= col.ColName #>=@<#=                    col.ColName #>");                    
+                <#
+                i++;
+            }
+        }#>
+        
+                strSql.Append(" where ID=@ID ");
+                    SqlParameter[] parameters = {
+        
+                            <#foreach(DbColumn col in DbCol){#>                                    
+                                        new SqlParameter("@<#=col.ColName #>", model.<#=col.ColName #>),
+                            <#}#>                        
+                    };
+                int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+                if (rows > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        }
+
+
+            /// <summary>
+            /// 删除一条数据
+            /// </summary>
+            public bool Delete(<#=ColModel.ColType #> <#=ColModel.ColName #>)
+            {
+                 
+                StringBuilder strSql = new StringBuilder();
+                strSql.Append("delete from <#=table.TableName #> ");
+                strSql.Append(" where <#=ColModel.ColName #>=@<#=ColModel.ColName #> ");
+                SqlParameter[] parameters = {
+            	  	new SqlParameter("@<#=ColModel.ColName #>", <#=ColModel.ColName #>)			};
+                   
+                int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+                if (rows > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+
+        /// <summary>
+        /// 批量删除数据
+        /// </summary>
+        public bool DeleteList(string IDlist)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from <#=table.TableName #>  ");
+            strSql.Append(" where <#=ColModel.ColName #> in (" + IDlist + ")  ");
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
+        public <#=table.TableName #> GetModel(<#=ColModel.ColType #> <#=ColModel.ColName #>)
+                {
+
+                    StringBuilder strSql = new StringBuilder();
+                    strSql.Append("select  top 1 <#=string.Join(",",DbCol.Select(p=>p.ColName).ToArray()) #> from <#=table.TableName #> ");
+                    strSql.Append(" where <#=ColModel.ColName #>=@<#=ColModel.ColName #> ");
+                    SqlParameter[] parameters = {
+	                		new SqlParameter("@<#=ColModel.ColName #>", <#=ColModel.ColName #>)			};
+                        
+                    <#=table.TableName #> model = new <#=table.TableName #>();
+                    DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        return DataRowToModel(ds.Tables[0].Rows[0]);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+
+
+
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
+        public <#=table.TableName #> DataRowToModel(DataRow row)
+                {
+                    <#=table.TableName #> model = new <#=table.TableName #>();
+                    if (row != null)
+                    {
+                        <#foreach(DbColumn col in DbCol){#>
+
+                        if (row["<#=col.ColName #>"] != null && row["<#=col.ColName #>"].ToString() != "")
+                        {
+                            <#if(col.ColType!="string"){ #>
+
+                                model.<#=col.ColName #> = <#=col.ColType #>.Parse(row["<#=col.ColName #>"].ToString());
+                            <#}else{ #>
+
+                                model.<#=col.ColName #> = row["<#=col.ColName #>"].ToString();
+
+                            <#}#>
+
+                        }
+                        <#}#>
+
+                    }
+                    return model;
+                }
+
+
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public List<<#=table.TableName #>> GetList(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select <#=string.Join(",",DbCol.Select(p=>p.ColName).ToArray()) #> from <#=table.TableName #> ");
+            strSql.Append(" FROM <#=table.TableName #> ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+
+                DataTable tab = DbHelperSQL.Query(strSql.ToString()).Tables[0];
+                    
+                List<<#=table.TableName #>> list = new List<<#=table.TableName #>>();
+                    
+                foreach (DataRow row in tab.Rows)
+                {
+                    list.Add(DataRowToModel(row));
+                }
+                return list;
+                        
+        }
+
+
+        /// <summary>
+        /// 分页获取数据列表
+        /// </summary>
+        public List<<#=table.TableName #>> GetListByPage(string strWhere, string orderby, int startIndex, int endIndex)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT * FROM ( ");
+            strSql.Append(" SELECT ROW_NUMBER() OVER (");
+            if (!string.IsNullOrEmpty(orderby.Trim()))
+            {
+                strSql.Append("order by T." + orderby);
+            }
+            else
+            {
+                strSql.Append("order by T.<#=ColModel.ColName #> desc");
+            }
+            strSql.Append(")AS Row, T.*  from <#=table.TableName #> T ");
+            if (!string.IsNullOrEmpty(strWhere.Trim()))
+            {
+                strSql.Append(" WHERE " + strWhere);
+            }
+            strSql.Append(" ) TT");
+            strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", startIndex, endIndex);
+            DataTable tab = DbHelperSQL.Query(strSql.ToString()).Tables[0];
+                
+            List<<#=table.TableName #>> list = new List<<#=table.TableName #>>();
+                
+            foreach (DataRow row in tab.Rows)
+            {
+                list.Add(DataRowToModel(row));
+            }
+                
+                
+                
+            return list;
+        }
+
+
+
+
+    }
+}
+
+
+<#        } //end if #>
+
+
+<#
+
+
+     
+
+    
+        manager.EndBlock(); 
+        
+    }   //end for
+    
+ #>
+
+}
+
+<#    manager.Process(true); #>
+
+
+
+
+
+
+

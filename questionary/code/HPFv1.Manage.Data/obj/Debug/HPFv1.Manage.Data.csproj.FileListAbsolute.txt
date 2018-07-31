@@ -1,0 +1,9 @@
+F:\问卷调查系统\源代码\HPFv1.Manage.Data\bin\Debug\HPFv1.Manage.Data.dll
+F:\问卷调查系统\源代码\HPFv1.Manage.Data\bin\Debug\HPFv1.Manage.Data.pdb
+F:\问卷调查系统\源代码\HPFv1.Manage.Data\bin\Debug\HPFv1.Entity.dll
+F:\问卷调查系统\源代码\HPFv1.Manage.Data\bin\Debug\HPFv1.Manage.ViewModel.dll
+F:\问卷调查系统\源代码\HPFv1.Manage.Data\bin\Debug\HPFv1.Entity.pdb
+F:\问卷调查系统\源代码\HPFv1.Manage.Data\bin\Debug\HPFv1.Manage.ViewModel.pdb
+F:\问卷调查系统\源代码\HPFv1.Manage.Data\obj\Debug\HPFv1.Manage.Data.csprojResolveAssemblyReference.cache
+F:\问卷调查系统\源代码\HPFv1.Manage.Data\obj\Debug\HPFv1.Manage.Data.dll
+F:\问卷调查系统\源代码\HPFv1.Manage.Data\obj\Debug\HPFv1.Manage.Data.pdb

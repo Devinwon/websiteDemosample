@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E22E4806-4BAE-484D-91A0-8C1C15292AB3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HPFv1.Logic</RootNamespace>
+    <AssemblyName>HPFv1.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding">
+      <HintPath>..\packages\thoughtworks.qrcode_dll\0.0.0.0\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attribute\AuthorizationAttribute.cs" />
+    <Compile Include="Attribute\CustomExceptionAttribute.cs" />
+    <Compile Include="Common\CommonController.cs" />
+    <Compile Include="ErrorAlert\ErrorAlertController.cs" />
+    <Compile Include="Home\HomeController.cs" />
+    <Compile Include="Account\AccountController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionDetailHistory\QuestionDetailHistoryController.cs" />
+    <Compile Include="QuestionDetail\QuestionDetailController.cs" />
+    <Compile Include="QuestionGroup\QuestionGroupController.cs" />
+    <Compile Include="QuestionTemplate\QuestionTemplateController.cs" />
+    <Compile Include="Question\QuestionController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HPFv1.Business\HPFv1.Business.csproj">
+      <Project>{b0f30fe7-38f0-4e47-8a18-b7fb5d9da358}</Project>
+      <Name>HPFv1.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPFv1.Core\HPFv1.Core.csproj">
+      <Project>{acb8f507-b289-4fa9-afbd-15e9a0932bd8}</Project>
+      <Name>HPFv1.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPFv1.Data\HPFv1.Data.csproj">
+      <Project>{dd58aa7c-d453-41d2-a0e3-1b006adfa55e}</Project>
+      <Name>HPFv1.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPFv1.Entity\HPFv1.Entity.csproj">
+      <Project>{11781684-cf1a-4ec9-b84f-87249ef6ca84}</Project>
+      <Name>HPFv1.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPFv1.ViewModel\HPFv1.ViewModel.csproj">
+      <Project>{4d8310c0-9d09-4bfd-9186-ebec103cc008}</Project>
+      <Name>HPFv1.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,74 @@
+﻿<div class="modal" id="edit-manager" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><span class="fa fa-pencil"></span> 编辑问卷</h4>
+            </div>
+            <div class="modal-body block">
+                <form id="user-points-form" class="form-horizontal">
+                    <!-- start -->
+                    <input type="hidden" id="txt_qid">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">问卷标题</label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input id="txt_title" type="text" class="form-control" value="" />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                            <label class="col-md-3 control-label">问卷描述</label>
+
+                            <div class="col-md-6 col-xs-12">
+                                <input id="txt_description" type="text" class="form-control" value="" />
+                            </div>
+
+                        </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">开始时间</label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input id="txt_startTime" type="text" class="form-control datepicker" value="" />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">结束时间</label>
+
+                        <div class="col-md-6 col-xs-12">
+                            <input id="txt_endTime" type="text"   class="form-control datepicker" value="" />
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">模版选择</label>
+
+                        <div class="col-md-3 col-xs-12">
+                            <select id="sel_templates" class="form-control select" style="width:265px">
+                                <option value="0">--请选择--</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    @*<div class="form-group">
+                        <label class="col-md-3 control-label">分组所属用户</label>
+
+                        <div class="col-md-3 col-xs-12">
+                            <select id="sel_users" class="form-control select" style="width:265px">
+                                <option value="0">--请选择--</option>
+                            </select>
+                        </div>
+
+                    </div>*@
+                    <!-- end -->
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="EditQuestion()">确  定</button>
+            </div>
+
+        </div>
+    </div>
+</div>

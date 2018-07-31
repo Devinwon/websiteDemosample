@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>问卷调查结果-分组</title>
+    <!-- META SECTION -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- END META SECTION -->
+    <!-- CSS INCLUDE -->
+    <link type="text/css" id="theme" href="~/Content/css/theme-default.css" rel="stylesheet" />
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body class="page-container-boxed2">
+    <div id="SetHtml" class="page-container2">
+
+        <div class="col-md-12">
+
+            <h1 id="h1_title" style="text-align:center;"></h1>
+            <div id="questionAnswer_list" class=" col-md-12" style="height:100%">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- END PAGE CONTAINER -->
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+<audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/icheck/icheck.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/noty/jquery.noty.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/noty/themes/default.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap-file-input.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/ajaxfileupload/ajaxfileupload.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+<!-- END PAGE PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/actions.js")"></script>
+@*<script type="text/javascript" src="@Url.Content("~/Js/Chart.js")"></script>*@
+<script type="text/javascript" src="@Url.Content("~/Js/HighCharts/highcharts.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/HighCharts/modules/exporting.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/QuestionGroup/page_showquestiongroupresult.js")"></script>
+
+
+
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->
+

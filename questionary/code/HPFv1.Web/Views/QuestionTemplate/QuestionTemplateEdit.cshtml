@@ -1,0 +1,163 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "模版编辑 ";
+    var ParentActionName = ViewContext.RouteData.Values["Action"].ToString().ToLower();
+    var ParentControllerName = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+}
+@model HPFv1.Entity.QuestionTemplate
+
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    @Html.Action("SideBar", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName })
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content scroll" style="overflow:scroll;">
+
+        @Html.Action("BodyHeader", "Common")
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">云课堂</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        
+
+        <div class=" col-md-2" style="position: relative;">
+
+                <div class="panel panel-default" style="overflow: auto;position: fixed; width:13% ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">工具</h3>
+                    </div>
+                    <div class="panel-body">
+
+
+                        <div class="panel-body-navigation">
+
+                            <div class="row">
+                                <button class="btn btn-primary btn-sm" type="button" style="width:120px" onclick="addTopic('radio')">
+                                    <span class="fa fa-plus-square"></span> 单&nbsp;选&nbsp;题
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="panel-body-navigation">
+                            <div class="row">
+                                <button class="btn btn-primary btn-sm" type="button" style="width:120px" onclick="addTopic('checkbox')">
+                                    <span class="fa fa-plus-square"></span> 多&nbsp;选&nbsp;题
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="panel-body-navigation">
+                            <div class="row">
+                                <button class="btn btn-primary btn-sm" type="button" style="width:120px" onclick="addTopic('text')">
+                                    <span class="fa fa-plus-square"></span> 单行填空
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="panel-body-navigation">
+                            <div class="row">
+                                <button class="btn btn-primary btn-sm" type="button" style="width:120px" onclick="addTopic('textarea')">
+                                    <span class="fa fa-plus-square"></span> 多行填空
+                                </button>
+                            </div>
+                        </div>
+                        <div class="panel-body-navigation">
+                            <div class="row">
+                                <button class="btn btn-primary btn-sm" type="button" style="width:120px" onclick="addTopic('description')">
+                                    <span class="fa fa-plus-square"></span> 描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="panel-body-navigation">
+                            <div class="row">
+                                <button class="btn btn-primary btn-sm" type="button" style="width:120px" onclick="addTopic('name')">
+                                    <span class="fa fa-plus-square"></span> 姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="panel-body-navigation">
+                            <div class="row">
+                                <button class="btn btn-primary btn-sm" type="button" style="width:120px" onclick="addTopic('telephone')">
+                                    <span class="fa fa-plus-square"></span> 电话号码
+                                </button>
+                            </div>
+                        </div>
+                     
+                        <div class="panel-body-navigation">
+                            <div class="row">
+                                <button class="btn btn-primary btn-sm" type="button" style="width:120px" onclick="addTopic('email')">
+                                    <span class="fa fa-plus-square"></span> 电子邮箱
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        <input type="hidden" id="HID" />
+        <div id="getHtml">
+            <div id="question_list" class=" col-md-10" style="height:100%">
+                <div class="panel panel-default">
+                    <!-- table content -->
+                    <div class="panel-body">
+                     
+                        <h1 style="text-align:center"><input type="text" id="txt_title" style="font-size:30px"  placeholder="请输入问卷标题"/> </h1>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+
+        
+ 
+
+
+    <!-- END PAGE CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT -->
+
+<!-- END PAGE CONTAINER -->
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+<audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/icheck/icheck.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/noty/jquery.noty.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/noty/themes/default.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap-file-input.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/ajaxfileupload/ajaxfileupload.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+
+<!-- END PAGE PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/QuestionTemplate/page_questiontemplate.js")"></script>
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->

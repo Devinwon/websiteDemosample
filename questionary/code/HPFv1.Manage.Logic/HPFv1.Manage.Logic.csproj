@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CCE6372-78B1-4EC9-BCB2-1C8FA60295A2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HPFv1.Manage.Logic</RootNamespace>
+    <AssemblyName>HPFv1.Manage.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AccountController.cs" />
+    <Compile Include="Common\CommonController.cs" />
+    <Compile Include="Home\HomeController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\UsersController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HPFv1.Core\HPFv1.Core.csproj">
+      <Project>{acb8f507-b289-4fa9-afbd-15e9a0932bd8}</Project>
+      <Name>HPFv1.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPFv1.Entity\HPFv1.Entity.csproj">
+      <Project>{11781684-cf1a-4ec9-b84f-87249ef6ca84}</Project>
+      <Name>HPFv1.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPFv1.Manage.Business\HPFv1.Manage.Business.csproj">
+      <Project>{6354cb7e-0666-44b1-a10c-1f637246b9a4}</Project>
+      <Name>HPFv1.Manage.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPFv1.Manage.Data\HPFv1.Manage.Data.csproj">
+      <Project>{43cf0a50-f747-48fb-8e0b-21c8568ba34f}</Project>
+      <Name>HPFv1.Manage.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HPFv1.Manage.ViewModel\HPFv1.Manage.ViewModel.csproj">
+      <Project>{44137fba-6487-4fc3-a932-f125a61939aa}</Project>
+      <Name>HPFv1.Manage.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

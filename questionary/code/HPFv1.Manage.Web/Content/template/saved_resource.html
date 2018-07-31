@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0121)http://www.wenjuan.com/edit/form/ajax/create_image_option/56f1f62ea320fc817df2ffff/?qid=56f23cf0a320fc81b43bf919&plugin=1 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<style type="text/css">
+body, #uploadForm, #uploadFile {
+height:100px;
+margin: 0;
+padding: 0;
+position:absolute;
+left: 0;
+width: 100%;
+top: 0;
+cursor:pointer;
+z-index: 1000;
+}
+input{
+}
+a,button,label,textarea,div,select,option,input{
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+</style>
+</head>
+<body class=" zh_CN">
+<form action="http://www.wenjuan.com/edit/form/ajax/create_image_option/56f1f62ea320fc817df2ffff/" enctype="multipart/form-data" method="POST" id="uploadForm">
+<input type="file" class="uploadFile" name="file" id="uploadFile">
+<input type="hidden" val="" class="formId" name="qid" value="56f23cf0a320fc81b43bf919">
+<input type="hidden" val="" class="formId" name="plugin" value="1">
+<input type="hidden" name="_xsrf" value="675f2828fd3e4510b3b925a1de890cd1">
+</form>
+<script type="text/javascript" src="./jquery.js"></script>
+<link href="./load.css" rel="stylesheet" type="text/css">
+
+
+<script type="text/javascript">
+
+var option_struct = "";
+
+if (option_struct != ""){
+window.top.upload_img_success_for_ie("56f23cf0a320fc81b43bf919",option_struct);
+}
+$("#uploadFile").change(function(){
+window.top.start_upload_img_for_ie("56f23cf0a320fc81b43bf919");
+$("#uploadForm").submit();
+});
+</script></body></html>

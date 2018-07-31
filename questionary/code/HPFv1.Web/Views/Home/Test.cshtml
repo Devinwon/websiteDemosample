@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div >
+        @using (Html.BeginForm("index", "home", FormMethod.Post)) { 
+           <p>输入需要加密的字符串:@Html.TextBox("tbString", "Data Source=SEAN-JIN\\SQL2012.;Initial Catalog=HPOpinion;User ID=sa;Password=123456;", new { @style = "width:800px;" })  <input type="submit" value="提交" /></p>
+            <p>@ViewBag.Result</p>
+            <p>@ViewBag.Source</p>
+
+        }
+        这是测试页面<br/>
+        
+    </div>
+</div>

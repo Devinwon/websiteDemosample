@@ -1,0 +1,125 @@
+﻿    @{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "问卷详细查看";
+    var ParentActionName = "Index";
+    var ParentControllerName = "Question";
+    }
+
+
+
+
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    @Html.Action("SideBar", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName })
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        @Html.Action("BodyHeader", "Common")
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">问卷调查</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+            <form class="form-inline" role="form">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label>选择分组：</label>
+                                    <select id="sel_group" class="form-control">
+                                        <option value="0">== 请选择 ==</option>
+                                    </select>
+
+                                </div>
+                                &nbsp;<label>提交时间：</label>
+                                <input class="form-control datepicker" id="txt_startDate" />
+                                <label>--</label>
+                                <input class="form-control datepicker" id="txt_endDate" />
+                                &nbsp;<button type="button" id="btnSearchHistory" class="btn btn-danger">查询</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            <!-- table content -->
+                            <div id="class-list" class="table-responsive">
+                                <table class="table datatable_questiondetailhistory table-bordered table-actions table-hover">
+                                    <thead>
+                                        <tr>
+
+                                            <th width="200">问卷标题</th>
+                                            <th width="200">分组名称</th>
+                                            <th width="200">提交时间</th>
+                                            <th width="200">提交IP地址</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="QA_SelectList">
+                                        <tr>
+                                            <td valign="top" colspan="4" class="dataTables_empty">无数据</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- END table content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+</div>
+<!-- END PAGE CONTENT -->
+<!-- END PAGE CONTAINER -->
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+<audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/icheck/icheck.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/noty/jquery.noty.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/noty/themes/default.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap-file-input.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/ajaxfileupload/ajaxfileupload.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap-datepicker.js")"></script>
+<!-- END PAGE PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/QuestionDetailHistory/page_questiondetailhistory.js")"></script>
+
+
+
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->

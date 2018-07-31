@@ -1,0 +1,113 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "分组列表";
+    var ParentActionName = "Index";
+    var ParentControllerName = "Question";
+}
+
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    @Html.Action("SideBar", "Common", new { ParentAction = ParentActionName, ParentController = ParentControllerName })
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        @Html.Action("BodyHeader", "Common")
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">问卷调查</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+        <!-- PAGE CONTENT WRAPPER -->
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading ui-draggable-handle">
+                        <div class="btn-group ">
+                            <img src="GetTwoDimensionCode?path=@Server.UrlEncode("" + @ViewBag.QuestionUrl + "")" width="100" height="100" />
+                            <label>问卷地址：@ViewBag.QuestionUrl</label>
+                        </div>
+
+                    </div>
+
+                    <div class="panel-heading ui-draggable-handle">
+                        <div class="btn-group ">
+                            <button id="btnAddQuestionGroup" class="btn btn-primary btn-sm" type="button">
+                                <span class="fa fa-plus-square"></span> 添加分组
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="panel-body">
+
+                        <!-- table content -->
+                        <div id="class-list" class="table-responsive">
+                            <table class="table datatable_questiongroup table-bordered table-actions table-hover">
+                                <thead>
+                                    <tr>
+
+                                        <th width="200">模版标题</th>
+                                        <th width="150">创建人</th>
+                                        <th width="200">分组所属用户名称</th>
+                                        <th width="200">分组密码</th>
+                                        <th width="200">创建时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="QA_SelectList">
+                                    <tr>
+                                        <td valign="top" colspan="4" class="dataTables_empty">无数据</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- END table content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <!-- END PAGE CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+<!-- Modal AJAX -->
+<div id="pop_modaldialog">
+</div>
+<!-- END Modal AJAX -->
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="@Url.Content("~/Content/audio/alert.mp3")" preload="auto"></audio>
+<audio id="audio-fail" src="@Url.Content("~/Content/audio/fail.mp3")" preload="auto"></audio>
+<!-- END PRELOADS -->
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/jquery/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/jquery/jquery-ui.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap.min.js")"></script>
+<!-- END PLUGINS -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/datatables/jquery.dataTables.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap-select.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/icheck/icheck.min.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/noty/jquery.noty.js")"></script>
+<script type='text/javascript' src="@Url.Content("~/Js/plugins/noty/layouts/topRight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/noty/themes/default.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/bootstrap/bootstrap-file-input.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/ajaxfileupload/ajaxfileupload.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js")"></script>
+<!-- END PAGE PLUGINS -->
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="@Url.Content("~/Js/plugins.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/actions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Js/QuestionGroup/page_questiongroup.js")"></script>

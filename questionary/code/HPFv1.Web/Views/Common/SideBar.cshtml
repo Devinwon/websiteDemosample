@@ -1,0 +1,95 @@
+﻿@model IEnumerable<HPFv1.Entity.UsersMenu>
+@{
+    var isActive = "";
+    var PisActive = "";
+}
+
+<!-- START PAGE SIDEBAR -->
+<div class="page-sidebar page-sidebar-fixed scroll ">
+    <!-- START X-NAVIGATION -->
+    <ul class="x-navigation">
+        <li class="xn-logo">
+            <a href="/Home/Index">厚溥云</a>
+            <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="xn-title">导航菜单</li>
+        @{
+            //获取当前栏目的上级编号
+            int ParentPID = 0;
+            int CurrentID = 0;
+            foreach (HPFv1.Entity.UsersMenu sideitem in Model)
+            {
+                if (ViewBag.ParentController.ToLower() == sideitem.ControllerName.ToLower() && ViewBag.ParentAction.ToLower() == sideitem.ActionName.ToLower())
+                {
+                    ParentPID = sideitem.PID;
+                    CurrentID = sideitem.MID;
+                }
+            }
+        }
+        @foreach (HPFv1.Entity.UsersMenu sideitem in Model)
+        {
+            if (sideitem.PID == 0)
+            {
+                if (sideitem.ChildNum == 0)
+                {
+                    if (sideitem.MID == CurrentID)
+                    {
+                        isActive = "active";
+                    }
+                    else
+                    {
+                        isActive = "";
+                    }
+                    <li>
+                        <a href="/@sideitem.ControllerName/@sideitem.ActionName">
+                            <span class="@sideitem.Icon"></span> <span class="xn-text">@sideitem.MenuName</span>
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    if (ParentPID == sideitem.MID)
+                    {
+                        PisActive = "active";
+                    }
+                    else
+                    {
+                        PisActive = "";
+                    }
+                    <li class="xn-openable @PisActive">
+                        <a href="#"><span class="@sideitem.Icon"></span> <span class="xn-text">@sideitem.MenuName</span></a>
+                        <ul>
+                            @foreach (HPFv1.Entity.UsersMenu sideChild in Model)
+                            {
+                                if (sideChild.MID == CurrentID)
+                                {
+                                    isActive = "active";
+                                }
+                                else
+                                {
+                                    isActive = "";
+                                }
+                                if (sideChild.PID == sideitem.MID)
+                                {
+                                    <li class="@isActive">
+                                        <a href="/@sideChild.ControllerName/@sideChild.ActionName">
+                                            <span class="@sideChild.Icon"></span> @sideChild.MenuName
+                                        </a>
+                                    </li>
+
+                                }
+                            }
+
+
+                        </ul>
+                    </li>
+                }
+
+            }
+
+        }
+
+    </ul>
+    <!-- END X-NAVIGATION -->
+</div>
+<!-- END PAGE SIDEBAR -->

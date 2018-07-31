@@ -1,0 +1,54 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ include file="$(ProjectDir)include/Using.ttinclude"  #>
+<#@ include file="$(ProjectDir)include/DbHelper.ttinclude"  #>
+<#@ include file="$(ProjectDir)include/Manager.ttinclude"  #>
+<#var manager = Manager.Create(Host, GenerationEnvironment); #>
+<#manager.StartHeader(); #>
+
+
+
+using System;
+using System.Collections.Generic;
+namespace <#=manager.DefaultProjectNamespace #>
+{   
+<#manager.EndBlock(); #>
+<#
+    const string connStr="Data Source=.;Initial Catalog=HPOpinion;User ID=sa;password=123456";
+    var DbTables=DbHelper.GetDbTables(connStr);
+ #>
+<#
+    foreach(DbTable table in DbTables){
+        manager.StartNewFile(table.TableName+".cs");
+ #>
+
+        /// <summary>
+        /// <#=table.Remark#> 
+        /// </summary>
+        public partial class <#=table.TableName #>
+        {
+             <#     
+        var DbCol=DbHelper.GetDbColumns(connStr,table.TableName);
+        foreach (DbColumn dc in DbCol) 
+        {
+
+          #>
+
+            /// <summary>
+            /// <#=dc.Remark.Replace("\n","").Replace("\r","")  #> 
+            /// </summary>
+            public <#=dc.ColType #> <#=dc.ColName #>  { get; set; }       
+
+             <#    
+
+        }   
+   
+        #>
+
+        }
+}
+<#
+        manager.EndBlock();    
+    }       
+ #>
+<#manager.Process(true); #>
+}

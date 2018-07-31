@@ -1,0 +1,9 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core.dll" #>
+<#@ assembly name="System.Data.dll" #>
+<#@ assembly name="System.Data.DataSetExtensions.dll" #>
+<#@ assembly name="System.Xml.dll" #>
+
+<#@ assembly name="System.Data.Linq"#>
+<#@ assembly name="EnvDTE"#>
+<#@ assembly name="System.Xml.Linq"#>
