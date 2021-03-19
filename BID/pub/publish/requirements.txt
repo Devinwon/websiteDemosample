@@ -15,7 +15,7 @@ django-cors-headers==2.1.0
 django-crispy-forms==1.7.2
 django-filter==1.1.0
 django-haystack==2.6.0
-djangorestframework==3.8.2
+djangorestframework==3.11.2
 idna==2.6
 itypes==1.1.0
 jieba==0.38
