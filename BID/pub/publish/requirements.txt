@@ -3,7 +3,7 @@ appdirs==1.4.3
 billiard==3.5.0.2
 category==0.9.10
 celery==4.0.2
-certifi==2018.1.18
+certifi==2022.12.7
 chardet==3.0.4
 class-registry==2.1.2
 coreapi==2.1.1
